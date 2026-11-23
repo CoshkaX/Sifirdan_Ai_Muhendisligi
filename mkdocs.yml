@@ -55,7 +55,7 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/highlights.js?v=20261123-2
+  - javascripts/highlights.js?v=20261123-3
 
 
 exclude_docs: |

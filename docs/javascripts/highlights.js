@@ -10,6 +10,7 @@
   var menu = null;
   var pending = null;
   var overlays = [];
+  var pendingRange = null;
 
   function article() {
     return document.querySelector(".md-content article .md-typeset") ||
@@ -95,6 +96,16 @@
     if (top < 8) top = rect.bottom + 8;
     menu.style.left = left + "px";
     menu.style.top = top + "px";
+  }
+
+  function refreshMenuPosition() {
+    if (!menu || !menu.classList.contains("visible") || !pendingRange) return;
+    var rect = pendingRange.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > innerHeight) {
+      hideMenu();
+      return;
+    }
+    showMenu(rect);
   }
 
   function hideMenu() {
@@ -231,6 +242,7 @@
     }
 
     pendingRect = range.getBoundingClientRect();
+    pendingRange = range.cloneRange();
     pending = {
       start: textOffset(root, range.startContainer, range.startOffset),
       end: textOffset(root, range.endContainer, range.endOffset)
@@ -284,8 +296,14 @@
     }
   });
 
-  window.addEventListener("scroll", renderOverlays, true);
-  window.addEventListener("resize", renderOverlays);
+  window.addEventListener("scroll", function () {
+    renderOverlays();
+    refreshMenuPosition();
+  }, true);
+  window.addEventListener("resize", function () {
+    renderOverlays();
+    refreshMenuPosition();
+  });
   document.addEventListener("DOMContentLoaded", renderOverlays);
   window.addEventListener("load", renderOverlays);
 })();
