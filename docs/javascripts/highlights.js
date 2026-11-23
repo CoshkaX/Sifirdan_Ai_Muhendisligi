@@ -1,53 +1,52 @@
 (function () {
-  "use strict";
+  if (location.pathname.indexOf("/faz-") === -1) return;
 
-  var lessonPage = /\/faz-[^/]+\//.test(window.location.pathname);
-  if (!lessonPage) return;
-
-  var menu;
-  var activeSelection = null;
-  var palette = [
-    { name: "Sarı", value: "#d8c878" },
-    { name: "Yeşil", value: "#91b39b" },
-    { name: "Mavi", value: "#86a5c7" },
-    { name: "Pembe", value: "#c49aab" }
+  var colors = [
+    ["Sarı", "#d8c878"],
+    ["Yeşil", "#91b39b"],
+    ["Mavi", "#86a5c7"],
+    ["Pembe", "#c49aab"]
   ];
+  var menu = null;
+  var pending = null;
 
-  function lessonArticle() {
+  function article() {
     return document.querySelector(".md-content article .md-typeset") ||
-      document.querySelector(".md-content__inner .md-typeset");
+      document.querySelector("article.md-content__inner .md-typeset") ||
+      document.querySelector(".md-typeset");
   }
 
-  function storageKey() {
-    return "ders-vurgular:" + window.location.pathname;
+  function key() {
+    return "ders-vurgular:" + location.pathname;
   }
 
-  function loadMarks() {
+  function saved() {
     try {
-      return JSON.parse(localStorage.getItem(storageKey()) || "[]");
+      return JSON.parse(localStorage.getItem(key()) || "[]");
     } catch (_) {
       return [];
     }
   }
 
-  function saveMarks(marks) {
-    localStorage.setItem(storageKey(), JSON.stringify(marks));
+  function store(items) {
+    localStorage.setItem(key(), JSON.stringify(items));
   }
 
-  function createMenu() {
+  function ensureMenu() {
+    if (menu) return menu;
     menu = document.createElement("div");
     menu.className = "lesson-highlight-menu";
-    menu.setAttribute("role", "toolbar");
-    menu.setAttribute("aria-label", "Metin vurgusu");
-
-    palette.forEach(function (color) {
+    colors.forEach(function (item) {
       var button = document.createElement("button");
       button.type = "button";
       button.className = "lesson-highlight-color";
-      button.style.setProperty("--highlight-color", color.value);
-      button.title = color.name + " ile vurgula";
-      button.setAttribute("aria-label", color.name + " ile vurgula");
-      button.dataset.color = color.value;
+      button.dataset.color = item[1];
+      button.style.setProperty("--highlight-color", item[1]);
+      button.title = item[0];
+      button.addEventListener("mousedown", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+      });
       menu.appendChild(button);
     });
 
@@ -55,56 +54,51 @@
     clear.type = "button";
     clear.className = "lesson-highlight-clear";
     clear.textContent = "×";
-    clear.title = "Bu dersin tüm vurgularını temizle";
-    clear.setAttribute("aria-label", "Tüm vurguları temizle");
-    menu.appendChild(clear);
-
-    document.body.appendChild(menu);
-
-    menu.addEventListener("mousedown", function (event) {
+    clear.title = "Tüm vurguları temizle";
+    clear.addEventListener("mousedown", function (event) {
       event.preventDefault();
       event.stopPropagation();
     });
+    menu.appendChild(clear);
+    document.body.appendChild(menu);
+    return menu;
   }
 
-  function pointByOffset(article, offset) {
-    var remaining = offset;
-    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
-    var node;
-
-    while ((node = walker.nextNode())) {
-      if (remaining <= node.data.length) {
-        return { node: node, offset: remaining };
-      }
-      remaining -= node.data.length;
-    }
-
-    var last = article.lastChild;
-    while (last && last.lastChild) last = last.lastChild;
-    return { node: last, offset: last ? last.data.length : 0 };
-  }
-
-  function offsetOfRange(article, range) {
-    var before = document.createRange();
-    before.selectNodeContents(article);
-    before.setEnd(range.startContainer, range.startOffset);
-    var start = before.toString().length;
-    before.setEnd(range.endContainer, range.endOffset);
-    return { start: start, end: before.toString().length };
-  }
-
-  function wrapRange(article, start, end, color) {
-    var startPoint = pointByOffset(article, start);
-    var endPoint = pointByOffset(article, end);
+  function textOffset(root, container, offset) {
     var range = document.createRange();
-    range.setStart(startPoint.node, startPoint.offset);
-    range.setEnd(endPoint.node, endPoint.offset);
+    range.selectNodeContents(root);
+    range.setEnd(container, offset);
+    return range.toString().length;
+  }
+
+  function textPoint(root, offset) {
+    var left = offset;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    var node;
+    while ((node = walker.nextNode())) {
+      if (left <= node.nodeValue.length) {
+        return { node: node, offset: left };
+      }
+      left -= node.nodeValue.length;
+    }
+    return null;
+  }
+
+  function applyRange(item) {
+    var root = article();
+    var start = textPoint(root, item.start);
+    var end = textPoint(root, item.end);
+    if (!start || !end) return;
+
+    var range = document.createRange();
+    range.setStart(start.node, start.offset);
+    range.setEnd(end.node, end.offset);
     if (range.collapsed) return;
 
     var mark = document.createElement("mark");
     mark.className = "lesson-highlight";
-    mark.dataset.color = color;
-    mark.style.setProperty("--highlight-color", color);
+    mark.dataset.color = item.color;
+    mark.style.setProperty("--highlight-color", item.color);
 
     try {
       range.surroundContents(mark);
@@ -115,25 +109,20 @@
     }
   }
 
-  function restoreMarks() {
-    var article = lessonArticle();
-    if (!article) return;
-    document.querySelectorAll(".lesson-highlight").forEach(function (mark) {
-      mark.replaceWith(mark.textContent);
+  function restore() {
+    var root = article();
+    if (!root) return;
+    root.querySelectorAll("mark.lesson-highlight").forEach(function (mark) {
+      mark.replaceWith(document.createTextNode(mark.textContent));
     });
-
-    loadMarks().slice().sort(function (a, b) {
-      return b.start - a.start;
-    }).forEach(function (mark) {
-      wrapRange(article, mark.start, mark.end, mark.color);
-    });
+    saved().forEach(applyRange);
   }
 
   function showMenu(rect) {
-    if (!menu) createMenu();
+    var menu = ensureMenu();
     menu.classList.add("visible");
-    var left = Math.max(8, Math.min(rect.left + rect.width / 2, window.innerWidth - 150));
-    var top = rect.top - 48;
+    var left = Math.max(82, Math.min(rect.left + rect.width / 2, innerWidth - 82));
+    var top = rect.top - 50;
     if (top < 8) top = rect.bottom + 8;
     menu.style.left = left + "px";
     menu.style.top = top + "px";
@@ -143,79 +132,66 @@
     if (menu) menu.classList.remove("visible");
   }
 
-  function onMouseUp(event) {
-    if (menu && menu.contains(event.target)) return;
-
-    var article = lessonArticle();
-    if (!article) return;
-
-    var selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+  function selectionChanged() {
+    var root = article();
+    var selection = getSelection();
+    if (!root || !selection || selection.isCollapsed || selection.rangeCount === 0) {
       hideMenu();
       return;
     }
 
     var range = selection.getRangeAt(0);
-    if (!article.contains(range.startContainer) || !article.contains(range.endContainer)) {
+    var text = selection.toString().trim();
+    if (!text || !root.contains(range.startContainer) || !root.contains(range.endContainer)) {
       hideMenu();
       return;
     }
 
-    var text = range.toString().trim();
-    if (!text) {
-      hideMenu();
-      return;
-    }
-
-    activeSelection = offsetOfRange(article, range);
+    pending = {
+      start: textOffset(root, range.startContainer, range.startOffset),
+      end: textOffset(root, range.endContainer, range.endOffset)
+    };
     showMenu(range.getBoundingClientRect());
   }
 
-  document.addEventListener("mouseup", onMouseUp);
-  document.addEventListener("touchend", onMouseUp);
-
-  document.addEventListener("mousedown", function (event) {
-    if (menu && !menu.contains(event.target)) hideMenu();
+  document.addEventListener("mouseup", selectionChanged);
+  document.addEventListener("keyup", function (event) {
+    if (event.shiftKey) selectionChanged();
   });
 
   document.addEventListener("click", function (event) {
-    if (!menu) return;
-
-    var colorButton = event.target.closest(".lesson-highlight-color");
-    if (colorButton && activeSelection) {
-      var marks = loadMarks();
-      marks.push({
-        start: activeSelection.start,
-        end: activeSelection.end,
-        color: colorButton.dataset.color
-      });
-      saveMarks(marks);
-      window.getSelection().removeAllRanges();
-      document.querySelectorAll(".lesson-highlight").forEach(function (mark) {
-        mark.replaceWith(mark.textContent);
-      });
-      restoreMarks();
+    var color = event.target.closest(".lesson-highlight-color");
+    if (color && pending) {
+      var items = saved();
+      items.push({ start: pending.start, end: pending.end, color: color.dataset.color });
+      store(items);
+      getSelection().removeAllRanges();
+      pending = null;
+      restore();
       hideMenu();
       return;
     }
 
     if (event.target.closest(".lesson-highlight-clear")) {
-      saveMarks([]);
-      document.querySelectorAll(".lesson-highlight").forEach(function (mark) {
-        mark.replaceWith(mark.textContent);
-      });
-      window.getSelection().removeAllRanges();
+      store([]);
+      restore();
+      pending = null;
+      getSelection().removeAllRanges();
       hideMenu();
     }
+  });
+
+  document.addEventListener("mousedown", function (event) {
+    if (menu && !menu.contains(event.target)) hideMenu();
   });
 
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-      window.getSelection().removeAllRanges();
+      getSelection().removeAllRanges();
       hideMenu();
     }
   });
 
-  window.addEventListener("load", restoreMarks);
-  document.addEventListener("DOMContentLoaded", restoreMarks);
+  document.addEventListener("DOMContentLoaded", restore);
+  window.addEventListener("load", restore);
 })();
