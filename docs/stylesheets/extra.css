@@ -78,3 +78,172 @@
   border-radius: 3px;
   text-transform: none;
 }
+
+/* Ders sayfalari: teknik, uc sutunlu ve bilgi yogun bir düzen. */
+.md-header {
+  height: 3.1rem;
+}
+
+.md-header__inner {
+  height: 3.1rem;
+  padding: 0 0.7rem;
+}
+
+.md-header__title {
+  font-family: "Fira Code", monospace;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.md-tabs {
+  min-height: 0;
+  height: 2.1rem;
+}
+
+.md-tabs__inner {
+  height: 2.1rem;
+}
+
+.md-tabs__link {
+  margin-top: 0;
+  height: 2.1rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.md-main__inner {
+  margin-top: 0;
+}
+
+.md-sidebar--primary {
+  border-right: 1px solid rgba(110, 128, 119, 0.16);
+}
+
+.md-sidebar--secondary {
+  border-left: 1px solid rgba(110, 128, 119, 0.16);
+}
+
+.md-sidebar__inner {
+  padding-top: 0.75rem;
+}
+
+.md-nav__title,
+.md-nav__item {
+  font-family: "Fira Code", monospace;
+}
+
+.md-nav__item {
+  font-size: 0.68rem;
+  line-height: 1.45;
+}
+
+.md-nav__item .md-nav__link {
+  margin-top: 0.12rem;
+  margin-bottom: 0.12rem;
+  border-radius: 2px;
+  padding: 0.34rem 0.45rem;
+}
+
+.md-nav__item .md-nav__link--active {
+  font-weight: 700;
+  background: rgba(110, 128, 119, 0.10);
+  border-left: 2px solid var(--md-accent-fg-color);
+}
+
+.md-nav--secondary .md-nav__title {
+  text-transform: uppercase;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  opacity: 0.72;
+}
+
+.md-nav--secondary .md-nav__item {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 0.64rem;
+}
+
+.md-typeset h1 {
+  width: 100%;
+  padding: 0.15rem 0 0.8rem;
+  border-bottom: 1px solid rgba(110, 128, 119, 0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+.md-typeset h2 {
+  font-size: 1.18rem;
+  margin-top: 2.2em;
+}
+
+.md-typeset h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--md-accent-fg-color);
+  background: rgba(110, 128, 119, 0.05);
+  padding: 0.65rem 1rem;
+  color: inherit;
+}
+
+.md-typeset .admonition {
+  border: 1px solid rgba(110, 128, 119, 0.20);
+  border-left-width: 3px;
+}
+
+.md-typeset .admonition-title {
+  font-family: "Fira Code", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.62rem;
+}
+
+.md-typeset table:not([class]) {
+  font-size: 0.72rem;
+}
+
+.md-typeset table th {
+  font-family: "Fira Code", monospace;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.md-typeset pre {
+  border: 1px solid rgba(110, 128, 119, 0.18);
+}
+
+.md-typeset code {
+  font-size: 0.78em;
+}
+
+.md-footer {
+  border-top: 1px solid rgba(110, 128, 119, 0.16);
+}
+
+@media screen and (min-width: 76em) {
+  .md-grid {
+    max-width: 79rem;
+  }
+
+  .md-sidebar {
+    top: 3.1rem;
+  }
+
+  .md-sidebar--primary {
+    width: 13.5rem;
+  }
+
+  .md-sidebar--secondary {
+    width: 13.5rem;
+  }
+
+  .md-content__inner {
+    max-width: 48rem;
+  }
+}
