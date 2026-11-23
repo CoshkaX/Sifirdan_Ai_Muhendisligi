@@ -188,14 +188,20 @@
       var rects = range.getClientRects();
 
       Array.prototype.forEach.call(rects, function (rect) {
+        if (rect.width < 2 || rect.height < 2) return;
+        var lineRect = rect;
+        var top = lineRect.top + window.scrollY;
+        var height = Math.min(lineRect.height, 24);
+        var left = lineRect.left + window.scrollX;
+        var width = lineRect.width;
         var overlay = document.createElement("div");
         overlay.className = "lesson-highlight-overlay";
         overlay.dataset.id = item.id;
         overlay.style.setProperty("--highlight-color", item.color);
-        overlay.style.left = rect.left + window.scrollX + "px";
-        overlay.style.top = rect.top + window.scrollY + "px";
-        overlay.style.width = rect.width + "px";
-        overlay.style.height = rect.height + "px";
+        overlay.style.left = left + "px";
+        overlay.style.top = top + "px";
+        overlay.style.width = width + "px";
+        overlay.style.height = height + "px";
         overlay.title = item.note ? "Not: " + item.note : "Vurguyu aç";
         overlay.addEventListener("click", function (event) {
           event.preventEvent = true;

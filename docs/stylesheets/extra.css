@@ -506,6 +506,8 @@
 .lesson-highlight-overlay {
   position: absolute;
   z-index: 12;
+  box-sizing: border-box;
+  min-width: 1px;
   border-radius: 2px;
   background: var(--highlight-color);
   opacity: 0.58;
