@@ -54,6 +54,9 @@ markdown_extensions:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - javascripts/highlights.js
+
 
 exclude_docs: |
   __pycache__/
