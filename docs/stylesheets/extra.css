@@ -336,3 +336,17 @@ a.learning-card:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* Henüz yazılmamış dersler sol menüde okunabilir, fakat pasif görünür.
+   Ders README.md yoluna geçirildiğinde bu seçici otomatik olarak geçerli olmaz. */
+.md-sidebar--primary .md-nav__item:has(.md-nav__link[href*="MUFREDAT"]) {
+  opacity: 0.42;
+}
+
+.md-sidebar--primary .md-nav__item:has(.md-nav__link[href*="MUFREDAT"]):hover {
+  opacity: 0.68;
+}
+
+.md-sidebar--primary .md-nav__item:has(.md-nav__link[href*="MUFREDAT"]) .md-nav__link {
+  cursor: default;
+}
