@@ -348,5 +348,6 @@ a.learning-card:hover {
 }
 
 .md-sidebar--primary .md-nav__item:has(.md-nav__link[href*="MUFREDAT"]) .md-nav__link {
-  cursor: default;
+  opacity: 0.42;
+  cursor: pointer;
 }
