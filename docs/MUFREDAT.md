@@ -22,6 +22,7 @@ Kod yazıp çalıştıracağın zemini hazırlar. **Ön koşul:** yok. **Çıkt�
 - ⬜ 0.3 Git ve GitHub ile çalışmak: commit, branch, pull request, ilk katkını yapmak
 - ⬜ 0.4 Jupyter ve Colab: not defteri mantığı, ücretsiz bulut ortamı
 - ⬜ 0.5 Test yazmak ve hata ayıklamak: `unittest`, `assert`, hata mesajı okumak
+- ✅ [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md): temsil, bellek, çıkarım, öğrenme ve açıklama
 
 ## Faz 1 – Matematik Temelleri
 
@@ -44,7 +45,6 @@ Verinden öğrenen ilk modellerini yazarsın. **Ön koşul:** Faz 1. **Çıktı:
 - ⬜ 2.4 Eğitim, doğrulama, test: aşırı öğrenmeyi yakalamak
 - ⬜ 2.5 Karar ağaçları: kuralları veriden öğrenmek
 - ⬜ 2.6 Metrikler: doğruluk, kesinlik, duyarlılık, F1
-- ✅ [2.7 Soyağacı ve akrabalık katsayısı](faz-02-klasik-makine-ogrenmesi/07-soyagaci-ve-agac-yapisi/README.md): ağaç, özyineleme ve 1987'lerin bilgisayar bilimi yaklaşımına özgün bir bakış
 
 ## Faz 3 – Sinir Ağları
 

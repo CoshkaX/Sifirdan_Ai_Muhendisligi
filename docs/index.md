@@ -5,7 +5,7 @@
 Bu seri açık kaynaktır, ücretsizdir ve her dersin çalışan, test edilmiş kodu vardır. Amaç, bir kütüphanenin fonksiyonunu çağırmayı değil, o fonksiyonun **içinde ne olduğunu** anlamaktır.
 
 !!! warning "Proje erken aşamada"
-    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an hazır olan dersler: [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md), [2.7 Soyağacı ve akrabalık katsayısı](faz-02-klasik-makine-ogrenmesi/07-soyagaci-ve-agac-yapisi/README.md) ve [4.1 Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md).
+    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an hazır olan dersler: [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md), [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md) ve [4.1 Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md).
 
 ## Neden böyle bir seri?
 

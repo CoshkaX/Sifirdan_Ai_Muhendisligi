@@ -228,7 +228,7 @@
 
 @media screen and (min-width: 76em) {
   .md-grid {
-    max-width: 79rem;
+    max-width: 96rem;
   }
 
   .md-sidebar {
@@ -236,11 +236,11 @@
   }
 
   .md-sidebar--primary {
-    width: 13.5rem;
+    width: 15rem;
   }
 
   .md-sidebar--secondary {
-    width: 13.5rem;
+    width: 15rem;
   }
 
   .md-content__inner {
