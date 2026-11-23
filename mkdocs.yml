@@ -1,0 +1,62 @@
+site_name: Sıfırdan Yapay Zeka Mühendisliği
+site_description: Yapay zekâ mühendisliğini Türkçe, sıfırdan ve kendi ellerinle yazarak öğren.
+site_url: https://coshkax.github.io/Sifirdan_Ai_Muhendisligi/
+repo_url: https://github.com/CoshkaX/Sifirdan_Ai_Muhendisligi
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  language: tr
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Koyu moda geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Açık moda geç
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search:
+      lang: tr
+
+markdown_extensions:
+  - admonition
+  - tables
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+exclude_docs: |
+  __pycache__/
+  *.pyc
+
+nav:
+  - Ana Sayfa: index.md
+  - Müfredat: MUFREDAT.md
+  - Faz 0 - Hazırlık:
+      - 0.1 Geliştirme ortamı: faz-00-hazirlik/01-gelistirme-ortami/README.md
+  - Faz 4 - Metin ve Türkçe NLP:
+      - 4.1 Metni sayılara çevirmek: faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
+  - Sözlük: SOZLUK.md
+  - Katkı:
+      - Katkı rehberi: CONTRIBUTING.md
+      - Ders şablonu: sablon/DERS-SABLONU.md
