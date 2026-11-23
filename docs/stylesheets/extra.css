@@ -351,3 +351,65 @@ a.learning-card:hover {
   opacity: 0.42;
   cursor: pointer;
 }
+
+.curriculum-nav {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 7.2rem);
+  overflow-y: auto;
+  padding: 0.35rem 0.35rem 1.2rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.68rem;
+}
+
+.curriculum-nav details {
+  border-bottom: 1px solid rgba(110, 128, 119, 0.12);
+  padding: 0.25rem 0;
+}
+
+.curriculum-nav summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.55rem 0.5rem 0.45rem;
+  color: var(--md-default-fg-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+}
+
+.curriculum-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+.curriculum-nav summary span {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 0.62rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  opacity: 0.76;
+}
+
+.curriculum-nav a {
+  display: block;
+  margin: 0.05rem 0;
+  padding: 0.38rem 0.5rem 0.38rem 0.85rem;
+  border-radius: 2px;
+  color: var(--md-default-fg-color);
+  line-height: 1.42;
+  text-decoration: none;
+}
+
+.curriculum-nav a.available {
+  color: var(--md-typeset-a-color);
+}
+
+.curriculum-nav a.planned {
+  opacity: 0.42;
+}
+
+.curriculum-nav a.planned:hover {
+  opacity: 0.72;
+  background: rgba(110, 128, 119, 0.06);
+}

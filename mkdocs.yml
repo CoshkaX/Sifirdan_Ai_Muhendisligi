@@ -7,6 +7,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: tr
+  custom_dir: docs/overrides
   font:
     text: Nunito Sans
     code: Fira Code
@@ -61,99 +62,10 @@ exclude_docs: |
 nav:
   - Ana Sayfa: index.md
   - Öğrenme yolları: OGRENME-YOLLARI.md
-  - Faz 0 - Hazırlık:
-      - "0.1 Geliştirme ortamı": faz-00-hazirlik/01-gelistirme-ortami/README.md
-      - "0.2 Python hızlı tekrar": MUFREDAT.md
-      - "0.3 Git ve GitHub": MUFREDAT.md
-      - "0.4 Jupyter ve Colab": MUFREDAT.md
-      - "0.5 Test ve hata ayıklama": MUFREDAT.md
-      - "0.6 Yapay zekâ nedir?": faz-00-hazirlik/06-yapay-zeka-nedir/README.md
-  - Faz 1 - Matematik:
-      - "1.1 Vektörler ve matrisler": MUFREDAT.md
-      - "1.2 Matris çarpımı": MUFREDAT.md
-      - "1.3 Türev ve gradyan": MUFREDAT.md
-      - "1.4 Olasılık ve dağılımlar": MUFREDAT.md
-      - "1.5 İstatistik": MUFREDAT.md
-      - "1.6 Entropi ve çapraz entropi": MUFREDAT.md
-  - Faz 2 - Klasik Makine Öğrenmesi:
-      - "2.1 NumPy ile veri": MUFREDAT.md
-      - "2.2 Doğrusal regresyon": MUFREDAT.md
-      - "2.3 Lojistik regresyon": MUFREDAT.md
-      - "2.4 Eğitim, doğrulama, test": MUFREDAT.md
-      - "2.5 Karar ağaçları": MUFREDAT.md
-      - "2.6 Metrikler": MUFREDAT.md
-  - Faz 3 - Sinir Ağları:
-      - "3.1 Tek nöron": MUFREDAT.md
-      - "3.2 Mini autograd": MUFREDAT.md
-      - "3.3 Geri yayılım": MUFREDAT.md
-      - "3.4 Çok katmanlı ağ": MUFREDAT.md
-      - "3.5 Optimizasyon": MUFREDAT.md
-      - "3.6 PyTorch'a geçiş": MUFREDAT.md
-  - Faz 4 - Metin ve Türkçe NLP:
-      - "4.1 Metni sayılara çevirmek": faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
-      - "4.2 Türkçe biçimbilim": MUFREDAT.md
-      - "4.3 Metin temizleme": MUFREDAT.md
-      - "4.4 Gömme": MUFREDAT.md
-      - "4.5 Benzerlik ve arama": MUFREDAT.md
-      - "4.6 Duygu analizi": MUFREDAT.md
-      - "4.7 Veri setleri": MUFREDAT.md
-  - Faz 5 - Transformer:
-      - "5.1 Dizi modelleme": MUFREDAT.md
-      - "5.2 Attention": MUFREDAT.md
-      - "5.3 Çok başlı attention": MUFREDAT.md
-      - "5.4 Konum bilgisi": MUFREDAT.md
-      - "5.5 Transformer bloğu": MUFREDAT.md
-      - "5.6 Mini transformer": MUFREDAT.md
-  - Faz 6 - Küçük Dil Modeli:
-      - "6.1 Sonraki token tahmini": MUFREDAT.md
-      - "6.2 BPE tokenizer": MUFREDAT.md
-      - "6.3 Türkçe tokenizer verimliliği": MUFREDAT.md
-      - "6.4 Mini GPT eğitimi": MUFREDAT.md
-      - "6.5 Metin üretimi": MUFREDAT.md
-      - "6.6 Küçük Türkçe veri deneyi": MUFREDAT.md
-  - Faz 7 - LLM'leri Kullanmak:
-      - "7.1 API ile model çağırmak": MUFREDAT.md
-      - "7.2 Etkili prompt": MUFREDAT.md
-      - "7.3 Yapılandırılmış çıktı": MUFREDAT.md
-      - "7.4 Bağlam, maliyet, gecikme": MUFREDAT.md
-      - "7.5 Hata yönetimi": MUFREDAT.md
-  - Faz 8 - Arama ve RAG:
-      - "8.1 Anlamsal arama": MUFREDAT.md
-      - "8.2 Parçalama": MUFREDAT.md
-      - "8.3 Vektör veritabanı": MUFREDAT.md
-      - "8.4 Sıfırdan RAG hattı": MUFREDAT.md
-      - "8.5 Türkçe RAG": MUFREDAT.md
-      - "8.6 RAG'i değerlendirmek": MUFREDAT.md
-  - Faz 9 - Agent'lar:
-      - "9.1 Agent döngüsü": MUFREDAT.md
-      - "9.2 Araç tanımlamak": MUFREDAT.md
-      - "9.3 Bellek ve durum": MUFREDAT.md
-      - "9.4 MCP'ye giriş": MUFREDAT.md
-      - "9.5 Agent'ların başarısızlıkları": MUFREDAT.md
-      - "9.6 Güvenlik": MUFREDAT.md
-  - Faz 10 - Fine-tuning:
-      - "10.1 Ne zaman fine-tuning?": MUFREDAT.md
-      - "10.2 Veri hazırlama": MUFREDAT.md
-      - "10.3 LoRA": MUFREDAT.md
-      - "10.4 Küçük modeli fine-tune etmek": MUFREDAT.md
-      - "10.5 Sonucu ölçmek": MUFREDAT.md
-  - Faz 11 - Değerlendirme:
-      - "11.1 İyi ne demek?": MUFREDAT.md
-      - "11.2 Test seti hazırlamak": MUFREDAT.md
-      - "11.3 Otomatik ve insan değerlendirmesi": MUFREDAT.md
-      - "11.4 LLM'i hakem olarak kullanmak": MUFREDAT.md
-      - "11.5 Regresyon testleri": MUFREDAT.md
-  - Faz 12 - Üretime Almak:
-      - "12.1 Modeli servis etmek": MUFREDAT.md
-      - "12.2 Maliyet ve gecikme": MUFREDAT.md
-      - "12.3 İzleme ve loglama": MUFREDAT.md
-      - "12.4 Güvenlik ve gizlilik": MUFREDAT.md
-      - "12.5 Dağıtım": MUFREDAT.md
-  - Faz 13 - Bitirme Projeleri:
-      - "13.1 Türkçe RAG projesi": MUFREDAT.md
-      - "13.2 Araç kullanan agent": MUFREDAT.md
-      - "13.3 Kendi mini dil modelin": MUFREDAT.md
-      - "13.4 Proje sunumu ve portföy": MUFREDAT.md
+  - Müfredat: MUFREDAT.md
+  - 0.1 Geliştirme ortamı: faz-00-hazirlik/01-gelistirme-ortami/README.md
+  - 0.6 Yapay zekâ nedir?: faz-00-hazirlik/06-yapay-zeka-nedir/README.md
+  - 4.1 Metni sayılara çevirmek: faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
