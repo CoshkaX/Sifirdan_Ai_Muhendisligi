@@ -4,7 +4,7 @@
 
 ## Bu derste ne öğreneceksin?
 
-- Yapay zekâyı tek bir sihirli algoritma olarak değil, belirli görevleri yerine getiren sistemler olarak tanımlamayı
+- Yapay zekâyı tek bir sihirli algoritma değil, belirli görevleri yerine getiren yazılım sistemleri olarak anlamayı
 - Bir sistemde bilgi, bellek, çıkarım, öğrenme ve açıklama parçalarının nasıl ayrıldığını
 - Bir yapay zekâ iddiasını algoritma sonuçlarından öte somut ölçütlerle sorgulamayı
 - Roger C. Schank'ın 1987 tarihli *What Is AI, Anyway?* makalesinin günümüz mühendisliği açısından temel sorularını
