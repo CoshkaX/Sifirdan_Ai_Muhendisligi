@@ -53,30 +53,30 @@ Ayrıntılı ders listesi için [müfredata](MUFREDAT.md) bak.
 </div>
 
 <div class="learning-grid">
-  <a class="learning-card" href="OGRENME-YOLLARI/#yapay-zeka-temelleri">
+  <div class="learning-card">
     <span class="learning-card__number">01</span>
     <span class="learning-card__title">Yapay zekâ temelleri</span>
     <span class="learning-card__text">Python, matematik, klasik öğrenme ve sinir ağlarını sıfırdan kur.</span>
     <span class="learning-card__route">Faz 0 → 1 → 2 → 3</span>
-  </a>
-  <a class="learning-card" href="OGRENME-YOLLARI/#llm-uygulamalari">
+  </div>
+  <div class="learning-card">
     <span class="learning-card__number">02</span>
     <span class="learning-card__title">LLM uygulamaları</span>
     <span class="learning-card__text">API'leri, aramayı, agent'ları ve üretim sınırlarını öğren.</span>
     <span class="learning-card__route">Faz 7 → 8 → 9 → 12</span>
-  </a>
-  <a class="learning-card" href="OGRENME-YOLLARI/#turkce-dogal-dil-isleme">
+  </div>
+  <div class="learning-card">
     <span class="learning-card__number">03</span>
     <span class="learning-card__title">Türkçe doğal dil işleme</span>
     <span class="learning-card__text">Tokenization, ekler, embedding'ler ve Türkçe RAG'i uygulamalı öğren.</span>
     <span class="learning-card__route">Faz 4 → 5 → 6 → 8</span>
-  </a>
-  <a class="learning-card" href="OGRENME-YOLLARI/#yapay-zeka-muhendisligi">
+  </div>
+  <div class="learning-card">
     <span class="learning-card__number">04</span>
     <span class="learning-card__title">Yapay zekâ mühendisliği</span>
     <span class="learning-card__text">Ölç, güvenilir hale getir, maliyeti hesapla ve sistemi hizmet olarak sun.</span>
     <span class="learning-card__route">Faz 11 → 12 → 13</span>
-  </a>
+  </div>
 </div>
 
 ## Kodları çalıştırmak

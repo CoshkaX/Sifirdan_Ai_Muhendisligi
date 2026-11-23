@@ -288,7 +288,11 @@
   transition: border-color 120ms ease, background 120ms ease;
 }
 
-a.learning-card:hover {
+.learning-card {
+  cursor: default;
+}
+
+.learning-card:hover {
   border-color: var(--md-accent-fg-color);
   background: rgba(110, 128, 119, 0.065);
 }
