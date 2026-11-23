@@ -503,10 +503,86 @@
   line-height: 1;
 }
 
-mark.lesson-highlight {
-  padding: 0.04em 0.08em;
+.lesson-highlight-overlay {
+  position: absolute;
+  z-index: 12;
   border-radius: 2px;
   background: var(--highlight-color);
+  opacity: 0.58;
+  mix-blend-mode: multiply;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+[data-md-color-scheme="slate"] .lesson-highlight-overlay {
+  opacity: 0.34;
+  mix-blend-mode: screen;
+}
+
+.lesson-highlight-note {
+  height: 1.55rem;
+  padding: 0 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 2px;
+  background: transparent;
+  color: #f0f2ed;
+  font-size: 0.66rem;
+  cursor: pointer;
+}
+
+.lesson-highlight-note-editor {
+  position: fixed;
+  z-index: 110;
+  width: 252px;
+  padding: 0.65rem;
+  border: 1px solid rgba(110, 128, 119, 0.35);
+  border-radius: 3px;
+  background: #20251f;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.34);
+  color: #f0f2ed;
+}
+
+.lesson-highlight-note-title {
+  margin-bottom: 0.45rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.lesson-highlight-note-editor textarea {
+  width: 100%;
+  min-height: 92px;
+  resize: vertical;
+  box-sizing: border-box;
+  border: 1px solid rgba(110, 128, 119, 0.28);
+  border-radius: 2px;
+  background: #292e27;
+  color: #f0f2ed;
+  padding: 0.55rem;
+  font: 0.72rem "Nunito Sans", sans-serif;
+}
+
+.lesson-highlight-note-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.45rem;
+}
+
+.lesson-highlight-note-actions button {
+  height: 1.65rem;
+  border: 1px solid rgba(110, 128, 119, 0.32);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.65rem;
+}
+
+.lesson-highlight-delete {
+  background: transparent;
+  color: #d9ddd4;
+}
+
+.lesson-highlight-save {
+  background: #78877e;
   color: #20251f;
-  box-shadow: 0 0 0 1px rgba(32, 37, 31, 0.08);
+  padding: 0 0.7rem;
 }
