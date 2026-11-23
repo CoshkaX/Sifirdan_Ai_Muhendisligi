@@ -5,11 +5,13 @@
 Bu liste bir **taslaktır**. Ders başlıkları ve sırası ilerledikçe değişebilir. Her ders, [aynı 4 adımı](index.md) izler: problem, kendin yaz, kütüphaneyle yap, pekiştir.
 
 !!! tip "Öğrenme yolları"
+    Hangi hedefe ulaşmak istediğine göre dersleri sıralamak için [öğrenme yolları sayfasına](OGRENME-YOLLARI.md) bak.
+
     | Hedef | Yol |
     |---|---|
-    | Sıfırdan temel | Faz 0 → 1 → 2 → 3 → 4 → 5 → 6 |
-    | LLM uygulama geliştirici | Faz 0 → 7 → 8 → 9 → 11 → 12 |
-    | Türkçe NLP | Faz 0 → 4 → 5 → 6 → 8 → 10 |
+    | Yapay zekâ temelleri | Faz 0 → 1 → 2 → 3 → 4 → 5 → 6 |
+    | LLM uygulama geliştiricisi | Faz 0 → 7 → 8 → 9 → 11 → 12 |
+    | Türkçe doğal dil işleme | Faz 0 → 4 → 5 → 6 → 8 → 10 |
 
 ---
 

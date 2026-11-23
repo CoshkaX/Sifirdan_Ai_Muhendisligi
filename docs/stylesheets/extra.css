@@ -247,3 +247,92 @@
     max-width: 48rem;
   }
 }
+
+.learning-intro {
+  margin: 1.25rem 0 0.85rem;
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--md-accent-fg-color);
+  background: rgba(110, 128, 119, 0.055);
+  font-size: 0.76rem;
+}
+
+.learning-intro p {
+  margin: 0;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2.25rem;
+}
+
+.learning-grid--page {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.5rem;
+}
+
+.learning-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  column-gap: 0.65rem;
+  align-content: start;
+  min-height: 8.75rem;
+  padding: 0.9rem 1rem 0.8rem;
+  border: 1px solid rgba(110, 128, 119, 0.22);
+  border-radius: 3px;
+  color: inherit;
+  background: rgba(110, 128, 119, 0.025);
+  text-decoration: none;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+a.learning-card:hover {
+  border-color: var(--md-accent-fg-color);
+  background: rgba(110, 128, 119, 0.065);
+}
+
+.learning-card__number {
+  grid-row: 1 / span 3;
+  padding-top: 0.12rem;
+  font-family: "Fira Code", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--md-accent-fg-color);
+}
+
+.learning-card__title {
+  font-family: "Fira Code", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--md-primary-fg-color);
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.learning-card__text {
+  margin-top: 0.55rem;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  opacity: 0.82;
+}
+
+.learning-card__route {
+  align-self: end;
+  margin-top: 0.8rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(110, 128, 119, 0.14);
+  font-family: "Fira Code", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.035em;
+  opacity: 0.76;
+}
+
+@media screen and (max-width: 44em) {
+  .learning-grid,
+  .learning-grid--page {
+    grid-template-columns: 1fr;
+  }
+}

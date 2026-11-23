@@ -48,12 +48,36 @@ Ayrıntılı ders listesi için [müfredata](MUFREDAT.md) bak.
 
 ## Nereden başlamalıyım?
 
-| Durumun | Önerilen yol |
-|---|---|
-| Hiç kod yazmadım | [Faz 0](faz-00-hazirlik/01-gelistirme-ortami/README.md) ile başla, sırayla ilerle |
-| Python biliyorum, yapay zekâya yeniyim | Faz 1 (matematik) → 2 → 3 |
-| Sadece LLM uygulamaları geliştirmek istiyorum | Faz 7 → 8 → 9 → 11 → 12 |
-| Türkçe NLP ile ilgileniyorum | Faz 4 → 5 → 6 → 8 → 10 |
+<div class="learning-intro">
+  <p><strong>Bir hedef seç.</strong> Her yol, aynı çekirdek müfredattan hedefine uygun dersleri bir araya getirir.</p>
+</div>
+
+<div class="learning-grid">
+  <a class="learning-card" href="OGRENME-YOLLARI.md#yapay-zeka-temelleri">
+    <span class="learning-card__number">01</span>
+    <span class="learning-card__title">Yapay zekâ temelleri</span>
+    <span class="learning-card__text">Python, matematik, klasik öğrenme ve sinir ağlarını sıfırdan kur.</span>
+    <span class="learning-card__route">Faz 0 → 1 → 2 → 3</span>
+  </a>
+  <a class="learning-card" href="OGRENME-YOLLARI.md#llm-uygulamalari">
+    <span class="learning-card__number">02</span>
+    <span class="learning-card__title">LLM uygulamaları</span>
+    <span class="learning-card__text">API'leri, aramayı, agent'ları ve üretim sınırlarını öğren.</span>
+    <span class="learning-card__route">Faz 7 → 8 → 9 → 12</span>
+  </a>
+  <a class="learning-card" href="OGRENME-YOLLARI.md#turkce-dogal-dil-isleme">
+    <span class="learning-card__number">03</span>
+    <span class="learning-card__title">Türkçe doğal dil işleme</span>
+    <span class="learning-card__text">Tokenization, ekler, embedding'ler ve Türkçe RAG'i uygulamalı öğren.</span>
+    <span class="learning-card__route">Faz 4 → 5 → 6 → 8</span>
+  </a>
+  <a class="learning-card" href="OGRENME-YOLLARI.md#yapay-zeka-muhendisligi">
+    <span class="learning-card__number">04</span>
+    <span class="learning-card__title">Yapay zekâ mühendisliği</span>
+    <span class="learning-card__text">Ölç, güvenilir hale getir, maliyeti hesapla ve sistemi hizmet olarak sun.</span>
+    <span class="learning-card__route">Faz 11 → 12 → 13</span>
+  </a>
+</div>
 
 ## Kodları çalıştırmak
 

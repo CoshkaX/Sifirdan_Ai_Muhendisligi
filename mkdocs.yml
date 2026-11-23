@@ -59,6 +59,7 @@ exclude_docs: |
 
 nav:
   - Ana Sayfa: index.md
+  - Öğrenme yolları: OGRENME-YOLLARI.md
   - Müfredat: MUFREDAT.md
   - Faz 0 - Hazırlık:
       - 0.1 Geliştirme ortamı: faz-00-hazirlik/01-gelistirme-ortami/README.md
