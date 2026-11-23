@@ -44,6 +44,7 @@ Verinden öğrenen ilk modellerini yazarsın. **Ön koşul:** Faz 1. **Çıktı:
 - ⬜ 2.4 Eğitim, doğrulama, test: aşırı öğrenmeyi yakalamak
 - ⬜ 2.5 Karar ağaçları: kuralları veriden öğrenmek
 - ⬜ 2.6 Metrikler: doğruluk, kesinlik, duyarlılık, F1
+- ✅ [2.7 Soyağacı ve akrabalık katsayısı](faz-02-klasik-makine-ogrenmesi/07-soyagaci-ve-agac-yapisi/README.md): ağaç, özyineleme ve 1987'lerin bilgisayar bilimi yaklaşımına özgün bir bakış
 
 ## Faz 3 – Sinir Ağları
 

@@ -7,6 +7,9 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: tr
+  font:
+    text: Nunito Sans
+    code: Fira Code
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -20,6 +23,7 @@ theme:
         name: Açık moda geç
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - navigation.footer
     - toc.follow
@@ -33,6 +37,7 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - footnotes
   - tables
   - attr_list
   - toc:
@@ -45,6 +50,9 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
 
+extra_css:
+  - stylesheets/extra.css
+
 exclude_docs: |
   __pycache__/
   *.pyc
@@ -56,6 +64,8 @@ nav:
       - 0.1 Geliştirme ortamı: faz-00-hazirlik/01-gelistirme-ortami/README.md
   - Faz 4 - Metin ve Türkçe NLP:
       - 4.1 Metni sayılara çevirmek: faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
+  - Tarihsel Notlar:
+      - 2.7 Soyağacı ve akrabalık katsayısı: faz-02-klasik-makine-ogrenmesi/07-soyagaci-ve-agac-yapisi/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
