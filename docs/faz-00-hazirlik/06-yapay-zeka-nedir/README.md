@@ -1,39 +1,52 @@
 # Faz 0 – Ders 6: Yapay zekâ nedir?
 
-> ⏱️ Tahmini süre: 50-70 dk · 📚 Ön koşul: değişkenler, sözlükler ve fonksiyonlar · 💻 Gereksinim: Python 3.11+
+> ⏱️ Tahmini süre: 45-60 dk · 📚 Ön koşul: değişkenler, sözlükler ve fonksiyonlar · 💻 Gereksinim: Python 3.11+
 
 ## Bu derste ne öğreneceksin?
 
-- Yapay zekâyı tek bir sihirli algoritma olarak değil, belli görevleri çözmek için tasarlanmış sistemler bütünü olarak
-- Bilgiyi temsil etmek, bellekte tutmak, çıkarım yapmak, deneyimden öğrenmek ve kararını açıklamak
-- Bir yapay zekâ iddiasını çalıştırılabilir kriterlerle sınamak
-- 1987 yılında Roger C. Schank’ın *What Is AI, Anyway?* makalesindeki temel soruların günümüzde neden hâlâ önemli olduğunu
+- Yapay zekâyı tek bir sihirli algoritma olarak değil, belirli görevleri yerine getiren sistemler olarak tanımlamayı
+- Bir sistemde bilgi, bellek, çıkarım, öğrenme ve açıklama parçalarının nasıl ayrıldığını
+- Bir yapay zekâ iddiasını algoritma sonuçlarından öte somut ölçütlerle sorgulamayı
+- Roger C. Schank'ın 1987 tarihli *What Is AI, Anyway?* makalesinin günümüz mühendisliği açısından temel sorularını
 
 ## 1. Problem
 
-“Yapay zekâ” sözcüğü bugün farklı şeyler için kullanılıyor: satranç oynayan bir program, düğmeye basınca cevap veren bir chatbot, yönlendiğinde resim üreten bir model veya evdeki sesi izleyen bir sistem. Peki hangi özelliklere sahip olduğunda bir sistemi yapay zekâ saymalıyız?
+“Yapay zekâ” ifadesi; satranç oynayan bir programa, konuşan bir modele, fotoğraf sınıflandırıcısına ve bir ajansın yayımladığı metinlere aynı başlık altında uygulanabiliyor. Bu durumda hangi sistemin yapay zekâ sayıldığına ilişkin açık bir sınır gerekir.
 
-Bu sorunun güçlü bir yanıtı tek bir dilin, tek bir yazılım kütüphanesinin veya tek bir başarı ölçütünün adı olamaz. Yapay zekâ, bir hedefe ulaşmak için **girdi alabilen, bilgiyi anlamlı biçimde saklayabilen, eski bilgiyle yeni durumu ilişkilendirebilen ve çıkardığı sonucu açıklayabilen** sistemler alanıdır.
+Bu ders için kullanacağımız tanım şudur:
 
-Bu ders 1987 tarihli [Roger C. Schank’ın makalesindeki](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/623) çerçeveden ilham alır. Makalenin terimlerini aynen aktarmaz; onları günümüzün yazılım problemlerine dönüştürür.
+!!! quote "Dersin tanımı"
+    Bir yapay zekâ sistemi, belirsiz veya daha önce karşılaşılmamış durumlar için bilgi üretmek üzere girdiyi işler, geçmişten aldığı bilgisini temsil eder ve ürettiği sonuca göre bir karar veya açıklama verir.
 
-## 2. Yapay zekâyı ayıran sorular
+Bu tanım tek başına yeterli değildir. Sistemin şu sorulara cevap verebilmesi gerekir:
 
-Makale “akıllı” bir programın yalnızca doğru cevap vermekle yetmediğini, nasıl bildiğini de göstermesi gerektiğini tartışır. Aşağıdaki beş soru bu fikri somutlaştırır.
+1. Bilgi nasıl temsil ediliyor?
+2. Geçmiş gözlem nerede saklanıyor?
+3. Yeni bir durum eski bilgiyle nasıl ilişkilendiriliyor?
+4. Sistem deneyimden nasıl öğreniyor?
+5. Bir kararın neden verildiği nasıl açıklanıyor?
 
-| Soru | Programın yapması gereken |
-|---|---|
-| Görevi neyi temsil eder? | Girdileri ve hedefleri açık veri biçiminde tutar |
-| Bilgiyi nerede saklar? | Geçmiş gözlemleri ve kuralları bellekte tutar |
-| Nasıl çıkarım yapar? | Yeni durumu kayıtlı bilgiyle ilişkilendirir |
-| Deneyimden nasıl öğrenir? | Yeni örnekten bir sonuç çıkarır ve gelecekte kullanır |
-| Kararını nasıl açıklar? | Kullanıcıya hangi bilgi ve kuralın etkili olduğunu bildirir |
+Bu sorular, 1987'de yazılmış bir makale için geçerli olmanın ötesinde; bugün kurduğumuz dil modeli uygulamaları ve agent sistemleri için de geçerlidir.
 
-Bu soruların yalnızca büyük dil modellerine değil, satranç motoruna, tavsiye sistemine, trafik tahmin programına ve biçimden etkili şekilde yararlanan küçük bir kural sistemine de uygulanabilir.
+## 2. Yapay zekânın beş yapı taşı
 
-## 3. Temsil: dünyayı programa uygun biçimde yazmak
+Bir yapay zekâ sistemi tek bir fonksiyondan daha fazlasıdır. Aşağıdaki beş yapı, sistemi incelememizi kolaylaştırır.
 
-Bir durumun tüm ayrıntısını bilgisayara aktarmak zorunda değiliz. Görev için gerekli bilgiyi seçmek gerekir.
+| Yapı taşı | Sorduğu soru | Basit örnek |
+|---|---|---|
+| **Temsil** | Bilgi programa hangi biçimde aktarılıyor? | Bir hava durumu kaydı sözlükte tutulur |
+| **Bellek** | Geçmiş bilgi nerede saklanıyor? | Önceki gözlem kayıtları listede tutulur |
+| **Çıkarım** | Yeni veri mevcut bilgiyle nasıl ilişkilendiriliyor? | Yağmur kuralı yeni hava gözlemine uygulanır |
+| **Öğrenme** | Sistem yeni deneyimden ne değiştiriyor? | Yeni örnekten çıkarılan kural belleğe eklenir |
+| **Açıklama** | Neden bu sonuca ulaşıldı? | Kullanılan kural ve gözlem kullanıcıya gösterilir |
+
+Bir sistem bu parçaların tamamını barındırmak zorunda değildir. Ancak her parçanın varlığını veya eksikliğini bilmek, sistemi doğru değerlendirmemizi sağlar.
+
+## 3. Temsil: problemi bilgisayarın anlayacağı biçimde tanımlamak
+
+Bir yapay zekâ sistemine gerçek dünyanın tüm ayrıntısını vermek mümkün değildir. Görev için gereken bilgi seçilir ve tutarlı bir biçimde saklanır.
+
+Örneğin bir öneri sistemi yalnızca iki bilgi alanına odaklanabilir:
 
 ```python
 gözlem = {
@@ -42,46 +55,75 @@ gözlem = {
 }
 ```
 
-Bu sözlük doğada olan her şeyi temsil etmiyor. Ancak sorunumuza doğrudan bağlı iki özelliği gösteriyor: hava durumu ve yapılacak iş. İyi temsil, gereksiz ayrıntıyı çıkarıp karar için gerekli ilişkiyi korur.
+Bu kayıt, hava, zaman, zemin sıcaklığı veya rüzgâr gibi başka ayrıntıları taşımaz. Ama verdiğimiz örnek için önemli olan iki bilgiyi açık tutar:
 
-## 4. Bellek: gözlemi saklamak
+- mevcut hava durumu;
+- kullanıcının gerçekleştirmek istediği plan.
 
-Bir sistemin sadece o an gördüğüyle karar vermesiyle, geçmişi hatırlayarak karar vermesi aynı değildir. Burada belleği basitçe geçen gözlem listesi olarak tutuyoruz:
+İyi temsil, gereksiz ayrıntıyı silmekten daha fazlasını yapar. Karar vermek için gerekli ilişkileri kaybetmeden sadeleştirme yapar.
+
+## 4. Bellek: gözlem ve kuralları saklamak
+
+Bellek, sistemin önceki çalışmalardan aldığı bilgiyi sonraki kararlara taşıyan yapıdır.
+
+Bu dersin örneğinde bellek iki katmandan oluşur:
 
 ```python
-self.bellek: list[Gözlem] = []
+self.bellek = []                 # Geçmiş gözlem kayıtları
+self.kurallar = {}               # Anahtar ve açıklama çiftleri
 ```
 
-Yeni bir veri geldiğinde:
+Yeni bir gözlem geldiğinde önce kaydedilir:
 
 ```python
 gözlem = Gözlem(özellikler)
 self.bellek.append(gözlem)
 ```
 
-Bu örnek kalıcı bir veri tabanı değildir. Ama belleğin neyi sakladığını, saklanan verinin hangi sınıftan geldiğini ve belleğe erişimle kararın nasıl değiştiğini anlamak için yeterlidir.
+Bu yapı kalıcı bir veri tabanı değildir. Ama bir sistemin belleği olmadığında geçmişi hatırlayamayacağını göstermek için yeterlidir.
 
-## 5. Çıkarım: yeni durumu eski kuralla ilişkilendirmek
+Belleği olan bir sistemin iki temel davranışı vardır:
 
-Çıkarım, bilinen bir kuralı yeni gözleme uygulamaktır:
+- daha önce gördüğü kayıtları geri çağırabilir;
+- yeni durumlarla bu kayıtları ilişkilendirebilir.
+
+Gerçek uygulamalarda belleği bir veri tabanı, dosya, sohbet geçmişi veya belgeleme arama sistemi olarak kurabiliriz. Temel fikir değişmez: sistemin geçmiş bilgiyi saklayabilmesi gerekir.
+
+## 5. Çıkarım: kuralı yeni duruma uygulamak
+
+Çıkarım, temsil edilmiş bir durumu mevcut kurallarla karşılaştırma işlemidir.
 
 ```python
-for anahtar, (beklenen, açıklama) in kurallar.items():
+for anahtar, (beklenen, açıklama) in self.kurallar.items():
     if gözlem.özellikler.get(anahtar) == beklenen:
         return anahtar, açıklama
+
+return "belirsiz", "Hiçbir tanımlı kural bu gözlemle eşleşmedi."
 ```
 
-Örnekte hava `yağmurlu` olduğunda sistem, yağmuru beklemenin daha güvenli olabileceğini söyleyen kuralı seçiyor. Bu, meteorolojik gerçeğin kanıtı değil; yalnızca programın içindeki kurala göre üretilmiş bir öneridir.
+Bu örnekte hava `"yağmurlu"` olduğunda sistem, kayıtlı açıklamayı döndürebilir. Bu karar gerçek dünyada kesin bir sonuç sunmak için değil, kural tabanlı çıkarımın mekanizmasını göstermek için kullanılır.
+
+!!! warning "Çıkarım ile gerçeklik aynı şey değildir"
+    Bir kuralın sonuç vermesi, önerinin doğrulanmış olduğu anlamına gelmez. Örneğin `"yağmurlu"` olunca şemsiye öneren bir sistem güvenli karar verme garantisi vermez; onu yalnızca kendi kuralına göre açıklar.
 
 ## 6. Kendin yaz
 
-Tam kod [`kod/yapay_zeka_durumu.py`](kod/yapay_zeka_durumu.py) dosyasındadır. Kodu çalıştır:
+Kodun tamamı [`kod/yapay_zeka_durumu.py`](kod/yapay_zeka_durumu.py) dosyasındadır.
+
+Kod, aşağıdaki görevleri sırayla gerçekleştirir:
+
+1. Bir gözlem nesnesi oluşturur.
+2. Gözlemi belleğe ekler.
+3. Kural eşleşmesi arar.
+4. Bulunan anahtarı ve açıklamayı ekrana yazdırır.
+
+Çalıştır:
 
 ```bash
 python kod/yapay_zeka_durumu.py
 ```
 
-Beklenen çıktının ana hatları şöyledir:
+Beklenen sonuç:
 
 ```text
 hava: Islak zeminde kayma riski artabilir.
@@ -89,78 +131,87 @@ plan: Bu görev için yağmuru beklemek daha güvenli olabilir.
 Bellek özeti: {'hava': 2, 'plan': 2}
 ```
 
-Ekranda gördüğün şey tek başına “akıllı” bir sistem değildir. Ama yapay zekâ sisteminde aradığımız parçaları açık biçimde gösterir:
+Bu örnek bir sohbet sistemi değildir. Ama yapay zekâ sistemlerinde aradığımız parçaları açık biçimde gösterir: veri temsil edilir, gözlem saklanır, çıkarım yapılır ve kararın nedeni açıklanır.
 
-1. Girdi bir sözlük olarak temsil edildi.
-2. Gözlem belleğe eklandı.
-3. Yeni durum bir kuralla eşleştirildi.
-4. Kararın nedeni metin olarak açıklandı.
+## 7. Öğrenme: sabit kuraldan deneyimle değişen sisteme
 
-## 7. Öğrenme ve sınırlar
+Bu örnekte kurallar doğrudan programa yazılmıştır. Bu, öğrenme değil, programlama anlamına gelir.
 
-Bu dersin ilk sürümü veriyi bellekte tutup sabit kurallarla çıkarım yapar. Yeni bir kural eklenirse sistemi geliştirebiliriz. Ama bu haliyle deneyimden otomatik öğrenmez.
+Bir sistemin öğrenmesi için en azından yeni örneklerden gelen bilgiyi kullanarak gelecekteki davranışı değiştirmesi gerekir. Örneğin:
 
-Daha gelişmiş sistemlerde:
+- yanlış bir tahmin için beklenen sonuç düzeltilir;
+- benzer hatalar tekrar etmesin diye kural güncellenir;
+- modelin ağırlıkları yeni veriyle değişir;
+- arama sistemi yeni belgeleri belleğe ekler.
 
-- kurallar veriden öğrenilir;
-- eskiden olan benzer örnekler aranır;
-- belirsizlik olasılıkla ifade edilir;
-- modelden gelen cevap doğruluk, güvenilirlik ve açıklama açısından ölçülür;
-- sistemin hangi bilginin üzerine konuştuğu denetlenir.
+!!! note "Öğrenme örneği"
+    Bir telefon öneri sistemini ele alalım. Kullanıcıların dönüşüm verilerini toplayan sistem, daha iyi tahmin yapmak için satış örüntülerini kullanır. Bu sistemin modeli verilerden öğrenir. Ama telefon hakkında sahip olduğu bilgiler zamanla değişebilir.
 
-Faz 2’de veriyle öğrenen ilk modelleri; Faz 7’de hazır dil modeli çağrılarını; Faz 11’de ise bu tür sistemleri nasıl değerlendireceğimizi öğreneceğiz.
+Öğrenmenin gerçekleştiğini yalnızca kodun bir sözlüğe yeni veri eklemesinden anlamıyoruz. Ayrıca sistemin gelecekteki çıktısının deneyimden sonra gerçekten değişmesini ölçmemiz gerekiyor.
 
-## 8. Makaleden günümüze
+## 8. Açıklama ve güven
 
-Schank’ın makalesindeki “yapay zekânın amacı” sorusu güncel modallerle daha görünür hale geldi. Yine de sorular değişmedi:
+Bir sistem açıklama üretebilir ama bu açıklama mutlaka doğru değildir.
 
-- Sistem hangi düşünceyi temsil ediyor?
-- Bilgiyi nasıl organize ediyor?
-- Yanlış bilgiyle karşılaşınca ne yapıyor?
-- Cevabı yalnızca ezberliyor, yoksa örnekler arasında genelleme yapabiliyor mu?
-- Başarısını ve hatalarını nasıl kanıtlıyor?
+Güvenli bir değerlendirmede beş soru sorulur:
 
-Bu sorular, güzel görünen bir çıkıştan daha sağlam bir mühendislik temelidir.
+1. Sistem hangi kaynağa dayanıyor?
+2. Cevabı hangi bilgilerden türetildi?
+3. Bilgiler güncel mi?
+4. Kesinlik ile olasılık arasında fark gösteriliyor mu?
+5. Hata oluştuğunda kullanıcıya ne anlatılıyor?
 
-!!! warning "Dil modeliyle karıştırma"
-    Bir dil modeli metin üretebilir, kurallara benzeyen örüntüler seçebilir ve açıklama yazabilir. Ancak çıktısı otomatik olarak doğru, güvende veya gerçeğe dayalı değildir. Sonuçların kaynak ve davranış bakımından doğrulanması gerekir.
+Dil modelleri metin üretebilir ve sürece benzeyen açıklamalar yazabilir. Ancak üretilen metinleri doğru, güvenli veya kaynağa dayalı kabul etmek için ayrıca doğrulama gerekir.
 
-## 9. Kütüphaneyle karşılaştırma
+## 9. 1987'den günümüze
 
-Bu küçük örnek, kütüphane yerine açık Python nesneleri kullanır. Gerçek bir uygulamada çok benzer parçaları kütüphanelerden alırız:
+Roger C. Schank'ın makalesi yapay zekânın sınırlarını tek bir programlama dili üzerinden tanımlamaya çalışmaz. Makalenin soruları şunlardır:
 
-- veri için `pandas` veya veri sınıfları
-- metin araması için embedding modelleri
-- çıkarım için makine öğrenmesi modeli
-- açıklama için yapılandırılmış çıktılar ve kaynak kayıtları
-- test için `unittest`, `pytest` veya benzeri araçlar
+- Bir sistem dünyayı nasıl temsil ediyor?
+- Hafızaya sahip olup bilgilerini düzenli tutabiliyor mı?
+- Yeni durumları eski bilgilerle ilişkilendiriyor mı?
+- Deneyimden genelleme çıkarabiliyor mı?
+- Sonucunu açıklayıp kendini sınayabiliyor mu?
 
-Fark, kütüphaneyi ilk çağırmadan önce temsil, bellek, çıkarım ve sınama sorularını anlamış olmamızdır.
+Bu soruların yazıldığı 1987 yılıyla bugün arasında teknoloji değişmiştir. Ancak iyi mühendislik soruları değişmemiştir. Modern bir dil modeli çağrısı, bir RAG hattı veya bir agent döngüsü de aynı temel parçalarla değerlendirilmelidir.
 
-## 10. Pekiştir
+## 10. Kütüphanelerle bağlantı
+
+Bu dersin örneğinde kütüphane kullanılmıyor. Ama gerçek bir uygulamada aşağıdaki araçları benzer parçalara bağlayabiliriz:
+
+- veri sınıfları: `dataclass`, `pydantic`
+- bellek: dosya, veri tabanı veya sohbet geçmişi
+- arama: embedding modelleri ve vektör veritabanı
+- çıkarım: makine öğrenmesi modelleri
+- açıklama: yapılandırılmış çıktı ve kaynak kayıtları
+- test: `unittest`, `pytest` ve örnek veri setleri
+
+Amaç kütüphanenin adını ezberlemek değildir. Amaç, kütüphane kullanıldığında hangi temel parçanın çözüldüğünü görmek ve hatayı hangi katmanda arayacağını bilmektir.
+
+## 11. Pekiştir
 
 **Quiz**
 
-1. Bir sistemde temsil neden önemlidir?
-2. Bellek, sadece önceki gözlemleri saklayan bir liste olarak hangi sınırı taşır?
-3. Kurala dayalı çıkarım ile öğrenilmiş çıkarım arasındaki fark nedir?
-4. Bir programın açıklama üretebilmesi neden doğru olduğunu kanıtlamaz?
-5. Bir dil modelinin çıktısını güvenilir kabul etmek için hangi kontroller gerekir?
+1. Temsil ile bellek arasındaki fark nedir?
+2. Bir kurala dayalı çıkarım ile deneyimden öğrenme arasındaki temel fark nedir?
+3. Bir açıklamanın doğru olduğuna nasıl emin olursunuz?
+4. Belleği olan fakat çıkarım yapamayan bir sistemin hangi sınırı vardır?
+5. Bir dil modelinin başarılı görünmesinden daha güçlü kanıtlar hangileridir?
 
 **Alıştırmalar**
 
-1. Sisteme `"ses": ("yüksek", "Kulaklık sesini azaltmayı öner")` kuralını ekle.
-2. Eşleşmeyen gözlem için bellek özeti değişimini incele.
-3. En az üç gözlemden oluşan bir deneme senaryosu yaz.
-4. Kural sisteminin çözüm üretemeyeceği bir örnek oluştur.
-5. Bu örneğin hangi bölümünün “öğrenme” yerine “programlama” olduğunu yazılı açıkla.
+1. Sisteme `"ses": ("yüksek", "Kulaklık sesini azaltmayı öner")` kuralını ekleyin.
+2. Hiçbir kuralla eşleşmeyen bir gözlem oluşturun.
+3. Üç gözlemden oluşan bir senaryo yazın ve bellek özetini inceleyin.
+4. Sistemin yanlış veya eksik karar verebileceği bir durum bulun.
+5. Bu örnekte hangi bölümler temsil, bellek, çıkarım ve öğrenme olarak ayrılabilir?
 
-## Özet
+## 12. Özet
 
-Yapay zekâya tek bir araç gözüyle bakmak yerine, temsil, bellek, çıkarım, öğrenme ve açıklama gibi sınanabilir parçalar olarak bakmak daha yararlı olur. 1987’deki tartışmaların çekirdeği bu parçalar üzerinedir; günümüzün dil modelleri ve agent sistemleri de aynı soruların yeni yüzleridir.
+Yapay zekâyı tek bir araç olarak tanımlamak yerine, bilgi temsilini, belleği, çıkarımı, öğrenmeyi ve açıklamayı ayrı parçalar olarak incelemek daha işlevseldir. Bu bölüm, 1987'deki temel soruların güncel sistemlere nasıl taşındığını gösterir. Sonraki derslerde bu kavramları matematik, veri, model eğitimi ve araç kullanımına bağlı olarak daha somut biçimde ele alacağız.
 
 ## Kaynaklar
 
 - Roger C. Schank, “What Is AI, Anyway?”, *AI Magazine*, 1987, cilt 8, sayı 4, DOI: `10.1609/aimag.v8i4.623`
-- [AAAI AI Magazine makalesi](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/623)
-- Python resmi belgesi: veri sınıfları, sözlükler ve tip işaretleri
+- [AAAI AI Magazine makale sayfası](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/623)
+- Python resmî belgesi: veri sınıfları, sözlükler ve tip işaretleri
