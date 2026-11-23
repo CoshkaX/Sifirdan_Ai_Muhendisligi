@@ -413,3 +413,38 @@ a.learning-card:hover {
   opacity: 0.72;
   background: rgba(110, 128, 119, 0.06);
 }
+
+.curriculum-brand,
+.curriculum-toplink {
+  display: flex !important;
+  align-items: center;
+  min-height: 1.8rem;
+}
+
+.curriculum-brand {
+  gap: 0.55rem;
+  margin: 0 0.15rem 0.55rem;
+  padding: 0.55rem 0.45rem;
+  border-bottom: 1px solid rgba(110, 128, 119, 0.18);
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.055em;
+}
+
+.curriculum-brand__mark {
+  display: inline-grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  place-items: center;
+  border: 1px solid var(--md-accent-fg-color);
+  font-size: 0.62rem;
+}
+
+.curriculum-toplink {
+  margin: 0.08rem 0.15rem;
+  padding: 0.42rem 0.5rem;
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color) !important;
+  text-decoration: none;
+}
