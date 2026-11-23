@@ -402,7 +402,15 @@ a.learning-card:hover {
 }
 
 .curriculum-nav a.available {
-  color: var(--md-typeset-a-color);
+  color: #f0f2ed;
+  opacity: 1;
+}
+
+.curriculum-nav a.available:hover,
+.curriculum-nav a.planned:hover {
+  border-radius: 2px;
+  background: rgba(110, 128, 119, 0.10);
+  box-shadow: inset 2px 0 0 var(--md-accent-fg-color);
 }
 
 .curriculum-nav a.planned {
