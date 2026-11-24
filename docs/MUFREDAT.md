@@ -20,33 +20,33 @@ Bu liste bir **taslaktır**. Ders başlıkları ve sırası ilerledikçe değiş
 Kod yazıp çalıştıracağın zemini hazırlar. **Ön koşul:** yok. **Çıktı:** çalışan bir Python ortamı, Git ile indirilmiş proje ve ilk testin.
 
 - ✅ [0.1 Geliştirme ortamını kurmak](faz-00-hazirlik/01-gelistirme-ortami/README.md): terminal, Python, Git, sanal ortam, ilk betik
-- ⬜ 0.2 Python hızlı tekrar: değişkenler, listeler, sözlükler, fonksiyonlar, sınıflar
-- ⬜ 0.3 Git ve GitHub ile çalışmak: commit, branch, pull request, ilk katkını yapmak
-- ⬜ 0.4 Jupyter ve Colab: not defteri mantığı, ücretsiz bulut ortamı
-- ⬜ 0.5 Test yazmak ve hata ayıklamak: `unittest`, `assert`, hata mesajı okumak
+- ✅ [0.2 Python hızlı tekrar](faz-00-hazirlik/02-python-hizli-tekrar/README.md): değişkenler, listeler, sözlükler, fonksiyonlar, sınıflar
+- ✅ [0.3 Git ve GitHub ile çalışmak](faz-00-hazirlik/03-git-ve-github/README.md): commit, branch, pull request, ilk katkını yapmak
+- ✅ [0.4 Jupyter ve Colab](faz-00-hazirlik/04-jupyter-ve-colab/README.md): not defteri mantığı, ücretsiz bulut ortamı
+- ✅ [0.5 Test yazmak ve hata ayıklamak](faz-00-hazirlik/05-test-ve-hata-ayiklama/README.md): `unittest`, `assert`, hata mesajı okumak
 - ✅ [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md): temsil, bellek, çıkarım, öğrenme ve açıklama
 
 ## Faz 1 – Matematik Temelleri
 
-Yapay zekânın kullandığı matematiği formülle değil, kodla öğrenirsin. **Ön koşul:** Python temelleri. **Çıktı:** vektör, matris ve türev işlemlerini kodla yapabilmek.
+Yapay zekânın kullandığı matematiği formülle değil, kodla öğrenirsin. **Ön koşul:** Python temelleri. **Çıktı:** vektör, matris, olasılık ve istatistik ölçülerini kullanmak; türevle parametre güncellemek ve kaybın entropiyle ilişkisini anlamak.
 
-- ⬜ 1.1 Vektörler ve matrisler: veriyi sayı dizisi olarak düşünmek
-- ⬜ 1.2 Matris çarpımı: sinir ağlarının temel işlemi
-- ⬜ 1.3 Türev ve gradyan: bir fonksiyonun hangi yöne değiştiğini bulmak
-- ⬜ 1.4 Olasılık ve dağılımlar: belirsizliği sayıyla ifade etmek
-- ⬜ 1.5 İstatistik: ortalama, varyans, korelasyon
-- ⬜ 1.6 Entropi ve çapraz entropi: kayıp fonksiyonunun kaynağı
+- ✅ [1.1 Vektörler ve matrisler](faz-01-matematik/01-vektorler-ve-matrisler/README.md): veriyi sayı dizisi ve tablo olarak düşünmek
+- ✅ [1.2 Matris çarpımı](faz-01-matematik/02-matris-carpimi/README.md): satır-sütun eşleşmesi ve noktasal çarpım
+- ✅ [1.3 Türev ve gradyan](faz-01-matematik/03-turev-ve-gradyan/README.md): eğimi yaklaşık bulmak ve parametre güncellemek
+- ✅ [1.4 Olasılık ve dağılımlar](faz-01-matematik/04-olasilik-ve-dagilimlar/README.md): eşit şanslı sonuçları saymak, dağılımı okumak ve gözlenen oranı ayırt etmek
+- ✅ [1.5 İstatistik](faz-01-matematik/05-istatistik/README.md): ortalama, yayılımı gösteren varyans ve doğrusal ilişkiyi ölçen korelasyon
+- ✅ [1.6 Entropi ve çapraz entropi](faz-01-matematik/06-entropi-ve-capraz-entropi/README.md): belirsizliği ölçmek ve sınıflandırma kaybını yorumlamak
 
 ## Faz 2 – Klasik Makine Öğrenmesi
 
-Verinden öğrenen ilk modellerini yazarsın. **Ön koşul:** Faz 1. **Çıktı:** sıfırdan yazılmış regresyon ve sınıflandırıcı, bir modelin iyi olup olmadığını ölçebilme becerisi.
+Veriden öğrenen ilk modellerini yazarsın. **Ön koşul:** Faz 1. **Çıktı:** NumPy ile sayısal veriyi düzenlemek; sıfırdan yazılmış regresyon ve sınıflandırıcıyla model eğitmek ve başarısını ölçmek.
 
-- ⬜ 2.1 NumPy ile veri: diziler, dilimleme, yayın (broadcasting)
-- ⬜ 2.2 Doğrusal regresyon: gradyan inişi ile sıfırdan
-- ⬜ 2.3 Lojistik regresyon: sınıflandırma ve olasılık
-- ⬜ 2.4 Eğitim, doğrulama, test: aşırı öğrenmeyi yakalamak
-- ⬜ 2.5 Karar ağaçları: kuralları veriden öğrenmek
-- ⬜ 2.6 Metrikler: doğruluk, kesinlik, duyarlılık, F1
+- ✅ [2.1 NumPy ile veri](faz-02-klasik-ml/01-numpy-ile-veri/README.md): dizileri, dilimlemeyi ve yayınlamayı öğrenmek
+- ✅ [2.2 Doğrusal regresyon](faz-02-klasik-ml/02-dogrusal-regresyon/README.md): MSE ve gradyan inişiyle sayısal tahmin yapmak
+- ✅ [2.3 Lojistik regresyon](faz-02-klasik-ml/03-lojistik-regresyon/README.md): sigmoid, sınıf olasılığı ve çapraz entropiyle öğrenme
+- ✅ [2.4 Eğitim, doğrulama ve test](faz-02-klasik-ml/04-egitim-dogrulama-test/README.md): aşırı öğrenmeyi fark etmek ve adil ölçüm yapmak
+- ✅ [2.5 Karar ağaçları](faz-02-klasik-ml/05-karar-agaclari/README.md): Gini safsızlığı ve bölme kurallarıyla sınıflandırma
+- ✅ [2.6 Sınıflandırma metrikleri](faz-02-klasik-ml/06-siniflandirma-metrikleri/README.md): doğruluk, kesinlik, duyarlılık ve F1
 
 ## Faz 3 – Sinir Ağları
 
@@ -63,9 +63,9 @@ Sinir ağlarının nasıl öğrendiğini, geri yayılımı elle yazarak görürs
 
 Metni sayılara çevirmenin yollarını ve Türkçe'ye özgü zorlukları öğrenirsin. **Ön koşul:** Faz 0 (Faz 1-3 sonraki derslerde gerekir). **Çıktı:** Türkçe metinle çalışan bir sınıflandırıcı ve arama.
 
-- ✅ [4.1 Metni sayılara çevirmek (ve Türkçe neden zor?)](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md): tokenizer, UTF-8, `lower()` tuzağı
-- ⬜ 4.2 Türkçe biçimbilim: kök, ek, ünlü uyumu ve kurala dayalı ek ayırma
-- ⬜ 4.3 Metin temizleme: normalleştirme ve Türkçe karakter tuzakları
+- ✅ [4.1 Metni sayılara dönüştürmek: Türkçe neden zor?](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md): tokenizer, UTF-8, `lower()` tuzağı
+- ✅ [4.2 Türkçe sözcüklerin içini açmak](faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md): kök, ek, ünlü uyumu ve basit ek ayırma
+- ✅ [4.3 Türkçe metni temizlemek ve normalleştirmek](faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md): Unicode NFC, Türkçe harfler ve boşluklar
 - ⬜ 4.4 Gömme (embedding): kelimeyi vektöre çevirmek
 - ⬜ 4.5 Benzerlik ve arama: kosinüs benzerliği
 - ⬜ 4.6 Duygu analizi: Türkçe yorumlarla basit sınıflandırıcı

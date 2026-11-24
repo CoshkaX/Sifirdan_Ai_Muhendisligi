@@ -96,7 +96,7 @@ Bu seri için **Python 3.11 veya daha yenisi** gerekiyor.
     python3 --version
     ```
 
-Çıktıda `Python 3.11.x` ya da daha yeni bir sürüm görmelisin.
+Windows ve macOS'ta seçtiğin güncel kurulum bu şartı karşılamalıdır. Ubuntu/Debian'da `apt` ile gelen Python sürümü dağıtımın sürümüne göre değişebilir. `python3 --version` sonucu 3.11'den eskiyse dersler için henüz uygun sürüm yok demektir; sistemin kullandığı Python'u silip değiştirme. Bilgisayarına kurulum yapmak istemiyorsan 0.4 dersindeki Colab ile devam edebilirsin. Yerel kurulum gerekiyorsa dağıtımına uygun adımlar için [Python'ın Unix kurulum belgesine](https://docs.python.org/3/using/unix.html) bak ve en son `python3 --version` ile sürümü yeniden kontrol et.
 
 !!! note "PATH nedir?"
     PATH, işletim sisteminin programları aradığı klasörlerin listesidir. Python PATH'te değilse terminale `python` yazdığında "bulunamadı" der. Windows'ta kurulumda PATH kutusunu işaretlemek bu yüzden önemli.
@@ -186,10 +186,22 @@ Ortamı kapatıp başka bir ortamda `pip list` yaparsan `requests`'i görmezsin;
 
 `yz-calisma` klasöründe (VS Code'da) `merhaba.py` adlı bir dosya oluştur:
 
-```python
+Önce kodu tarayıcıdaki pencerede deneyebilirsin. Bu pencere bilgisayarında dosya oluşturmaz; `merhaba.py` dosyasını ayrıca VS Code'da kaydet.
+
+```python {.python-playground}
 isim = "dünya"
 print(f"Merhaba, {isim}!")
 print("Türkçe karakterler: ç ğ ı ö ş ü İ")
+```
+```text {.python-playground-expected}
+Merhaba, dünya!
+Türkçe karakterler: ç ğ ı ö ş ü İ
+```
+```text {.python-playground-help}
+`isim = "dünya"` | Tırnak içindeki `"dünya"` metnini `isim` adlı değişkene kaydederiz; aşağıdaki satır bu değeri kullanacak.
+`print(f"Merhaba, {isim}!")` | `f` metni, süslü parantez içindeki `isim` değerini cümleye ekler; `print` cümleyi ekranda gösterir.
+`print("Türkçe karakterler: ç ğ ı ö ş ü İ")` | Tırnak içindeki yazıyı aynen gösterir. Türkçe harfler düzgün görünüyorsa Python dosyan UTF-8 metni doğru okuyordur.
+`isim = "dünya"` | `"dünya"` yerine kendi adını yazıp yeniden çalıştır; ilk `print` satırındaki selam da değişmelidir.
 ```
 
 Terminalde o klasördeyken çalıştır:
@@ -207,7 +219,9 @@ Türkçe karakterler: ç ğ ı ö ş ü İ
 
 ### Hata mesajını okumak
 
-Şimdi bilerek bir hata yapalım. `hata.py` adlı bir dosya oluştur:
+Şimdi bilerek bir hata yapalım. `hata.py` adlı bir dosya oluşturup aşağıdaki kodu yaz. Bu, çalıştırılabilir bir deneme kodudur; bilerek tanımlanmamış `isim` adını kullandığı için çalıştırınca `NameError` üretir.
+
+Bu kodu çalıştırınca bilerek `NameError` görürsün; ilk denemede başarılı bir çıktı gelmemesi normaldir.
 
 ```python
 ad = "Ayşe"
@@ -247,6 +261,7 @@ Aşağıdakilerin hepsini yapabiliyorsan hazırsın:
 | Belirti | Olası neden | Çözüm |
 |---|---|---|
 | `python: command not found` / "Python bulunamadı" | Windows'ta PATH işaretlenmedi ya da macOS/Linux'ta komut `python3` | Python'u yeniden kurup PATH kutusunu işaretle; `python3` dene; `py` dene |
+| Windows'ta `python` yazınca Microsoft Store açılıyor | Uygulama yürütme takma adı komutu Store'a yönlendiriyor olabilir | Ayarlar → Uygulamalar → Gelişmiş uygulama ayarları → Uygulama yürütme takma adları bölümünde `python.exe` ve `python3.exe` takma adlarını kapat. Yeni bir PowerShell açıp `py --version` ile Python'u kontrol et. |
 | Kurulumdan sonra komut hâlâ tanınmıyor | Terminal eski ortamı kullanıyor | Terminali kapatıp yeniden aç |
 | `(.venv)` görünmüyor | Ortam etkinleştirilmemiş | Etkinleştirme komutunu çalıştır (bölüm 6) |
 | Paketi kurdum ama `import` hata veriyor | Paket başka bir Python'a kurulmuş | Sanal ortamın etkin olduğundan emin ol, `pip` yerine `python -m pip install ...` dene |
@@ -266,7 +281,7 @@ Aşağıdakilerin hepsini yapabiliyorsan hazırsın:
 **Alıştırmalar**
 
 1. Masaüstünde `yz-calisma` adlı bir klasör oluştur, içine gir ve `pwd` ile konumunu doğrula.
-2. İkinci bir sanal ortam (`.venv2`) oluştur, etkinleştir, `pip list` ile boş olduğunu gör, sonra `deactivate` ile kapat.
+2. İkinci bir sanal ortam (`.venv2`) oluşturup etkinleştir. `pip list` çıktısında yalnızca `pip` (Python sürümüne göre `setuptools` da) bulunduğunu, `requests` paketinin ise bu ortama kurulmadığını kontrol et; sonra `deactivate` ile ortamı kapat.
 3. `merhaba.py` dosyasını kendi adını ve doğum yılından hesapladığın yaşını yazdıracak şekilde değiştir.
 4. (İsteğe bağlı) `hata.py` dosyasında hatayı düzelt. Sonra bilerek farklı bir hata yap (örn. `print("merhaba"` — parantezi kapatma) ve Python'un bu sefer hangi hata türünü verdiğini oku.
 
@@ -281,10 +296,9 @@ Bu derste terminali, Python'u, bir editörü, Git'i ve sanal ortamı kurdun; ilk
 - Pro Git kitabı (ücretsiz, Türkçe çevirisi de mevcut): git-scm.com/book
 - Visual Studio Code: "Python in Visual Studio Code" dokümanı (code.visualstudio.com)
 
-## Quiz cevapları
-
-1. Bir üst klasöre çıkar.
-2. Her projenin paketlerini birbirinden ayırmak ve sürüm çakışmalarını önlemek için.
-3. Önce son satıra (hatanın türü ve nedeni), sonra hangi dosyada ve hangi satırda olduğuna.
-4. PATH'te olmazsa terminal `python` komutunu bulamaz.
-5. Sanal ortamın o terminal oturumunda etkin olduğu anlamına gelir; kurduğun paketler o ortama gider.
+??? success "Quiz cevapları"
+    1. Bir üst klasöre çıkar.
+    2. Her projenin paketlerini birbirinden ayırmak ve sürüm çakışmalarını önlemek için.
+    3. Önce son satıra (hatanın türü ve nedeni), sonra hangi dosyada ve hangi satırda olduğuna.
+    4. PATH'te olmazsa terminal `python` komutunu bulamaz.
+    5. Sanal ortamın o terminal oturumunda etkin olduğu anlamına gelir; kurduğun paketler o ortama gider.

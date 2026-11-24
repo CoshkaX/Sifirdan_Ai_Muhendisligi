@@ -5,7 +5,7 @@
 Bu seri açık kaynaktır, ücretsizdir ve her dersin çalışan, test edilmiş kodu vardır. Amaç, bir kütüphanenin fonksiyonunu çağırmayı değil, o fonksiyonun **içinde ne olduğunu** anlamaktır.
 
 !!! warning "Proje erken aşamada"
-    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an hazır olan dersler: [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md), [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md) ve [4.1 Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md).
+    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Hazır dersler: Faz 0'daki [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md), [0.2 Python hızlı tekrar](faz-00-hazirlik/02-python-hizli-tekrar/README.md), [0.3 Git ve GitHub](faz-00-hazirlik/03-git-ve-github/README.md), [0.4 Jupyter ve Colab](faz-00-hazirlik/04-jupyter-ve-colab/README.md), [0.5 Test ve hata ayıklama](faz-00-hazirlik/05-test-ve-hata-ayiklama/README.md) ve [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md); Faz 1'de [1.1 Vektörler ve matrisler](faz-01-matematik/01-vektorler-ve-matrisler/README.md), [1.2 Matris çarpımı](faz-01-matematik/02-matris-carpimi/README.md), [1.3 Türev ve gradyan](faz-01-matematik/03-turev-ve-gradyan/README.md), [1.4 Olasılık ve dağılımlar](faz-01-matematik/04-olasilik-ve-dagilimlar/README.md), [1.5 İstatistik](faz-01-matematik/05-istatistik/README.md) ve [1.6 Entropi ve çapraz entropi](faz-01-matematik/06-entropi-ve-capraz-entropi/README.md); Faz 2'de [2.1 NumPy ile veri](faz-02-klasik-ml/01-numpy-ile-veri/README.md), [2.2 Doğrusal regresyon](faz-02-klasik-ml/02-dogrusal-regresyon/README.md), [2.3 Lojistik regresyon](faz-02-klasik-ml/03-lojistik-regresyon/README.md), [2.4 Eğitim, doğrulama ve test](faz-02-klasik-ml/04-egitim-dogrulama-test/README.md), [2.5 Karar ağaçları](faz-02-klasik-ml/05-karar-agaclari/README.md) ve [2.6 Sınıflandırma metrikleri](faz-02-klasik-ml/06-siniflandirma-metrikleri/README.md); Faz 4'te [4.1 Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md), [4.2 Türkçe biçimbilim](faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md) ve [4.3 Metin temizleme](faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md).
 
 ## Neden böyle bir seri?
 
@@ -33,7 +33,7 @@ Bu seride her konuyu önce **küçük ve sade bir sürümle kendin yazarsın**: 
 | **3. Kütüphaneyle yap** | Aynı işi gerçek araçlarla yaparsın | Üretimde nasıl kullanıldığını görürsün |
 | **4. Pekiştir** | Quiz ve alıştırmalar çözersin | Öğrendiğini sınarsın |
 
-Her dersin başında tahmini süre, ön koşul ve gereken araçlar yazar. Her dersin kodu `kod/` klasöründe, testi `test/` klasöründedir. Testler, kodun gerçekten çalıştığını kanıtlar.
+Her dersin başında tahmini süre, ön koşul ve gereken araçlar yazar. Uygun örnekler sayfada düzenlenip çalıştırılabilir; yerel dosya veya test gerektiren dersler bunları ayrıca belirtir. Testler, sınadıkları davranışın beklendiği gibi çalışıp çalışmadığını kontrol eder.
 
 ## Müfredata genel bakış
 

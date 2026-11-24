@@ -26,12 +26,12 @@ Bu proje öğrenenler için, öğrenenlerle birlikte yazılıyor. Her katkı de�
     faz-XX-faz-adi/
       NN-ders-adi/
         README.md      # ders metni
-        kod/           # çalışan kod
-        test/          # kodu doğrulayan testler
+        kod/           # varsa, yerelde çalıştırılabilen tam örnek
+        test/          # varsa, kodu doğrulayan testler
     ```
 
-4. **Kodu yaz ve test et.** Test olmadan ders birleştirilmez.
-5. **Siteye ekle.** `mkdocs.yml` içindeki `nav:` bölümüne dersi ekle.
+4. **Örnekleri çalıştır ve doğrula.** Tarayıcı çalışma alanındaki örnekler tek başına çalışmalı ve belirtilen çıktıyı üretmeli. Yerel `kod/` dosyası eklediysen onu da test et.
+5. **Menülere ekle.** Dersi `mkdocs.yml` içindeki `nav:` bölümüne ve özel sol menü olan [`overrides/partials/nav.html`](overrides/partials/nav.html) dosyasına ekle. Tamamlanmış dersin bağlantısını gerçek ders sayfasına yönlendirip `available` olarak işaretle; henüz yazılmamış dersleri `planned` bırak.
 6. **Müfredatı güncelle.** [MUFREDAT.md](MUFREDAT.md) içinde dersin durumunu ✅ yap ve bağlantı ver.
 7. **Pull request aç.** Kontrol listesini doldur.
 
@@ -49,13 +49,18 @@ Bu proje öğrenenler için, öğrenenlerle birlikte yazılıyor. Her katkı de�
 - **Özgün yaz.** Başka bir kursun metnini veya kodunu çevirme. Birincil kaynaklardan (makaleler, resmî dokümanlar, kitaplar) öğren, kendi sözlerinle anlat ve "Kaynaklar" bölümünde belirt.
 - **Sayısal iddiaları doğrula.** "X, Y'den şu kadar hızlı" diyorsan ölçümü veya kaynağı ver.
 - **Neden olduğunu anlat.** "Şunu yap" demek yerine "şunu yap, çünkü..." de.
+- **Hataları anlaşılır açıkla.** `NameError` gibi bir hata adını vermekle yetinme; Python'ın neyi bulamadığını, bunun neden olduğunu ve öğrencinin hangi adımı düzeltmesi gerektiğini somut örnekle anlat.
 - **Yaygın hataları ekle.** Her dersin "Sık yapılan hatalar" bölümü, öğrencinin en çok vakit kazandığı yerdir.
 
 **Kod**
 
 - Mümkünse yalnızca standart kütüphane kullan. Ek paket gerekiyorsa dersin başında belirt.
 - Fonksiyonlara kısa bir açıklama (docstring) ekle. Değişken ve fonksiyon adları Türkçe olabilir, ama tek bir derste tutarlı ol.
-- Dersin içindeki kod parçaları `kod/` klasöründeki dosyayla birebir aynı olmalı.
+- Öğrencinin değiştirmesi ve çalıştırması yararlı olan, kendi başına çalışabilen saf Python örneklerini `{.python-playground}` ile etkileşimli yap; varsa beklenen çıktıyı hemen arkasına `{.python-playground-expected}` ile ekle.
+- Terminal komutlarını, işletim sistemine özgü kurulum adımlarını, sınıf bağlamına bağlı eksik kod parçalarını ve yerel dosya/özel paket gerektiren örnekleri normal kod bloğunda tut. Bunları tarayıcı çalışma alanının yerine geçiyormuş gibi sunma.
+- Öğrencinin takılabileceği örneklerde beklenen çıktı bloğunun arkasına `{.python-playground-help}` ekle. Her satıra `` `kod parçası` | açıklama `` biçiminde, birebir kod ifadesini ve sade açıklamasını yaz. Hangi değeri aldığını, ne yaptığını ve sonraki satırla nasıl bağlandığını yeni başlayan birine anlat; görev yönergesini tekrar etmekle yetinme.
+- Beklenen çıktılı örneklerde görevin yalnızca sabit `print()` çağrılarıyla geçilemeyeceğini doğrula; çıktı eşleşmesini tek başına kavrayış kanıtı sayma. Kestirme uyarıları destekleyici ve yargılamayan bir dille yaz.
+- Yerel `kod/` dosyasıyla aynı örnek gösteriliyorsa ikisini eşzamanlı tut; küçük öğretici parçalar kendi başına çalışabilir.
 - Testler `unittest` ile yazılır ve `python -m unittest discover -s test` ile çalışır.
 
 ## Siteyi kendi bilgisayarında görmek
@@ -74,6 +79,7 @@ Sonra tarayıcıda `http://127.0.0.1:8000` adresini aç. Bu adım isteğe bağl�
 - [ ] [Ders şablonundaki](sablon/DERS-SABLONU.md) bölümlerin hepsi var
 - [ ] Kod temiz bir ortamda çalışıyor
 - [ ] Testler geçiyor
+- [ ] `mkdocs.yml` ve özel sol menüdeki ders bağlantıları güncel
 - [ ] Terimler sözlükle tutarlı, yeni terimler sözlüğe eklendi
 - [ ] Kaynaklar listelenmiş
 - [ ] `mkdocs.yml` ve `MUFREDAT.md` güncellendi

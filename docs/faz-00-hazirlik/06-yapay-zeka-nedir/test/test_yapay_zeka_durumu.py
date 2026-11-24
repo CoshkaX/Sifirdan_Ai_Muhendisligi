@@ -1,4 +1,5 @@
 import os
+import subprocess
 import sys
 import unittest
 
@@ -25,6 +26,16 @@ class YapayZekaDurumuTestleri(unittest.TestCase):
         anahtar, açıklama = self.sistem.çıkarım_yap(gözlem)
         self.assertEqual(anahtar, "belirsiz")
         self.assertIn("eşleşmedi", açıklama)
+
+    def test_tam_ornek_dosyasi_calistirilabilir(self):
+        dosya = os.path.join(os.path.dirname(__file__), "..", "kod", "yapay_zeka_durumu.py")
+        sonuc = subprocess.run(
+            [sys.executable, dosya],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            check=True,
+        )
+        self.assertIn(b"Bellek ", sonuc.stdout)
 
 
 if __name__ == "__main__":

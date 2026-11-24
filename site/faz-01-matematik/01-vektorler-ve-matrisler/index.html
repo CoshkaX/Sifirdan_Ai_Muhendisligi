@@ -1,0 +1,798 @@
+
+<!doctype html>
+<html lang="tr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Yapay zekâ mühendisliğini Türkçe, sıfırdan ve kendi ellerinle yazarak öğren.">
+      
+      
+      
+        <link rel="canonical" href="https://coshkax.github.io/Sifirdan_Ai_Muhendisligi/faz-01-matematik/01-vektorler-ve-matrisler/">
+      
+      
+        <link rel="prev" href="../../faz-00-hazirlik/06-yapay-zeka-nedir/">
+      
+      
+        <link rel="next" href="../02-matris-carpimi/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>1.1 Vektörler ve matrisler - Sıfırdan Yapay Zeka Mühendisliği</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Nunito Sans";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css?v=20261125-notes-1">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#faz-1-ders-1-vektorler-ve-matrisler" class="md-skip">
+          Ana içeriğe geç
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Başlık">
+    <a href="../.." title="Sıfırdan Yapay Zeka Mühendisliği" class="md-header__button md-logo" aria-label="Sıfırdan Yapay Zeka Mühendisliği" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sıfırdan Yapay Zeka Mühendisliği
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.1 Vektörler ve matrisler
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Koyu moda geç"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Koyu moda geç" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Açık moda geç"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Açık moda geç" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Ara" placeholder="Ara" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Ara">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Temizle" aria-label="Temizle" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Arama başlatılıyor
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CoshkaX/Sifirdan_Ai_Muhendisligi" title="Depoya git" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+  <div class="md-sidebar__scrollwrap">
+    <div class="md-sidebar__inner">
+      <nav class="md-nav curriculum-nav" aria-label="Müfredat">
+        <a class="curriculum-brand" href="../../">
+          <span class="curriculum-brand__mark">AI</span>
+          <span>Mühendislik / TR</span>
+        </a>
+
+        <a class="curriculum-toplink" href="../../">Ana Sayfa</a>
+        <a class="curriculum-toplink" href="../../OGRENME-YOLLARI/">Öğrenme yolları</a>
+        <a class="curriculum-toplink" href="../../MUFREDAT/">Müfredat</a>
+
+        <div class="curriculum-divider"></div>
+
+        <details open>
+          <summary><span>Faz 0</span> Hazırlık</summary>
+          <a class="available" href="../../faz-00-hazirlik/01-gelistirme-ortami/">0.1 Geliştirme ortamı</a>
+          <a class="available" href="../../faz-00-hazirlik/02-python-hizli-tekrar/">0.2 Python hızlı tekrar</a>
+          <a class="available" href="../../faz-00-hazirlik/03-git-ve-github/">0.3 Git ve GitHub</a>
+          <a class="available" href="../../faz-00-hazirlik/04-jupyter-ve-colab/">0.4 Jupyter ve Colab</a>
+          <a class="available" href="../../faz-00-hazirlik/05-test-ve-hata-ayiklama/">0.5 Test ve hata ayıklama</a>
+          <a class="available" href="../../faz-00-hazirlik/06-yapay-zeka-nedir/">0.6 Yapay zekâ nedir?</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 1</span> Matematik</summary>
+          <a class="available active" href="../../faz-01-matematik/01-vektorler-ve-matrisler/">1.1 Vektörler ve matrisler</a>
+          <a class="available" href="../../faz-01-matematik/02-matris-carpimi/">1.2 Matris çarpımı</a>
+          <a class="available" href="../../faz-01-matematik/03-turev-ve-gradyan/">1.3 Türev ve gradyan</a>
+          <a class="available" href="../../faz-01-matematik/04-olasilik-ve-dagilimlar/">1.4 Olasılık ve dağılımlar</a>
+          <a class="available" href="../../faz-01-matematik/05-istatistik/">1.5 İstatistik</a>
+          <a class="available" href="../../faz-01-matematik/06-entropi-ve-capraz-entropi/">1.6 Entropi ve çapraz entropi</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 2</span> Klasik makine öğrenmesi</summary>
+          <a class="available" href="../../faz-02-klasik-ml/01-numpy-ile-veri/">2.1 NumPy ile veri</a>
+          <a class="available" href="../../faz-02-klasik-ml/02-dogrusal-regresyon/">2.2 Doğrusal regresyon</a>
+          <a class="available" href="../../faz-02-klasik-ml/03-lojistik-regresyon/">2.3 Lojistik regresyon</a>
+          <a class="available" href="../../faz-02-klasik-ml/04-egitim-dogrulama-test/">2.4 Eğitim, doğrulama ve test</a>
+          <a class="available" href="../../faz-02-klasik-ml/05-karar-agaclari/">2.5 Karar ağaçları</a>
+          <a class="available" href="../../faz-02-klasik-ml/06-siniflandirma-metrikleri/">2.6 Sınıflandırma metrikleri</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 3</span> Sinir ağları</summary>
+          <a class="planned" href="../../MUFREDAT/">3.1 Tek nöron</a>
+          <a class="planned" href="../../MUFREDAT/">3.2 Mini autograd</a>
+          <a class="planned" href="../../MUFREDAT/">3.3 Geri yayılım</a>
+          <a class="planned" href="../../MUFREDAT/">3.4 Çok katmanlı ağ</a>
+          <a class="planned" href="../../MUFREDAT/">3.5 Optimizasyon</a>
+          <a class="planned" href="../../MUFREDAT/">3.6 PyTorch'a geçiş</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 4</span> Metin ve Türkçe NLP</summary>
+          <a class="available" href="../../faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/">4.1 Metni sayılara dönüştürmek</a>
+          <a class="available" href="../../faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/">4.2 Türkçe biçimbilim</a>
+          <a class="available" href="../../faz-04-metin-ve-turkce-nlp/03-metin-temizleme/">4.3 Metin temizleme</a>
+          <a class="planned" href="../../MUFREDAT/">4.4 Gömme</a>
+          <a class="planned" href="../../MUFREDAT/">4.5 Benzerlik ve arama</a>
+          <a class="planned" href="../../MUFREDAT/">4.6 Duygu analizi</a>
+          <a class="planned" href="../../MUFREDAT/">4.7 Veri setleri</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 5</span> Transformer</summary>
+          <a class="planned" href="../../MUFREDAT/">5.1 Dizi modelleme</a>
+          <a class="planned" href="../../MUFREDAT/">5.2 Attention</a>
+          <a class="planned" href="../../MUFREDAT/">5.3 Çok başlı attention</a>
+          <a class="planned" href="../../MUFREDAT/">5.4 Konum bilgisi</a>
+          <a class="planned" href="../../MUFREDAT/">5.5 Transformer bloğu</a>
+          <a class="planned" href="../../MUFREDAT/">5.6 Mini transformer</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 6</span> Küçük dil modeli</summary>
+          <a class="planned" href="../../MUFREDAT/">6.1 Sonraki token tahmini</a>
+          <a class="planned" href="../../MUFREDAT/">6.2 BPE tokenizer</a>
+          <a class="planned" href="../../MUFREDAT/">6.3 Türkçe tokenizer verimliliği</a>
+          <a class="planned" href="../../MUFREDAT/">6.4 Mini GPT eğitimi</a>
+          <a class="planned" href="../../MUFREDAT/">6.5 Metin üretimi</a>
+          <a class="planned" href="../../MUFREDAT/">6.6 Küçük Türkçe veri deneyi</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 7</span> LLM'leri kullanmak</summary>
+          <a class="planned" href="../../MUFREDAT/">7.1 API ile model çağırmak</a>
+          <a class="planned" href="../../MUFREDAT/">7.2 Etkili prompt</a>
+          <a class="planned" href="../../MUFREDAT/">7.3 Yapılandırılmış çıktı</a>
+          <a class="planned" href="../../MUFREDAT/">7.4 Bağlam, maliyet ve gecikme</a>
+          <a class="planned" href="../../MUFREDAT/">7.5 Hata yönetimi</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 8</span> Arama ve RAG</summary>
+          <a class="planned" href="../../MUFREDAT/">8.1 Anlamsal arama</a>
+          <a class="planned" href="../../MUFREDAT/">8.2 Parçalama</a>
+          <a class="planned" href="../../MUFREDAT/">8.3 Vektör veritabanı</a>
+          <a class="planned" href="../../MUFREDAT/">8.4 Sıfırdan RAG hattı</a>
+          <a class="planned" href="../../MUFREDAT/">8.5 Türkçe RAG</a>
+          <a class="planned" href="../../MUFREDAT/">8.6 RAG'i değerlendirmek</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 9</span> Agent'lar</summary>
+          <a class="planned" href="../../MUFREDAT/">9.1 Agent döngüsü</a>
+          <a class="planned" href="../../MUFREDAT/">9.2 Araç tanımlamak</a>
+          <a class="planned" href="../../MUFREDAT/">9.3 Bellek ve durum</a>
+          <a class="planned" href="../../MUFREDAT/">9.4 MCP'ye giriş</a>
+          <a class="planned" href="../../MUFREDAT/">9.5 Agent'ların başarısızlıkları</a>
+          <a class="planned" href="../../MUFREDAT/">9.6 Güvenlik</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 10</span> Fine-tuning</summary>
+          <a class="planned" href="../../MUFREDAT/">10.1 Ne zaman fine-tuning?</a>
+          <a class="planned" href="../../MUFREDAT/">10.2 Veri hazırlama</a>
+          <a class="planned" href="../../MUFREDAT/">10.3 LoRA</a>
+          <a class="planned" href="../../MUFREDAT/">10.4 Küçük modeli fine-tune etmek</a>
+          <a class="planned" href="../../MUFREDAT/">10.5 Sonucu ölçmek</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 11</span> Değerlendirme</summary>
+          <a class="planned" href="../../MUFREDAT/">11.1 İyi ne demek?</a>
+          <a class="planned" href="../../MUFREDAT/">11.2 Test seti hazırlamak</a>
+          <a class="planned" href="../../MUFREDAT/">11.3 Otomatik ve insan değerlendirmesi</a>
+          <a class="planned" href="../../MUFREDAT/">11.4 LLM'i hakem olarak kullanmak</a>
+          <a class="planned" href="../../MUFREDAT/">11.5 Regresyon testleri</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 12</span> Üretime almak</summary>
+          <a class="planned" href="../../MUFREDAT/">12.1 Modeli servis etmek</a>
+          <a class="planned" href="../../MUFREDAT/">12.2 Maliyet ve gecikme</a>
+          <a class="planned" href="../../MUFREDAT/">12.3 İzleme ve loglama</a>
+          <a class="planned" href="../../MUFREDAT/">12.4 Güvenlik ve gizlilik</a>
+          <a class="planned" href="../../MUFREDAT/">12.5 Dağıtım</a>
+        </details>
+
+        <details open>
+          <summary><span>Faz 13</span> Bitirme projeleri</summary>
+          <a class="planned" href="../../MUFREDAT/">13.1 Türkçe RAG projesi</a>
+          <a class="planned" href="../../MUFREDAT/">13.2 Araç kullanan agent</a>
+          <a class="planned" href="../../MUFREDAT/">13.3 Kendi mini dil modelin</a>
+          <a class="planned" href="../../MUFREDAT/">13.4 Proje sunumu ve portföy</a>
+        </details>
+      </nav>
+    </div>
+  </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="İçindekiler">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      İçindekiler
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bu-derste-ne-ogreneceksin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bu derste ne öğreneceksin?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-kendin-yaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Kendin yaz
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Kendin yaz">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-vektor-tek-bir-ornegin-saysal-ozellikleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Vektör: tek bir örneğin sayısal özellikleri
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-vektorleri-ayn-konumlarda-toplamak" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Vektörleri aynı konumlarda toplamak
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-matris-birden-fazla-ornegi-satrlara-yerlestir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Matris: birden fazla örneği satırlara yerleştir
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-kutuphaneyle-yap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Kütüphaneyle yap
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sk-yaplan-hatalar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sık yapılan hatalar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-pekistir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Pekiştir
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ozet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Özet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kaynaklar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kaynaklar
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/CoshkaX/Sifirdan_Ai_Muhendisligi/edit/main/docs/faz-01-matematik/01-vektorler-ve-matrisler/README.md" title="Düzenle" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="faz-1-ders-1-vektorler-ve-matrisler">Faz 1 – Ders 1: Vektörler ve matrisler<a class="headerlink" href="#faz-1-ders-1-vektorler-ve-matrisler" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>⏱️ Tahmini süre: 45-60 dk · 📚 Ön koşul: 0.2 Python hızlı tekrar · 💻 Gereksinim: Python 3.11+, ek paket yok</p>
+</blockquote>
+<h2 id="bu-derste-ne-ogreneceksin">Bu derste ne öğreneceksin?<a class="headerlink" href="#bu-derste-ne-ogreneceksin" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Bir vektörü sıralı sayılarla temsil etmeyi</li>
+<li>Vektörlerin aynı konumdaki değerleri üzerinde işlem yapmayı</li>
+<li>Bir matrisi satır ve sütunlardan oluşan bir tablo gibi okumayı</li>
+<li>Vektör ve matrisleri yapay zekâda veriyi düzenlemek için kullanmayı</li>
+</ul>
+<h2 id="1-problem">1. Problem<a class="headerlink" href="#1-problem" title="Permanent link">&para;</a></h2>
+<p>Bir tahmin modeli bir evin büyüklüğü, oda sayısı ve yaşını kullanarak fiyat tahmini yapabilir. Bu bilgileri tek tek değişkenlerde tutmak küçük örnekte kolaydır; yüzlerce özellik olduğunda ise düzenli bir yapıya ihtiyaç duyarız.</p>
+<p>Örneğin tek bir evin sayısal özelliklerini <code>[120, 3, 10]</code> biçiminde, birden fazla evin özelliklerini de satırlardan oluşan bir tabloda saklayabiliriz. Bu yapılara <strong>vektör</strong> ve <strong>matris</strong> denir.</p>
+<h2 id="2-kendin-yaz">2. Kendin yaz<a class="headerlink" href="#2-kendin-yaz" title="Permanent link">&para;</a></h2>
+<h3 id="21-vektor-tek-bir-ornegin-saysal-ozellikleri">2.1 Vektör: tek bir örneğin sayısal özellikleri<a class="headerlink" href="#21-vektor-tek-bir-ornegin-saysal-ozellikleri" title="Permanent link">&para;</a></h3>
+<p>Vektör, sırası anlam taşıyan sayıların dizisidir. Aşağıda her konum farklı bir özelliği gösterir: önce metrekare, sonra oda sayısı, sonra bina yaşı. Sıralamayı değiştirirsen sayıların anlamı da değişir.</p>
+<p><div class="python-playground highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ev</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Metrekare:&quot;</span><span class="p">,</span> <span class="n">ev</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oda sayısı:&quot;</span><span class="p">,</span> <span class="n">ev</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bina yaşı:&quot;</span><span class="p">,</span> <span class="n">ev</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div>
+<div class="python-playground-expected highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Metrekare: 120
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Oda sayısı: 3
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Bina yaşı: 10
+</code></pre></div>
+<div class="python-playground-help highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>`ev = [120, 3, 10]` | Köşeli ayraçlar bir liste oluşturur. Bu örnekte listedeki her sayı, aynı eve ait bir özelliği sırayla temsil eder.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>`ev[0]` | Python sıfırdan saydığı için `0` ilk öğenin konumudur; burada ilk özellik metrekaredir.
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>`ev[1]` | `1` ikinci öğenin konumudur; bu sırayı baştan belirlediğimiz için oda sayısını temsil eder.
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>`ev[2]` | `2` üçüncü öğeyi verir; bu örnekte bina yaşıdır.
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>`print(&quot;Oda sayısı:&quot;, ev[1])` | `print` açıklama metniyle seçilen değeri birlikte gösterir. Listedeki sırayı değiştirirsen hangi özelliğin yazdırıldığı da değişir.
+</code></pre></div></p>
+<p><code>ev</code> Python'da bir listedir; sayısal özellikleri ve sıralarını belirli bir kuralla kullandığımızda onu vektör gibi düşünebiliriz. Gerçek uygulamalarda her konumun ne anlama geldiğini ayrıca bilmek gerekir.</p>
+<h3 id="22-vektorleri-ayn-konumlarda-toplamak">2.2 Vektörleri aynı konumlarda toplamak<a class="headerlink" href="#22-vektorleri-ayn-konumlarda-toplamak" title="Permanent link">&para;</a></h3>
+<p>İki ev arasındaki sayısal farkı bulduğumuzu düşün. Aynı özelliği aynı konumda tuttuğumuz için her konumdaki sayıları ayrı ayrı toplayabiliriz. Gerçek hayattaki özellikleri toplamamız her zaman anlamlı olmayabilir; burada amaç, vektör işleminin nasıl çalıştığını görmektir.</p>
+<p><div class="python-playground highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">toplam</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)):</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">toplam</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Toplam vektör:&quot;</span><span class="p">,</span> <span class="n">toplam</span><span class="p">)</span>
+</code></pre></div>
+<div class="python-playground-expected highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Toplam vektör: [6, 4]
+</code></pre></div>
+<div class="python-playground-help highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>`a = [2, 3]` | İlk vektör iki sayı saklar. Listedeki ilk sayı birinci özellikle, ikinci sayı ikinci özellikle eşleşir.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>`b = [4, 1]` | İkinci vektör de aynı sırada iki sayı içerir; toplama yapabilmek için iki listenin uzunluğu ve özellik sırası eşleşmelidir.
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>`toplam = []` | Sonuçları koyacağımız boş listeyi hazırlarız; her hesaplanan bileşen bu listeye eklenecek.
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>`range(len(a))` | `len(a)` iki öğe olduğunu bulur, `range` da `0` ve `1` konumlarını sırayla üretir.
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>`a[i] + b[i]` | Aynı konumdaki iki sayıyı toplarız; önce `2 + 4`, sonra `3 + 1` hesaplanır.
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>`toplam.append(a[i] + b[i])` | Bulduğumuz bileşeni sonuç listesinin sonuna ekleriz. Döngü bitince iki konum da hesaplanmış olur.
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>`print(&quot;Toplam vektör:&quot;, toplam)` | Sonuç listesini ekrana yazar; köşeli ayraçlar bunun birden fazla öğeli liste olduğunu gösterir.
+</code></pre></div></p>
+<p><code>a</code> ile <code>b</code> listelerindeki sayıları değiştirip tekrar çalıştır. İki listenin uzunluğu aynı olmalı. Örneğin <code>a</code> daha uzunsa döngü <code>b</code> içinde olmayan bir konumu okumaya çalışır ve Python <code>IndexError</code> verir; <code>b</code> daha uzunsa sondaki fazla sayı hiç hesaba katılmaz. Her iki vektörde de aynı sayıda ve aynı sırada özellik olduğundan emin ol.</p>
+<h3 id="23-matris-birden-fazla-ornegi-satrlara-yerlestir">2.3 Matris: birden fazla örneği satırlara yerleştir<a class="headerlink" href="#23-matris-birden-fazla-ornegi-satrlara-yerlestir" title="Permanent link">&para;</a></h3>
+<p>Matris, sayıları satır ve sütunlardan oluşan dikdörtgen bir düzende tutar. Aşağıdaki tabloda her satır bir evi, her sütun ise aynı özelliği gösterir:</p>
+<p><div class="python-playground highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">evler</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;İlk evin oda sayısı:&quot;</span><span class="p">,</span> <span class="n">evler</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ev sayısı:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evler</span><span class="p">))</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Özellik sayısı:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">evler</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</code></pre></div>
+<div class="python-playground-expected highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>İlk evin oda sayısı: 3
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Ev sayısı: 2
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Özellik sayısı: 3
+</code></pre></div>
+<div class="python-playground-help highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>`evler = [` | Dıştaki köşeli ayraç, birden fazla satırı tutan ana listeyi başlatır.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>`[120, 3, 10]` | İçteki liste bir satırdır; bu satır tek bir evin üç özelliğini aynı sırayla saklar.
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>`[85, 2, 5]` | İkinci satır başka bir evi temsil eder. Her satırda aynı özelliklerin aynı sırada bulunması gerekir.
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>`evler[0][1]` | İlk köşeli ayraç ilk satırı, ikincisi o satırdaki ikinci özelliği seçer; sonuç oda sayısı olan `3` olur.
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>`len(evler)` | Dış listedeki satırları sayar; burada iki ev vardır.
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>`len(evler[0])` | İlk satırdaki değerleri sayar; her ev için üç özellik tutulur.
+</code></pre></div></p>
+<p>Bu örnekte matrisin boyutu <strong>2 satır × 3 sütun</strong>dur. Matrisin boyutu, hangi işlemlerin yapılabileceğini belirler; örneğin her satırın aynı sayıda sütunu olmalıdır.</p>
+<h2 id="3-kutuphaneyle-yap">3. Kütüphaneyle yap<a class="headerlink" href="#3-kutuphaneyle-yap" title="Permanent link">&para;</a></h2>
+<p>Python listeleri öğrenmek için yeterlidir; büyük sayısal dizilerle çalışırken <strong>NumPy</strong> kullanılır. NumPy, dizilerin boyutunu (<code>shape</code>) gösterir ve çok sayıda sayısal işlemi verimli biçimde yapar. Kurulum komutu terminal içindir; tarayıcıdaki çalışma alanında NumPy kurulu değildir.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>numpy
+</code></pre></div>
+<p>Bu örneği paketi kurduktan sonra bilgisayarındaki Python dosyasında çalıştır:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">evler</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">])</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">evler</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">evler</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+<p><code>shape</code>, <code>(2, 3)</code> sonucuyla iki satır ve üç sütun olduğunu söyler. NumPy'de <code>evler[0, 1]</code> yazımı da ilk satırın ikinci sütununu seçer. Python listesindeki <code>evler[0][1]</code> ile aynı değeri verir.</p>
+<h2 id="4-sk-yaplan-hatalar">4. Sık yapılan hatalar<a class="headerlink" href="#4-sk-yaplan-hatalar" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>İlk öğenin konumunu <code>1</code> sanmak.</strong> Python'da ilk öğe <code>0</code> konumundadır. Bu yüzden <code>ev[0]</code> ilk özelliği seçer.</li>
+<li><strong>Özellik sırasını karıştırmak.</strong> Bir satırda oda sayısı ikinci sıradaysa, bütün satırlarda ikinci sırada kalmalıdır.</li>
+<li><strong>Farklı uzunluktaki vektörleri toplamak.</strong> Her bileşenin karşısında eşleşeceği bir bileşen olmalıdır; önce uzunlukları ve sıraları kontrol et.</li>
+<li><strong>Matrisin satır ve sütunlarını ters söylemek.</strong> İç listeler satırlardır; satır sayısı dış listenin, sütun sayısı bir iç listenin uzunluğudur.</li>
+<li><strong>Her sayı listesini kendiliğinden anlamlı bir vektör sanmak.</strong> Listeyi vektör gibi kullanmak için her konumun neyi temsil ettiğini bilmelisin.</li>
+</ul>
+<h2 id="5-pekistir">5. Pekiştir<a class="headerlink" href="#5-pekistir" title="Permanent link">&para;</a></h2>
+<p><strong>Quiz</strong></p>
+<ol>
+<li><code>[8, 2, 4]</code> vektöründe ikinci öğenin Python konumu nedir?</li>
+<li>İki vektörü bileşen bileşen toplamak için hangi koşul gerekir?</li>
+<li>İki satır ve dört sütundan oluşan bir matrisin boyutu nasıl yazılır?</li>
+<li><code>matris[1][0]</code> hangi değeri seçer?</li>
+</ol>
+<p><strong>Alıştırmalar</strong></p>
+<ol>
+<li>Bir öğrencinin üç sınav notunu <code>[78, 85, 92]</code> biçiminde yaz. İlk notu ve üçüncü notu ayrı ayrı yazdır.</li>
+<li>İki üç boyutlu vektörü aynı konumlardaki değerleri toplayarak birleştir.</li>
+<li>Üç öğrencinin iki sınav notunu iki boyutlu bir listede sakla. İkinci öğrencinin ilk notunu yazdır.</li>
+<li>(İsteğe bağlı) Bir matrisin her satırında iki sayı olduğunu doğrulayan bir kontrol yaz.</li>
+</ol>
+<details class="success">
+<summary>Quiz cevapları</summary>
+<ol>
+<li><code>1</code>; Python saymayı sıfırdan başlatır.</li>
+<li>Uzunlukları aynı olmalı ve aynı konumlar aynı özelliği temsil etmeli.</li>
+<li><code>2 × 4</code> (iki satır, dört sütun).</li>
+<li>İkinci satırın ilk değeri.</li>
+</ol>
+</details>
+<h2 id="ozet">Özet<a class="headerlink" href="#ozet" title="Permanent link">&para;</a></h2>
+<p>Vektör, sırası anlam taşıyan sayıların dizisidir; matris ise birden fazla vektörü satırlar halinde düzenler. Python listeleri bu yapıları küçük örneklerde görmemizi sağlar. Bir vektör veya matrisle işlem yaparken uzunluk, satır-sütun boyutu ve her konumun anlamı önemlidir. NumPy, aynı fikri büyük sayısal dizilerde daha kullanışlı hale getirir.</p>
+<h2 id="kaynaklar">Kaynaklar<a class="headerlink" href="#kaynaklar" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy: Mutlak başlangıç rehberi</a></li>
+<li><a href="https://numpy.org/doc/stable/user/quickstart.html">NumPy: Hızlı başlangıç</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Başa dön
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Altbilgi" >
+        
+          
+          <a href="../../faz-00-hazirlik/06-yapay-zeka-nedir/" class="md-footer__link md-footer__link--prev" aria-label="Önceki: 0.6 Yapay zekâ nedir?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Önceki
+              </span>
+              <div class="md-ellipsis">
+                0.6 Yapay zekâ nedir?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../02-matris-carpimi/" class="md-footer__link md-footer__link--next" aria-label="Sonraki: 1.2 Matris çarpımı">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Sonraki
+              </span>
+              <div class="md-ellipsis">
+                1.2 Matris çarpımı
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Kopyaland\u0131", "clipboard.copy": "Kopyala", "search.result.more.one": "Bu sayfada 1 tane daha", "search.result.more.other": "Bu sayfada # tane daha", "search.result.none": "E\u015fle\u015fen dok\u00fcman bulunamad\u0131", "search.result.one": "1 dok\u00fcman bulundu", "search.result.other": "# dok\u00fcman bulundu", "search.result.placeholder": "Aramaya ba\u015flamak i\u00e7in yaz\u0131n", "search.result.term.missing": "Eksik", "select.version": "Versiyon se\u00e7"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="../../javascripts/highlights.js?v=20261125-notes-1"></script>
+      
+        <script src="../../javascripts/python-playground.js?v=20261124-8"></script>
+      
+    
+  </body>
+</html>

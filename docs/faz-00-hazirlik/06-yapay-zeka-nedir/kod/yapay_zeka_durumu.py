@@ -44,7 +44,7 @@ if __name__ == "__main__":
         {"hava": "güneşli", "plan": "bahçede fidan dikmek"},
     ):
         kaydı = sistem.gözlemle(gözlem)
-        anahtar, açıklama = sistem.çıkarım_yap(kayıdı)
+        anahtar, açıklama = sistem.çıkarım_yap(kaydı)
         print(f"{anahtar}: {açıklama}")
 
     print("Bellek özeti:", sistem.özetle())

@@ -37,8 +37,8 @@ Bu yol, hazır bir model çağrısına geçmeden önce verinin, matematiğin ve 
 
 | Sıra | Ders | Kazanım |
 |---:|---|---|
-| 1 | [Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Python, Git ve sanal ortamla çalışır |
-| 2 | **Faz 1 — Matematik** | Vektör, matris, türev ve olasılık hesaplarını anlar |
+| 1 | [Faz 0 — Hazırlık](MUFREDAT.md) | Python, Git, Jupyter ve test temellerini kurar |
+| 2 | [Faz 1 — Matematik](faz-01-matematik/01-vektorler-ve-matrisler/README.md) | Vektör, matris, olasılık, istatistik, gradyan ve kayıp fikirlerini kodla öğrenir |
 | 3 | **Faz 2 — Klasik öğrenme** | Veriyi temsil eder, model eğitir ve hatayı ölçer |
 | 4 | **Faz 3 — Sinir ağları** | Geri yayılımı ve optimizasyonu kendi koduyla izler |
 | 5 | **Faz 4 — Metin** | Metni temsil etmeyi ve Türkçe'nin özel durumlarını kavrar |
