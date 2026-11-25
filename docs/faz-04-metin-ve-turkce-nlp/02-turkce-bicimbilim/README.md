@@ -141,7 +141,7 @@ Zemberek gibi Türkçe doğal dil işleme araçları, kök bulma ve biçimbilim 
 
 1. İlk çalışma alanına `araba`, `gözlük` ve `çocuk` sözcüklerini ekle. Seçilen çoğul ekini kontrol et.
 2. İkinci çalışma alanındaki ek listesine `"de"` ve `"da"` ekle. `evlerimizde` ve `okullarda` sözcüklerini dene.
-3. `"masa"` sözcüğünü ikinci çalışma alanında dene. Programın bulduğu parçanın neden gerçek bir çözümleme garantisi vermediğini açıkla.
+3. `"beden"` sözcüğünü ikinci çalışma alanında dene. Programın bulduğu parçanın neden gerçek bir çözümleme garantisi vermediğini açıkla.
 4. (Zor) `cogul_eki` fonksiyonunu büyük harfli sözcüklerde de çalışacak şekilde genişlet. Türkçe `I/İ` harflerini düşün ve önceki derste öğrendiğin küçük harfe çevirme yöntemini uygula.
 
 ??? success "Quiz cevapları"
