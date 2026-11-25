@@ -57,6 +57,7 @@ extra_css:
 extra_javascript:
   - javascripts/highlights.js?v=20261125-2
   - javascripts/python-playground.js?v=20261125-2
+  - javascripts/github-yildiz.js?v=1
 
 
 exclude_docs: |
