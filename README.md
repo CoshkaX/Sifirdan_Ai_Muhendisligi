@@ -4,7 +4,7 @@ Yapay zekâ mühendisliğini **Türkçe**, **sıfırdan** ve **kendi ellerinle y
 
 🌐 **Site:** https://coshkax.github.io/Sifirdan_Ai_Muhendisligi/
 
-> 🚧 Proje erken aşamada. Hangi derslerin hazır olduğu için [müfredata](docs/MUFREDAT.md) bak.
+> 🚧 Proje erken aşamada. Hangi derslerin hazır olduğunu görmek için [müfredata](docs/MUFREDAT.md) bak.
 
 ## Hızlı başlangıç
 
