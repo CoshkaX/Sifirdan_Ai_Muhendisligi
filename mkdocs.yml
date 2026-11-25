@@ -94,6 +94,10 @@ nav:
   - 4.1 Metni sayılara dönüştürmek: faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
   - 4.2 Türkçe biçimbilim: faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md
   - 4.3 Metin temizleme: faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md
+  - "4.4 Gömme": faz-04-metin-ve-turkce-nlp/04-gomme/README.md
+  - "4.5 Benzerlik ve arama": faz-04-metin-ve-turkce-nlp/05-benzerlik-ve-arama/README.md
+  - "4.6 Duygu analizi": faz-04-metin-ve-turkce-nlp/06-duygu-analizi/README.md
+  - "4.7 Veri setleri": faz-04-metin-ve-turkce-nlp/07-veri-setleri/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md

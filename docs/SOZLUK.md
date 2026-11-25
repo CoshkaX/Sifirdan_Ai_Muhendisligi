@@ -105,6 +105,16 @@
 | momentum | momentum | Geçmiş türevlerden bir hız biriktirerek güncellemeyi hızlandıran yöntem |
 | Adam | Adam | Her parametrenin adımını türev büyüklüğüne göre ayarlayan, yaygın kullanılan optimizer |
 | tensor | tensör (tensor) | Çok boyutlu sayı dizisi; PyTorch'un temel veri yapısı |
+| bag of words | sözcük torbası (bag of words) | Metni, sözcük sırasını unutup yalnızca hangi sözcüğün kaç kez geçtiğiyle temsil etme |
+| cosine similarity | kosinüs benzerliği (cosine similarity) | İki vektörün uzunluklarından bağımsız olarak yönlerinin ne kadar benzediğini ölçer |
+| TF-IDF | TF-IDF | Terim sıklığını, terimin kaç belgede geçtiğine göre ağırlıklandıran yöntem; her yerde geçen sözcüklerin etkisini azaltır |
+| distributional hypothesis | dağılımsal varsayım | Benzer anlamlı sözcüklerin benzer bağlamlarda geçtiği fikri |
+| stemming | kök bulma (stemming) | Sözcüğün eklerini atarak kökünü bulma; Türkçe aramada ilk birkaç harfi almak basit bir yaklaşımdır |
+| sentiment analysis | duygu analizi (sentiment analysis) | Bir metnin olumlu mu olumsuz mu olduğunu tahmin etme |
+| stop words | durak sözcükleri (stop words) | `ve`, `bu` gibi çok sık geçen ve çoğu görevde az bilgi taşıyan sözcükler |
+| dataset card | veri kartı (dataset card) | Bir veri setinin amacını, kaynağını, lisansını ve sınırlarını anlatan belge |
+| personal data | kişisel veri | Bir kişiyi tanımlayan veya tanımlanabilir kılan bilgi; Türkiye'de KVKK kapsamındadır |
+| regular expression | düzenli ifade (regular expression) | Metinde aranacak bir kalıbı tarif eden küçük dil; Python'da `re` modülü |
 | NameError | NameError | Python, kullanılmış bir değişken adını bulamaz; ad tanımlanmamış, yanlış yazılmış veya hücresi çalıştırılmamış olabilir |
 | IndexError | IndexError | Listede olmayan bir sıradaki öğe istenir |
 | KeyError | KeyError | Sözlükte bulunmayan bir anahtarın değeri istenir |

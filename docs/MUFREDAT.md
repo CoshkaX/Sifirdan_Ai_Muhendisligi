@@ -67,10 +67,10 @@ Metni sayılara çevirmenin yollarını ve Türkçe'ye özgü zorlukları öğre
 - ✅ [4.1 Metni sayılara dönüştürmek: Türkçe neden zor?](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md): tokenizer, UTF-8, `lower()` tuzağı
 - ✅ [4.2 Türkçe sözcüklerin içini açmak](faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md): kök, ek, ünlü uyumu ve basit ek ayırma
 - ✅ [4.3 Türkçe metni temizlemek ve normalleştirmek](faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md): Unicode NFC, Türkçe harfler ve boşluklar
-- ⬜ 4.4 Gömme (embedding): kelimeyi vektöre çevirmek
-- ⬜ 4.5 Benzerlik ve arama: kosinüs benzerliği
-- ⬜ 4.6 Duygu analizi: Türkçe yorumlarla basit sınıflandırıcı
-- ⬜ 4.7 Veri setleri: nereden bulunur, lisans ve etik
+- ✅ [4.4 Gömme (embedding)](faz-04-metin-ve-turkce-nlp/04-gomme/README.md): kelimeyi vektöre çevirmek
+- ✅ [4.5 Benzerlik ve arama](faz-04-metin-ve-turkce-nlp/05-benzerlik-ve-arama/README.md): kosinüs benzerliği, TF-IDF ve Türkçe için kök yaklaşımı
+- ✅ [4.6 Duygu analizi](faz-04-metin-ve-turkce-nlp/06-duygu-analizi/README.md): Türkçe yorumlarla basit sınıflandırıcı
+- ✅ [4.7 Veri setleri](faz-04-metin-ve-turkce-nlp/07-veri-setleri/README.md): nereden bulunur, lisans ve etik
 
 ## Faz 5 – Transformer'ı Anlamak
 
