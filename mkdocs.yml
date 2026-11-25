@@ -85,6 +85,12 @@ nav:
   - 2.4 Eğitim, doğrulama ve test: faz-02-klasik-ml/04-egitim-dogrulama-test/README.md
   - 2.5 Karar ağaçları: faz-02-klasik-ml/05-karar-agaclari/README.md
   - 2.6 Sınıflandırma metrikleri: faz-02-klasik-ml/06-siniflandirma-metrikleri/README.md
+  - "3.1 Tek nöron": faz-03-sinir-aglari/01-tek-noron/README.md
+  - "3.2 Mini autograd": faz-03-sinir-aglari/02-mini-autograd/README.md
+  - "3.3 Geri yayılım": faz-03-sinir-aglari/03-geri-yayilim/README.md
+  - "3.4 Çok katmanlı ağ": faz-03-sinir-aglari/04-cok-katmanli-ag/README.md
+  - "3.5 Optimizasyon": faz-03-sinir-aglari/05-optimizasyon/README.md
+  - "3.6 PyTorch'a geçiş": faz-03-sinir-aglari/06-pytorcha-gecis/README.md
   - 4.1 Metni sayılara dönüştürmek: faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md
   - 4.2 Türkçe biçimbilim: faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md
   - 4.3 Metin temizleme: faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md

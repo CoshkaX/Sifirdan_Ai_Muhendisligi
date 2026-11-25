@@ -40,7 +40,7 @@ Bu yol, hazır bir model çağrısına geçmeden önce verinin, matematiğin ve 
 | 1 | [Faz 0 — Hazırlık](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Python, Git, Jupyter ve test temellerini kurar |
 | 2 | [Faz 1 — Matematik](faz-01-matematik/01-vektorler-ve-matrisler/README.md) | Vektör, matris, olasılık, istatistik, gradyan ve kayıp fikirlerini kodla öğrenir |
 | 3 | [Faz 2 — Klasik öğrenme](faz-02-klasik-ml/01-numpy-ile-veri/README.md) | Veriyi temsil eder, model eğitir ve hatayı ölçer |
-| 4 | **Faz 3 — Sinir ağları** | Geri yayılımı ve optimizasyonu kendi koduyla izler |
+| 4 | [Faz 3 — Sinir ağları](faz-03-sinir-aglari/01-tek-noron/README.md) | Geri yayılımı ve optimizasyonu kendi koduyla izler |
 | 5 | [Faz 4 — Metin](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md) | Metni temsil etmeyi ve Türkçe'nin özel durumlarını kavrar |
 
 Bu yolun çıkış projesi, veriyi alıp eğitilmiş bir model üreten ve sonuçlarını testlerle doğrulayan küçük bir deney hattıdır.

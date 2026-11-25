@@ -53,12 +53,12 @@ Veriden öğrenen ilk modellerini yazarsın. **Ön koşul:** Faz 1. **Çıktı:*
 
 Sinir ağlarının nasıl öğrendiğini, geri yayılımı elle yazarak görürsün. **Ön koşul:** Faz 1-2. **Çıktı:** kendi yazdığın bir mini autograd motoru ve onunla eğitilmiş bir ağ.
 
-- ⬜ 3.1 Tek nöron: girdi, ağırlık, aktivasyon
-- ⬜ 3.2 Mini autograd: türevi otomatik hesaplayan küçük bir motor
-- ⬜ 3.3 Geri yayılım: hatanın katmanlara dağıtılması
-- ⬜ 3.4 Çok katmanlı ağ: XOR ve basit sınıflandırma
-- ⬜ 3.5 Optimizasyon: SGD, momentum, Adam
-- ⬜ 3.6 PyTorch'a geçiş: aynı ağ, çok daha az kod
+- ✅ [3.1 Tek nöron](faz-03-sinir-aglari/01-tek-noron/README.md): girdi, ağırlık, aktivasyon
+- ✅ [3.2 Mini autograd](faz-03-sinir-aglari/02-mini-autograd/README.md): türevi otomatik hesaplayan küçük bir motor
+- ✅ [3.3 Geri yayılım](faz-03-sinir-aglari/03-geri-yayilim/README.md): hatanın katmanlara dağıtılması
+- ✅ [3.4 Çok katmanlı ağ](faz-03-sinir-aglari/04-cok-katmanli-ag/README.md): XOR ve basit sınıflandırma
+- ✅ [3.5 Optimizasyon](faz-03-sinir-aglari/05-optimizasyon/README.md): SGD, momentum, Adam
+- ✅ [3.6 PyTorch'a geçiş](faz-03-sinir-aglari/06-pytorcha-gecis/README.md): aynı ağ, çok daha az kod
 
 ## Faz 4 – Metin ve Türkçe NLP
 

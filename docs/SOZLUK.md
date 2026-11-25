@@ -87,6 +87,24 @@
 | precision | kesinlik (precision) | Pozitif tahminlerin ne kadarının gerçekten pozitif olduğunu ölçer |
 | recall / sensitivity | duyarlılık (recall / sensitivity) | Gerçek pozitif örneklerin ne kadarının bulunduğunu ölçer |
 | F1 score | F1 skoru (F1 score) | Kesinlik ile duyarlılığı harmonik ortalamayla birlikte özetleyen ölçü |
+| neuron | nöron (neuron) | Girdileri ağırlıklarla çarpıp toplayan, sabit ekleyen ve sonucu aktivasyondan geçiren birim |
+| activation function | aktivasyon fonksiyonu | Nöronun ağırlıklı toplamını çıktıya çeviren, ağa doğrusal olmayan davranış kazandıran fonksiyon |
+| ReLU | ReLU | Negatif sayıları sıfıra çeviren, pozitifleri olduğu gibi bırakan aktivasyon |
+| perceptron | perceptron | Basamak aktivasyonlu tek nöron ve onu eğiten basit kural |
+| chain rule | zincir kuralı (chain rule) | İç içe bir hesabın türevinin, yol üzerindeki yerel türevlerin çarpımı olduğunu söyleyen kural |
+| computational graph | hesaplama grafiği | Bir hesabın hangi işlemlerden ve hangi ara değerlerden oluştuğunu gösteren yapı |
+| automatic differentiation | otomatik türev alma (autograd) | Türevleri hesaplama grafiği üzerinde zincir kuralıyla otomatik bulan yöntem |
+| forward / backward pass | ileri geçiş / geri geçiş | İleri geçiş tahmini ve kaybı, geri geçiş kaybın parametrelere göre türevlerini hesaplar |
+| gradient checking | gradyan kontrolü | Geri yayılımla bulunan türevleri sonlu farkla karşılaştırarak doğrulama |
+| vanishing gradient | kaybolan gradyan (vanishing gradient) | Geri geçişte türevlerin katmanlar boyunca küçülüp neredeyse sıfıra inmesi |
+| hidden layer | gizli katman (hidden layer) | Girdi ile çıktı arasındaki, ara özellikler üreten katman |
+| multi-layer perceptron | çok katmanlı ağ (MLP) | Gizli katman(lar)ı olan, nöronları katmanlar hâlinde dizilmiş ağ |
+| epoch | tur (epoch) | Bütün eğitim verisinin bir kez kullanılması |
+| mini-batch | mini-batch | Tek bir güncellemede kullanılan küçük örnek grubu |
+| optimizer | optimizer | Türevleri kullanarak parametreleri güncelleyen yöntem (SGD, momentum, Adam) |
+| momentum | momentum | Geçmiş türevlerden bir hız biriktirerek güncellemeyi hızlandıran yöntem |
+| Adam | Adam | Her parametrenin adımını türev büyüklüğüne göre ayarlayan, yaygın kullanılan optimizer |
+| tensor | tensör (tensor) | Çok boyutlu sayı dizisi; PyTorch'un temel veri yapısı |
 | NameError | NameError | Python, kullanılmış bir değişken adını bulamaz; ad tanımlanmamış, yanlış yazılmış veya hücresi çalıştırılmamış olabilir |
 | IndexError | IndexError | Listede olmayan bir sıradaki öğe istenir |
 | KeyError | KeyError | Sözlükte bulunmayan bir anahtarın değeri istenir |
