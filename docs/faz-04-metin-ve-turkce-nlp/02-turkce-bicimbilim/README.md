@@ -102,7 +102,7 @@ kitaplarımızdan -> ['kitap', 'lar', 'ımız', 'dan']
 `for ek in sorted(EKLER, key=len, reverse=True):` | Ekleri uzun olandan kısa olana sırayla deneriz. Böylece uzun bir eki, onun içindeki kısa bir ek sanmayız.
 `kok_uzunlugu = len(kalan) - len(ek)` | Sözcüğün ve denenmekte olan ekin harf sayılarını çıkarırız. Sonuç, eki çıkarırsak kökte kaç harf kalacağını söyler.
 `if kalan.endswith(ek) and kok_uzunlugu >= 2:` | Önce sözcüğün bu ekle bitmesini, ayrıca kökte en az iki harf kalmasını isteriz. `and` iki koşulun da doğru olması gerektiği anlamına gelir.
-`kalan = kalan[:-len(ek)]` | Ekin uzunluğu kadar harfi sondan siler. `evlerimizden` içinden `den` çıkınca `evlerimizi` kalır.
+`kalan = kalan[:-len(ek)]` | Ekin uzunluğu kadar harfi sondan siler. `evlerimizden` içinden `den` çıkınca `evlerimiz` kalır.
 `bulunan_ekler.insert(0, ek)` | Eki listenin başına koyarız; çünkü ekleri sözcüğün sonundan buluyoruz ve sonuçta köke yakın olan ek önce gelmeli.
 `break` | Bu turda bir ek bulduğumuz için aramayı durdurur. `while` döngüsü, kısalmış `kalan` sözcükte yeniden ek arar.
 `else:` | Bu bölüm ancak `for` döngüsü hiçbir ek bulamadan biterse çalışır; yani artık ayıracak ek kalmamıştır.
