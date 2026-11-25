@@ -52,11 +52,11 @@ markdown_extensions:
       alternate_style: true
 
 extra_css:
-  - stylesheets/extra.css?v=20261125-notes-1
+  - stylesheets/extra.css?v=20261125-2
 
 extra_javascript:
-  - javascripts/highlights.js?v=20261125-notes-1
-  - javascripts/python-playground.js?v=20261124-8
+  - javascripts/highlights.js?v=20261125-2
+  - javascripts/python-playground.js?v=20261125-2
 
 
 exclude_docs: |

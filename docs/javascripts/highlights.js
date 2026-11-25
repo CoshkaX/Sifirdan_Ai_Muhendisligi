@@ -35,7 +35,7 @@
     var hint = document.createElement("p");
     hint.className = "lesson-highlight-hint";
     hint.setAttribute("role", "note");
-    hint.textContent = "Metni seç; açılan araç çubuğundan bir renk seçerek vurgula veya Not ile açıklama ekle. Vurgular bu tarayıcıda saklanır.";
+    hint.textContent = "İpucu: Metni seçip renk seçerek vurgulayabilir veya not ekleyebilirsin. Notların yalnızca bu tarayıcıda saklanır.";
     root.parentNode.insertBefore(hint, root);
   }
 
@@ -701,14 +701,29 @@
     }
   });
 
-  window.addEventListener("scroll", function () {
-    renderOverlays();
-    refreshMenuPosition();
-  }, true);
-  window.addEventListener("resize", function () {
-    renderOverlays();
-    refreshMenuPosition();
+  // Telefonda metin seçimi "mouseup" üretmez; parmak kalkınca seçimi kontrol et.
+  document.addEventListener("touchend", function () {
+    window.setTimeout(selectionChanged, 50);
   });
+
+  // Kaydırma olayı saniyede onlarca kez gelir. Vurguları her olayda değil,
+  // ekran yenilenirken en fazla bir kez yeniden çizeriz.
+  var redrawRequested = false;
+  function scheduleRedraw() {
+    if (redrawRequested) return;
+    redrawRequested = true;
+    window.requestAnimationFrame(function () {
+      redrawRequested = false;
+      renderOverlays();
+      refreshMenuPosition();
+    });
+  }
+
+  window.addEventListener("scroll", scheduleRedraw, true);
+  window.addEventListener("resize", scheduleRedraw);
+  // Quiz cevapları gibi açılır bölümler sayfa düzenini değiştirince
+  // vurgular yanlış yerde kalmasın.
+  document.addEventListener("toggle", scheduleRedraw, true);
   document.addEventListener("DOMContentLoaded", initialize);
   window.addEventListener("load", initialize);
 })();

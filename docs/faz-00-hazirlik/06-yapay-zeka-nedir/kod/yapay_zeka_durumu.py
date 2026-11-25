@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from typing import Iterable
 
 
 @dataclass(frozen=True)
@@ -8,7 +7,7 @@ class Gözlem:
 
 
 class BasitKararSistemi:
-    """Görevi tanıma, bellekten bağlama ve çıkarım yapmaya dönüştüren küçük bir örnek."""
+    """Gözlemleri belleğe kaydeden ve basit kurallarla karar veren küçük bir örnek."""
 
     def __init__(self, kurallar: dict[str, tuple[object, str]]) -> None:
         self.bellek: list[Gözlem] = []
@@ -36,7 +35,7 @@ class BasitKararSistemi:
 if __name__ == "__main__":
     sistem = BasitKararSistemi({
         "hava": ("yağmurlu", "Islak zeminde kayma riski artabilir."),
-        "plan": ("bahçede fidan dikmek", "Bu görev için yağmuru beklemek daha güvenli olabilir."),
+        "plan": ("bahçede fidan dikmek", "Fidanı dikmeden önce toprağın nemini kontrol et."),
     })
 
     for gözlem in (

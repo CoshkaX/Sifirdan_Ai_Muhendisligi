@@ -184,9 +184,7 @@ Ortamı kapatıp başka bir ortamda `pip list` yaparsan `requests`'i görmezsin;
 
 ## 7. İlk Python dosyan ve ilk hatan
 
-`yz-calisma` klasöründe (VS Code'da) `merhaba.py` adlı bir dosya oluştur:
-
-Önce kodu tarayıcıdaki pencerede deneyebilirsin. Bu pencere bilgisayarında dosya oluşturmaz; `merhaba.py` dosyasını ayrıca VS Code'da kaydet.
+Önce kodu aşağıdaki pencerede dene. Bu pencere tarayıcıda çalışır ve bilgisayarında dosya oluşturmaz. Sonra aynı kodu VS Code'da `yz-calisma` klasörüne `merhaba.py` adıyla kaydet.
 
 ```python {.python-playground}
 isim = "dünya"
@@ -204,7 +202,7 @@ Türkçe karakterler: ç ğ ı ö ş ü İ
 `isim = "dünya"` | `"dünya"` yerine kendi adını yazıp yeniden çalıştır; ilk `print` satırındaki selam da değişmelidir.
 ```
 
-Terminalde o klasördeyken çalıştır:
+Terminalde o klasördeyken çalıştır (macOS/Linux'ta `python` yerine `python3` yaz):
 
 ```bash
 python merhaba.py
@@ -219,9 +217,7 @@ Türkçe karakterler: ç ğ ı ö ş ü İ
 
 ### Hata mesajını okumak
 
-Şimdi bilerek bir hata yapalım. `hata.py` adlı bir dosya oluşturup aşağıdaki kodu yaz. Bu, çalıştırılabilir bir deneme kodudur; bilerek tanımlanmamış `isim` adını kullandığı için çalıştırınca `NameError` üretir.
-
-Bu kodu çalıştırınca bilerek `NameError` görürsün; ilk denemede başarılı bir çıktı gelmemesi normaldir.
+Şimdi bilerek bir hata yapalım. `hata.py` adlı bir dosya oluşturup aşağıdaki kodu yaz. Kod, hiç tanımlanmamış `isim` adını kullandığı için hata verecek; bu beklenen bir durum.
 
 ```python
 ad = "Ayşe"

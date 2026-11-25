@@ -67,7 +67,7 @@ Konu sayısı: 4
 `len(konular)` | `len` listedeki öğe sayısını verir; burada dört konu vardır.
 ```
 
-Listeye `"sözlük"` ekle veya son satırda `len(konular)` yerine başka bir konum yaz. Örneğin üç öğeli ilk listede `konular[3]` dördüncü öğeyi ister; ama listede yalnızca `0`, `1` ve `2` konumları vardır. Python istenen konumda öğe bulamayınca `IndexError` verir. Düzeltmek için var olan bir konumu kullan veya önce listeye yeni öğe ekle.
+Kendin dene: `print("İlk konu:", konular[0])` satırındaki `0` yerine `10` yaz. Listede yalnızca `0`, `1`, `2` ve `3` konumları olduğu için Python `IndexError` verir. Düzeltmek için var olan bir konumu kullan.
 
 ### 2.3 Sözlükler: bilgiyi anahtarla bul
 

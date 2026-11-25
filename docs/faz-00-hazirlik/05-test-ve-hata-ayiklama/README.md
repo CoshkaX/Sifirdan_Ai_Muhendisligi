@@ -117,7 +117,7 @@ python -m unittest discover -s test -v
 ## 4. Sık yapılan hatalar
 
 - **Yalnızca kodu elle denemek.** Aynı örnekleri tekrar tekrar kontrol etmek yerine önemli durumlar için test yaz.
-- **Testin gerçek davranışı doğruladığını sanmak.** Yanlış beklenen değerle yazılan test de yeşil olabilir; beklenen sonucu bağımsız düşün.
+- **Beklenen değeri koddan kopyalamak.** Beklenen sonucu fonksiyonu çalıştırıp çıktısından alırsan, kod yanlışsa test de yanlışı “doğru” kabul eder. Beklenen değeri elle veya bağımsız bir yolla hesapla.
 - **Hata mesajının ilk satırında takılı kalmak.** Önce son satırdaki hata adını ve satır numarasını bul.
 - **Tüm kodu birden değiştirmek.** Bir küçük değişiklik yapıp testleri tekrar çalıştır; böylece hangi değişikliğin etkili olduğunu anlarsın.
 - **`assert` ile kullanıcı girdisi denetlemek.** `assert` test içindir; gerekli çalışma kontrolleri normal `if` koşulları ve anlaşılır hata mesajlarıyla yapılmalıdır.
@@ -146,7 +146,7 @@ python -m unittest discover -s test -v
     2. Python kullanılan adı bulamamıştır. `renk` değişkeni hiç tanımlanmadıysa, farklı yazıldıysa veya onu oluşturan hücre çalışmadıysa `print(renk)` bu hatayı verir.
     3. Programın gereksinimini ve doğru davranışı bilen kişi; beklenen değer tahmin edilmemelidir.
     4. Tek bir örnek, fonksiyonun yalnızca o girdide doğru çalıştığını gösterebilir.
-    5. Hayır. `assert` test sırasında kaldırılabilir; kullanıcı girdileri için normal koşul ve hata yönetimi gerekir.
+    5. Hayır. Python `-O` seçeneğiyle çalıştırılınca `assert` satırları atlanır; kullanıcı girdileri için normal `if` koşulu ve hata yönetimi gerekir.
 
 ## Özet
 

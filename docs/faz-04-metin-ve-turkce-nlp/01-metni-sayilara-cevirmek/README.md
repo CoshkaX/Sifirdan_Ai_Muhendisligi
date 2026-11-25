@@ -278,9 +278,10 @@ Deneme sözlüğü, penceredeki `ORNEK_SOZLUK` kümesinde elle hazırlanır. Kü
 | 3 | `imizden` | `imizden` ✗ ... `imiz` ✓ | `imiz` |
 | 4 | `den` | `den` ✓ | `den` |
 
-Çalıştır:
+Proje klasöründeyken çalıştır:
 
 ```bash
+cd docs/faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek
 python kod/tokenizer_demo.py
 ```
 
@@ -305,15 +306,17 @@ Bu örnekten üç noktayı çıkar:
 
 ### 2.6 Testler
 
+Aynı klasördeyken:
+
 ```bash
 python -m unittest discover -s test -v
 ```
 
-Dokuz testin de `ok` ile tamamlanması gerekir. [`test/test_tokenizer_demo.py`](test/test_tokenizer_demo.py) dosyası, örneklerdeki temel davranışları otomatik olarak denetler. Kodu değiştirdiğinde testleri yeniden çalıştırıp beklenmedik bir değişiklik olup olmadığını kontrol edebilirsin.
+On testin de `ok` ile tamamlanması gerekir. [`test/test_tokenizer_demo.py`](test/test_tokenizer_demo.py) dosyası, örneklerdeki temel davranışları otomatik olarak denetler. Kodu değiştirdiğinde testleri yeniden çalıştırıp beklenmedik bir değişiklik olup olmadığını kontrol edebilirsin.
 
 ## 3. Kütüphaneyle yap
 
-Bu dersi bilerek kütüphanesiz bıraktık. Gerçek tokenizer'ları (Hugging Face `tokenizers` gibi) Faz 4'ün sonraki derslerinde ve Faz 6'da kullanacağız. O zaman burada yazdığın fikrin onların içinde nasıl çalıştığını görürsün.
+Bu dersi bilerek kütüphanesiz bıraktık. Gerçek tokenizer'ları (Hugging Face `tokenizers` gibi) Faz 6'da kullanacağız. O zaman burada yazdığın fikrin onların içinde nasıl çalıştığını görürsün.
 
 Şimdilik bir şeyi aklında tut: gerçek tokenizer'lar sözlüğü elle yazmaz, büyük bir metin yığınından **istatistiksel olarak** öğrenir. Bizim açgözlü yöntemimiz, öğrenilmiş bir sözlükle de aynı mantıkla çalışabilir.
 
@@ -363,11 +366,10 @@ Modeller sayılarla çalışır, bu yüzden metni önce token'lara bölüp numar
 - Sennrich, Haddow, Birch (2016), *Neural Machine Translation of Rare Words with Subword Units* (alt-kelime/BPE fikrinin kaynağı)
 - Unicode standardı: büyük/küçük harf eşleme kuralları ve Türkçe'de noktalı/noktasız I için özel durumlar (unicode.org)
 
-## Quiz cevapları
-
-1. Sinir ağları sayısal işlem yapar; metni önce sayılara dönüştürmek gerekir.
-2. 3 karakter, 4 bayt.
-3. Bir kökten çok sayıda ek birleşimi türetilir ve her biçim ayrı bir kelime sayılır.
-4. `İ` harfi `lower()` ile `i` + birleşen nokta (iki karakter) olur; bu yüzden sonuç `"istanbul"` ile eşit değildir.
-5. Aynı ekin ünlü uyumuna göre farklı biçimleri vardır; sözlükte hepsinin bulunması gerekir, aksi halde ek bölünemez.
-6. Biri tek karakter, diğeri `u` + birleşen nokta olarak saklanır; bilgisayar ikisini farklı sayar. `unicodedata.normalize("NFC", metin)` ile ikisini aynı biçime getirirsin.
+??? success "Quiz cevapları"
+    1. Sinir ağları sayısal işlem yapar; metni önce sayılara dönüştürmek gerekir.
+    2. 3 karakter, 4 bayt.
+    3. Bir kökten çok sayıda ek birleşimi türetilir ve her biçim ayrı bir kelime sayılır.
+    4. `İ` harfi `lower()` ile `i` + birleşen nokta (iki karakter) olur; bu yüzden sonuç `"istanbul"` ile eşit değildir.
+    5. Aynı ekin ünlü uyumuna göre farklı biçimleri vardır; sözlükte hepsinin bulunması gerekir, aksi halde ek bölünemez.
+    6. Biri tek karakter, diğeri `u` + birleşen iki nokta olarak saklanır; bilgisayar ikisini farklı sayar. `unicodedata.normalize("NFC", metin)` ile ikisini aynı biçime getirirsin.

@@ -167,7 +167,7 @@ Elle yazdığımız örnek `log2` kullandığı için sonucu bit cinsinden göst
 
 ## Özet
 
-Entropi, bir olasılık dağılımındaki belirsizliği ölçer: sonuçlar eşit olasılıklı olduğunda belirsizlik, bir sonuç kesin olduğunda sıfırdır. Çapraz entropi, modelin tahmin ettiği olasılıkları gerçek cevapla karşılaştırır ve doğru sınıfa düşük olasılık verilmesini büyük kayıpla cezalandırır. Bu nedenle sınıflandırma modellerini eğitirken sık kullanılan bir kayıp ölçüsüdür. Elle yazdığımız örnekler bit, PyTorch örneği ise nat kullanır; değerler farklı görünse de ölçtükleri uyum aynıdır.
+Entropi, bir olasılık dağılımındaki belirsizliği ölçer: sonuçlar eşit olasılıklı olduğunda belirsizlik en yüksektir, bir sonuç kesin olduğunda sıfırdır. Çapraz entropi, modelin tahmin ettiği olasılıkları gerçek cevapla karşılaştırır ve doğru sınıfa düşük olasılık verilmesini büyük kayıpla cezalandırır. Bu nedenle sınıflandırma modellerini eğitirken sık kullanılan bir kayıp ölçüsüdür. Elle yazdığımız örnekler bit, PyTorch örneği ise nat kullanır; değerler farklı görünse de ölçtükleri uyum aynıdır.
 
 ## Kaynaklar
 

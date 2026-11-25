@@ -2,7 +2,7 @@
 
 **Bir hedef seç, müfredattan bu hedefe çıkan yolu izle.**
 
-Her yolun dersleri bağımsızdır; önceki dersin temeliyle uyumlu sırada okunur. Derslerin çoğunda önce boş bir dosyayla mekanizmayı kendin kurar, sonra gerçek araçlarla aynı problemi tekrar çözersin.
+Yollardaki dersleri verilen sırayla oku; her ders bir öncekinin üstüne kurulur. Derslerin çoğunda önce mekanizmayı sade kodla kendin kurar, sonra gerçek araçlarla aynı problemi tekrar çözersin.
 
 <div class="learning-grid learning-grid--page">
   <article class="learning-card learning-card--wide">
@@ -37,11 +37,11 @@ Bu yol, hazır bir model çağrısına geçmeden önce verinin, matematiğin ve 
 
 | Sıra | Ders | Kazanım |
 |---:|---|---|
-| 1 | [Faz 0 — Hazırlık](MUFREDAT.md) | Python, Git, Jupyter ve test temellerini kurar |
+| 1 | [Faz 0 — Hazırlık](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Python, Git, Jupyter ve test temellerini kurar |
 | 2 | [Faz 1 — Matematik](faz-01-matematik/01-vektorler-ve-matrisler/README.md) | Vektör, matris, olasılık, istatistik, gradyan ve kayıp fikirlerini kodla öğrenir |
-| 3 | **Faz 2 — Klasik öğrenme** | Veriyi temsil eder, model eğitir ve hatayı ölçer |
+| 3 | [Faz 2 — Klasik öğrenme](faz-02-klasik-ml/01-numpy-ile-veri/README.md) | Veriyi temsil eder, model eğitir ve hatayı ölçer |
 | 4 | **Faz 3 — Sinir ağları** | Geri yayılımı ve optimizasyonu kendi koduyla izler |
-| 5 | **Faz 4 — Metin** | Metni temsil etmeyi ve Türkçe'nin özel durumlarını kavrar |
+| 5 | [Faz 4 — Metin](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md) | Metni temsil etmeyi ve Türkçe'nin özel durumlarını kavrar |
 
 Bu yolun çıkış projesi, veriyi alıp eğitilmiş bir model üreten ve sonuçlarını testlerle doğrulayan küçük bir deney hattıdır.
 
@@ -51,7 +51,7 @@ Bu yol, bir dil modelini ürün koduna bağlamayı; bağlamı, araçları, arama
 
 | Sıra | Ders | Kazanım |
 |---:|---|---|
-| 1 | **Faz 0 — Hazırlık** | Çalışan Python ortamı ve test alışkanlığı |
+| 1 | [Faz 0 — Hazırlık](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Çalışan Python ortamı ve test alışkanlığı |
 | 2 | **Faz 7 — LLM'ler** | İstek, yanıt, biçimli çıktı ve hata yönetimi |
 | 3 | **Faz 8 — RAG** | Dokümanı parçalara ayırır, getirir ve kaynağa bağlar |
 | 4 | **Faz 9 — Agent'lar** | Araç çağıran, bellekli ve güvenlik sınırı olan döngü kurar |
@@ -66,8 +66,8 @@ Bu yol Türkçe'nin ekli yapısını, Unicode ayrıntılarını, alt kelime ayr�
 
 | Sıra | Ders | Kazanım |
 |---:|---|---|
-| 1 | [Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md) | UTF-8, küçük harf ve alt kelime ayrıntılarını anlar |
-| 2 | **Faz 4 — Türkçe NLP** | Temizleme, kökleme, embedding ve benzerlik uygular |
+| 1 | [Faz 0 — Hazırlık](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Çalışan Python ortamı |
+| 2 | [Faz 4 — Türkçe NLP](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md) | UTF-8, küçük harf, ekler, temizleme, embedding ve benzerlik |
 | 3 | **Faz 5 — Transformer** | Attention ve pozisyon bilgisini parça parça kurar |
 | 4 | **Faz 6 — Küçük dil modeli** | BPE ve mini bir GPT eğitimi yapar |
 | 5 | **Faz 8 — Türkçe RAG** | Ek yapısı ve normalleştirmeyi arama hattına dahil eder |

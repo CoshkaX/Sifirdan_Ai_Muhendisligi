@@ -27,9 +27,9 @@ Bir sistemi anlamak için şu basit soruları sorabiliriz. Her sistemin bu parç
 
 Bu sorular basit kurallarla çalışan programlar için de günümüzün büyük modelleri için de sorulabilir.
 
-## 2. Yapay zekâyı anlamak için beş soru
+## 2. Bir sistemin beş parçası
 
-Bir sistemi incelerken aşağıdaki beş farklı yönüne bakabiliriz.
+Yukarıdaki beş soru, bir sistemin beş parçasına karşılık gelir:
 
 | Parça | Basitçe ne anlama gelir? | Örnek |
 |---|---|---|
@@ -69,7 +69,7 @@ Plan: bahçede fidan dikmek
 `print(f"Plan: {gözlem['plan']}")` | Aynı yöntemle plan değerini alıp ekrana yazar. Sözlükteki `"plan"` değerini değiştirerek sonucu dene.
 ```
 
-Bu kayıt, hava, zaman, zemin sıcaklığı veya rüzgâr gibi başka ayrıntıları taşımaz. Ama verdiğimiz örnek için önemli olan iki bilgiyi açık tutar:
+Bu kayıt; saat, sıcaklık veya rüzgâr gibi başka ayrıntıları taşımaz. Ama verdiğimiz örnek için önemli olan iki bilgiyi açık tutar:
 
 - mevcut hava durumu;
 - kullanıcının gerçekleştirmek istediği plan.
@@ -174,9 +174,10 @@ Kod, aşağıdaki görevleri sırayla gerçekleştirir:
 3. Kural eşleşmesi arar.
 4. Bulunan anahtarı ve açıklamayı ekrana yazdırır.
 
-Çalıştır:
+Projeyi 0.1 dersinde indirdiysen, proje klasöründeyken şu komutlarla çalıştır:
 
 ```bash
+cd docs/faz-00-hazirlik/06-yapay-zeka-nedir
 python kod/yapay_zeka_durumu.py
 ```
 
@@ -184,9 +185,11 @@ Beklenen sonuç:
 
 ```text
 hava: Islak zeminde kayma riski artabilir.
-plan: Bu görev için yağmuru beklemek daha güvenli olabilir.
+plan: Fidanı dikmeden önce toprağın nemini kontrol et.
 Bellek özeti: {'hava': 2, 'plan': 2}
 ```
+
+İlk gözlemde hava yağmurlu olduğu için ilk kural eşleşir. İkinci gözlemde hava güneşli; bu kez hava kuralı eşleşmez ve sıradaki plan kuralı seçilir.
 
 Bu örnek bir sohbet sistemi değildir. Ama yapay zekâ sistemlerinde aradığımız parçaları açık biçimde gösterir: veri temsil edilir, gözlem saklanır, çıkarım yapılır ve kararın nedeni açıklanır.
 
@@ -237,16 +240,16 @@ Bu derste dışarıdan bir paket kurmuyoruz; örnekleri Python'ın temel özelli
 
 1. Temsil ile bellek arasındaki fark nedir?
 2. Bir kurala dayalı çıkarım ile deneyimden öğrenme arasındaki temel fark nedir?
-3. Bir açıklamanın doğru olduğuna nasıl emin olursunuz?
+3. Bir açıklamanın doğru olduğundan nasıl emin olursun?
 4. Belleği olan fakat çıkarım yapamayan bir sistemin hangi sınırı vardır?
 5. Bir dil modelinin başarılı görünmesinden daha güçlü kanıtlar hangileridir?
 
 **Alıştırmalar**
 
-1. Sisteme `"ses": ("yüksek", "Kulaklık sesini azaltmayı öner")` kuralını ekleyin.
-2. Hiçbir kuralla eşleşmeyen bir gözlem oluşturun.
-3. Üç gözlemden oluşan bir senaryo yazın ve bellek özetini inceleyin.
-4. Sistemin yanlış veya eksik karar verebileceği bir durum bulun.
+1. Sisteme `"ses": ("yüksek", "Kulaklık sesini azaltmayı öner")` kuralını ekle.
+2. Hiçbir kuralla eşleşmeyen bir gözlem oluştur.
+3. Üç gözlemden oluşan bir senaryo yaz ve bellek özetini incele.
+4. Sistemin yanlış veya eksik karar verebileceği bir durum bul.
 5. Bu örnekte hangi bölümler temsil, bellek, çıkarım ve öğrenme olarak ayrılabilir?
 
 ??? success "Quiz cevapları"

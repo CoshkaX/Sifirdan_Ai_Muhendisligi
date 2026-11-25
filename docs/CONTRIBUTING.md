@@ -82,7 +82,7 @@ Sonra tarayıcıda `http://127.0.0.1:8000` adresini aç. Bu adım isteğe bağl�
 - [ ] `mkdocs.yml` ve özel sol menüdeki ders bağlantıları güncel
 - [ ] Terimler sözlükle tutarlı, yeni terimler sözlüğe eklendi
 - [ ] Kaynaklar listelenmiş
-- [ ] `mkdocs.yml` ve `MUFREDAT.md` güncellendi
+- [ ] `MUFREDAT.md` güncellendi
 
 ## İnceleme süreci
 

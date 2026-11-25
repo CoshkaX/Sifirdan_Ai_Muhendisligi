@@ -201,7 +201,7 @@ Gerçek bir çalışmada `max_depth` gibi ayarları doğrulama kümesinde karş�
 - **İki grubun Gini değerini ağırlıksız ortalamak.** Grupların örnek sayıları farklı olabilir; büyük gruba daha fazla ağırlık vermeliyiz.
 - **Bir düğümün Gini değeri `0` ise modelin her yerde doğru olduğunu düşünmek.** Bu yalnızca incelenen gruptaki eğitim etiketlerinin aynı olduğunu söyler; yeni verideki sonucu garanti etmez.
 - **Derin ağacın her zaman daha iyi olduğunu sanmak.** Derin ağaç eğitim verisindeki küçük ayrıntıları ezberleyebilir; derinliği doğrulama verisiyle seç.
-- **Tek eşikli örneği tüm ağaçların nasıl çalıştığı sanmak.** Bu dersin saf Python kodu yalnızca bir bölme yapar; gerçek ağaçlar birden fazla özellik ve ardışık bölmeler kullanabilir.
+- **Tek eşikli örneğin bütün ağaçları anlattığını sanmak.** Bu dersin saf Python kodu yalnızca bir bölme yapar; gerçek ağaçlar birden fazla özellik ve ardışık bölmeler kullanabilir.
 - **Test verisini ayar seçmek için kullanmak.** Son değerlendirmeyi tarafsız tutmak için 2.4 dersindeki eğitim-doğrulama-test ayrımını koru.
 
 ## 5. Pekiştir

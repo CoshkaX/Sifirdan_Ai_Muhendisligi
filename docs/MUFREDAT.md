@@ -9,9 +9,10 @@ Bu liste bir **taslaktır**. Ders başlıkları ve sırası ilerledikçe değiş
 
     | Hedef | Yol |
     |---|---|
-    | Yapay zekâ temelleri | Faz 0 → 1 → 2 → 3 → 4 → 5 → 6 |
-    | LLM uygulama geliştiricisi | Faz 0 → 7 → 8 → 9 → 11 → 12 |
-    | Türkçe doğal dil işleme | Faz 0 → 4 → 5 → 6 → 8 → 10 |
+    | Yapay zekâ temelleri | Faz 0 → 1 → 2 → 3 → 4 |
+    | LLM uygulamaları | Faz 0 → 7 → 8 → 9 → 11 → 12 |
+    | Türkçe doğal dil işleme | Faz 0 → 4 → 5 → 6 → 8 |
+    | Yapay zekâ mühendisliği | Faz 7 → 11 → 12 → 13 |
 
 ---
 

@@ -144,7 +144,7 @@ Son `print(...)` çağrısı | Doğrulama sonucunda seçtiğimiz eşik kuralın�
 
 Ezberci yöntem eğitim kümesinde yüzde 100 doğru görünür; çünkü cevapları zaten saklamıştır. Ancak yeni saatleri görünce işe yaramaz ve doğrulama sonucu bunu ortaya çıkarır. Eşik kuralının bu küçük örneklerde daha iyi sonuç vermesi, gerçek hayattaki her problemde doğru model olacağını kanıtlamaz. Buradaki kümeler çok küçüktür; amaç ölçüm düzenini öğrenmektir, güvenilir bir başarı iddiası üretmek değil.
 
-Doğrulama kümesine bakarak model veya ayar seçtikten sonra test kümesini bu seçimi değiştirmek için tekrar tekrar kullanma. Test sonucuna göre modeli yeniden ayarlarsan test verisi de karar sürecine katılmış olur; artık tarafsız bir son ölçüm sayılmaz. Eğitim verisinin dışından bilgi yanlışlıkla modele veya model seçimine karışırsa buna **veri sızıntısı** denir.
+Doğrulama kümesine bakarak model veya ayar seçtikten sonra test kümesini bu seçimi değiştirmek için tekrar tekrar kullanma. Test sonucuna göre modeli yeniden ayarlarsan test verisi de karar sürecine katılmış olur; artık tarafsız bir son ölçüm sayılmaz. Test (veya doğrulama) verisinden gelen bilgi yanlışlıkla modelin eğitimine ya da seçimine karışırsa buna **veri sızıntısı** denir.
 
 ## 3. Kütüphaneyle yap
 

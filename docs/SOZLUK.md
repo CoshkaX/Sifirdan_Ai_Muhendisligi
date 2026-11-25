@@ -46,7 +46,7 @@
 | vector | vektör (vector) | Sırası anlam taşıyan sayı dizisi; model girdileri özellik vektörü olarak tutulabilir |
 | matrix | matris (matrix) | Sayıları satır ve sütunlarda düzenleyen iki boyutlu yapı |
 | dimension / shape | boyut (shape) | Bir dizinin kaç satır ve sütun içerdiğini belirten ölçü |
-| dot product | noktasal çarpım (dot product) | Aynı konumdaki sayıların çarpımlarını toplayan işlem |
+| dot product | noktasal çarpım (dot product) | Aynı konumdaki sayıların çarpımlarını toplayan işlem; "iç çarpım" olarak da geçer |
 | derivative | türev (derivative) | Bir fonksiyonun seçilen noktadaki değişim hızını anlatır |
 | gradient descent | gradyan inişi (gradient descent) | Kayıp değerini azaltmak için parametreleri gradyanın ters yönünde güncelleme yöntemi |
 | learning rate | öğrenme hızı (learning rate) | Gradyan inişinde her güncellemenin adım büyüklüğünü belirleyen değer |

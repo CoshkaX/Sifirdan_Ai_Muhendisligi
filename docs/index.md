@@ -5,7 +5,7 @@
 Bu seri açık kaynaktır, ücretsizdir ve her dersin çalışan, test edilmiş kodu vardır. Amaç, bir kütüphanenin fonksiyonunu çağırmayı değil, o fonksiyonun **içinde ne olduğunu** anlamaktır.
 
 !!! warning "Proje erken aşamada"
-    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Hazır dersler: Faz 0'daki [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md), [0.2 Python hızlı tekrar](faz-00-hazirlik/02-python-hizli-tekrar/README.md), [0.3 Git ve GitHub](faz-00-hazirlik/03-git-ve-github/README.md), [0.4 Jupyter ve Colab](faz-00-hazirlik/04-jupyter-ve-colab/README.md), [0.5 Test ve hata ayıklama](faz-00-hazirlik/05-test-ve-hata-ayiklama/README.md) ve [0.6 Yapay zekâ nedir?](faz-00-hazirlik/06-yapay-zeka-nedir/README.md); Faz 1'de [1.1 Vektörler ve matrisler](faz-01-matematik/01-vektorler-ve-matrisler/README.md), [1.2 Matris çarpımı](faz-01-matematik/02-matris-carpimi/README.md), [1.3 Türev ve gradyan](faz-01-matematik/03-turev-ve-gradyan/README.md), [1.4 Olasılık ve dağılımlar](faz-01-matematik/04-olasilik-ve-dagilimlar/README.md), [1.5 İstatistik](faz-01-matematik/05-istatistik/README.md) ve [1.6 Entropi ve çapraz entropi](faz-01-matematik/06-entropi-ve-capraz-entropi/README.md); Faz 2'de [2.1 NumPy ile veri](faz-02-klasik-ml/01-numpy-ile-veri/README.md), [2.2 Doğrusal regresyon](faz-02-klasik-ml/02-dogrusal-regresyon/README.md), [2.3 Lojistik regresyon](faz-02-klasik-ml/03-lojistik-regresyon/README.md), [2.4 Eğitim, doğrulama ve test](faz-02-klasik-ml/04-egitim-dogrulama-test/README.md), [2.5 Karar ağaçları](faz-02-klasik-ml/05-karar-agaclari/README.md) ve [2.6 Sınıflandırma metrikleri](faz-02-klasik-ml/06-siniflandirma-metrikleri/README.md); Faz 4'te [4.1 Metni sayılara çevirmek](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md), [4.2 Türkçe biçimbilim](faz-04-metin-ve-turkce-nlp/02-turkce-bicimbilim/README.md) ve [4.3 Metin temizleme](faz-04-metin-ve-turkce-nlp/03-metin-temizleme/README.md).
+    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an **Faz 0** (hazırlık), **Faz 1** (matematik) ve **Faz 2** (klasik makine öğrenmesi) tamamlandı; **Faz 4**\'ün ilk üç dersi hazır. İlk kez geliyorsan [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md) dersinden başla.
 
 ## Neden böyle bir seri?
 
@@ -57,34 +57,34 @@ Ayrıntılı ders listesi için [müfredata](MUFREDAT.md) bak.
     <span class="learning-card__number">01</span>
     <span class="learning-card__title">Yapay zekâ temelleri</span>
     <span class="learning-card__text">Python, matematik, klasik öğrenme ve sinir ağlarını sıfırdan kur.</span>
-    <span class="learning-card__route">Faz 0 → 1 → 2 → 3</span>
+    <span class="learning-card__route">Faz 0 → 1 → 2 → 3 → 4</span>
   </div>
   <div class="learning-card">
     <span class="learning-card__number">02</span>
     <span class="learning-card__title">LLM uygulamaları</span>
     <span class="learning-card__text">API'leri, aramayı, agent'ları ve üretim sınırlarını öğren.</span>
-    <span class="learning-card__route">Faz 7 → 8 → 9 → 12</span>
+    <span class="learning-card__route">Faz 0 → 7 → 8 → 9 → 11 → 12</span>
   </div>
   <div class="learning-card">
     <span class="learning-card__number">03</span>
     <span class="learning-card__title">Türkçe doğal dil işleme</span>
     <span class="learning-card__text">Tokenization, ekler, embedding'ler ve Türkçe RAG'i uygulamalı öğren.</span>
-    <span class="learning-card__route">Faz 4 → 5 → 6 → 8</span>
+    <span class="learning-card__route">Faz 0 → 4 → 5 → 6 → 8</span>
   </div>
   <div class="learning-card">
     <span class="learning-card__number">04</span>
     <span class="learning-card__title">Yapay zekâ mühendisliği</span>
     <span class="learning-card__text">Ölç, güvenilir hale getir, maliyeti hesapla ve sistemi hizmet olarak sun.</span>
-    <span class="learning-card__route">Faz 11 → 12 → 13</span>
+    <span class="learning-card__route">Faz 7 → 11 → 12 → 13</span>
   </div>
 </div>
 
 ## Kodları çalıştırmak
 
-Her dersin kodu ek kurulum gerektirmeden çalışacak şekilde yazılır. Gerekiyorsa dersin başında hangi paketin kurulacağı belirtilir. Örnek olarak 4.1 dersinin kodunu çalıştıralım:
+Temel örnekler ek kurulum gerektirmez; çoğunu doğrudan sayfadaki pencerede çalıştırabilirsin. NumPy gibi bir paket gereken yerlerde dersin başında yazar. Projeyi [0.1 dersindeki](faz-00-hazirlik/01-gelistirme-ortami/README.md) gibi indirdiysen, örneğin 4.1 dersinin kodunu proje klasöründeyken şöyle çalıştırırsın:
 
 ```bash
-cd faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek
+cd docs/faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek
 python kod/tokenizer_demo.py
 python -m unittest discover -s test
 ```

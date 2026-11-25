@@ -12,7 +12,10 @@
 
 ## 1. Problem
 
-Bir ürünün ağırlığını bilip fiyatını tahmin etmek istediğimizi düşün. Örneğin örnek verimizde `1` kilogram ürün `2` TL, `2` kilogram ürün `4` TL ve `3` kilogram ürün `6` TL olsun. Bu değerler bilerek kolay seçildi: her bir kilogram fiyatı `2` TL artırıyor.
+Bir ürünün kaç kilogram olduğunu bilip fiyatını tahmin etmek istediğimizi düşün. Örnek verimizde `1` kilogram ürün `2` TL, `2` kilogram ürün `4` TL ve `3` kilogram ürün `6` TL olsun. Bu değerler bilerek kolay seçildi: her bir kilogram fiyatı `2` TL artırıyor.
+
+!!! note "İki farklı “ağırlık”"
+    Bu derste **ağırlık** sözcüğü modelin parametresi anlamına gelir (İngilizcesi *weight*). Ürünün kaç kilogram olduğunu ise hep **kilogram** diye yazacağız; ikisini karıştırma.
 
 **Doğrusal regresyon**, sayısal bir sonucu düz çizgi kullanarak tahmin eder. Tek bir girdi için çizgiyi şöyle yazarız:
 
@@ -98,11 +101,11 @@ Ortalama kare hata: 4.67
 `kareli_hatalar.append(hata ** 2)` | Hatayı kendisiyle çarpıp listeye ekleriz. Örneğin `(-1) ** 2 = 1`; böylece eksi işaret kaybolur.
 `ortalama_kare_hata = sum(kareli_hatalar) / len(kareli_hatalar)` | Kareli hataları toplar ve örnek sayısına böleriz: `(1 + 4 + 9) / 3`, yaklaşık `4.67` eder.
 `print("Tahminler:", tahminler)` | Üç girdi için modelin ürettiği değerleri gösteririz.
-`print("Kareli hatalar:", kareli_hatalar)` | Her tahminin karesini aldığımız hata değerini gösteririz.
+`print("Kareli hatalar:", kareli_hatalar)` | Her hatanın karesini gösteririz.
 `print("Ortalama kare hata:", round(ortalama_kare_hata, 2))` | MSE değerini virgülden sonra iki basamakla gösteririz. Bu değer küçüldükçe, bu örneklerdeki tahminler genellikle gerçeğe yaklaşır.
 ```
 
-Bu ölçekte doğru fiyatlar bilerek `2 × kilogram` olarak seçildi; gerçek hayattaki veriler bu kadar kusursuz bir çizgi üzerinde olmayabilir. MSE, modelin seçilen örneklerde ne kadar yanıldığını özetler; tek başına tahminlerin her yeni üründe doğru olacağını garanti etmez.
+Bu örnekte doğru fiyatlar bilerek `2 × kilogram` olarak seçildi; gerçek hayattaki veriler bu kadar kusursuz bir çizgi üzerinde olmayabilir. MSE, modelin seçilen örneklerde ne kadar yanıldığını özetler; tek başına tahminlerin her yeni üründe doğru olacağını garanti etmez.
 
 ### 2.3 Gradyan inişiyle ağırlıkları öğren
 
@@ -241,9 +244,9 @@ NumPy kodu tarayıcıdaki Python penceresinde çalışmaz; çünkü bu çalışm
 
 1. İlk pencerede ağırlığı `3`, sabiti `2` yap. `3` kilogram için tahminin neden `11` olduğunu açıkla.
 2. MSE penceresinde ağırlığı `2`, sabiti `0` yap. Tahminler gerçek fiyatlarla eşleştiğinde MSE kaç olmalı?
-3. Gradyan inişi penceresinde `range(1000)` değerini `range(10)` yap. Parametreler neden hedefe daha az yaklaşır?
+3. Gradyan inişi penceresinde `range(1000)` değerini `range(10)` yap. Ağırlık yaklaşık `1.71`, sabit yaklaşık `0.65` çıkar. Parametreler neden hedefe daha az yaklaştı?
 4. (İsteğe bağlı) Gerçek fiyatları `[3, 5, 7]` yap. Öğrenilen ağırlık ve sabit nasıl değişir?
-5. (İsteğe bağlı) MSE penceresinde `hata = tahmin - gerçek_fiyatlar[i]` satırındaki çıkarma sırasını değiştir. Hata işaretleri değişse de kareli hataların neden aynı kaldığını açıkla.
+5. (İsteğe bağlı) MSE penceresinde `hata = tahmin - gercek_fiyatlar[i]` satırındaki çıkarma sırasını değiştir. Hata işaretleri değişse de kareli hataların neden aynı kaldığını açıkla.
 
 ??? success "Quiz cevapları"
     1. Fiyat veya uzunluk gibi sayısal sonuçları tahmin etmek için.

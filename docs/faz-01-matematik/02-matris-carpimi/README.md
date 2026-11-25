@@ -17,7 +17,7 @@ Bir evin özelliklerini `[100, 3, 5]`, katsayıları da `[2, 10, -1]` olarak yaz
 
 `100 × 2 + 3 × 10 + 5 × (-1) = 225`
 
-Bu işlem **noktasal çarpım**dır. Matris çarpımı, bu hesabı satır ve sütunlar üzerinde düzenli biçimde tekrarlar.
+Bu işlem **noktasal çarpım**dır (iç çarpım veya *dot product* olarak da geçer). Matris çarpımı, bu hesabı satır ve sütunlar üzerinde düzenli biçimde tekrarlar.
 
 ## 2. Kendin yaz
 
@@ -48,7 +48,7 @@ Puan: 225
 `print("Puan:", puan)` | Döngü tamamlanınca üç çarpımın toplamını gösterir; bu örnekte sonuç `225` olur.
 ```
 
-Listelerden toplanan değerlerin sayısı aynı olmalı; yoksa bazı özelliklerin eşleşen katsayısı bulunmaz. Bir özelliğin katsayısını değiştirip puanın nasıl etkilendiğini dene.
+İki listenin uzunluğu aynı olmalı; yoksa bazı özelliklerin eşleşen katsayısı bulunmaz. Bir özelliğin katsayısını değiştirip puanın nasıl etkilendiğini dene.
 
 ### 2.2 İki matrisi çarp
 
@@ -120,7 +120,7 @@ Boyut kontrolü testi: ValueError
 `sonuc.append(yeni_satir)` | Bütün sütunlar hesaplanınca tamamlanan satırı sonuç matrisine ekleriz.
 `return sonuc` | Tüm satırlar hesaplanınca yeni matrisi fonksiyonu çağıran koda geri veririz.
 `print(matris_carp(a, b))` | Fonksiyonu iki örnek matrisle çağırır ve dönen matrisi ekrana yazar.
-`try:` ve `matris_carp([[1, 2, 3]], [[1, 2], [3, 4]])` | Üç sütunlu ilk matrisi iki satırlı ikinci matrisle çarpmayı deneriz. Boyut kontrolü olmasaydı eski döngü `a` matrisinin üçüncü sütununu sessizce atlayıp yanlış sonuç üretebilirdi.
+`try:` ve `matris_carp([[1, 2, 3]], [[1, 2], [3, 4]])` | Üç sütunlu ilk matrisi iki satırlı ikinci matrisle çarpmayı deneriz. Boyut kontrolü olmasaydı döngü `a` matrisinin üçüncü sütununu sessizce atlayıp yanlış sonuç üretebilirdi.
 `except ValueError as hata:` | Boyut kontrolü beklediğimiz `ValueError` hatasını üretirse bu bölüm çalışır ve hatayı `hata` adıyla alırız.
 `print("Boyut kontrolü testi:", type(hata).__name__)` | Yakalanan hatanın türünü yazarız. Beklenen çıktı görünmüyorsa boyut kontrolü çalışmıyor demektir; 0.5'te gördüğün test yaklaşımıyla bu sonucu denetleyebiliriz.
 `else:` | `try` içindeki işlem hiç hata vermeden tamamlanırsa çalışır.

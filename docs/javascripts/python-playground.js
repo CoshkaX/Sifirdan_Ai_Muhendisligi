@@ -55,10 +55,22 @@
     "    }",
     "  }",
     "    self.postMessage({ type: 'running' });",
-    "    await runtime.runPythonAsync(event.data.code);",
+    // Her çalıştırma boş bir ad alanında başlar. Böylece önceki denemede
+    // tanımlanan değişkenler sessizce kalmaz; silinen satır gerçekten silinmiş olur.
+    "    var namespace = runtime.globals.get('dict')();",
+    "    try {",
+    "      await runtime.runPythonAsync(event.data.code, { globals: namespace });",
+    "    } finally {",
+    "      namespace.destroy();",
+    "    }",
     "    self.postMessage({ type: 'done' });",
     "  } catch (error) {",
-    "    self.postMessage({ type: 'error', text: error && error.message ? error.message : String(error) });",
+    "    var message = error && error.message ? error.message : String(error);",
+    // Pyodide'in kendi iç dosyalarını gösteren satırları atıp yalnızca
+    // öğrencinin kodundaki kısmı bırakırız.
+    "    var start = message.indexOf('  File \"<exec>\"');",
+    "    if (start !== -1) message = 'Traceback (most recent call last):\\n' + message.slice(start);",
+    "    self.postMessage({ type: 'error', text: message.replace(/\\n+$/, '') });",
     "  }",
     "};"
   ].join("\n");

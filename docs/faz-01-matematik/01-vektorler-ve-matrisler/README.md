@@ -44,7 +44,7 @@ Bina yaşı: 10
 
 ### 2.2 Vektörleri aynı konumlarda toplamak
 
-İki ev arasındaki sayısal farkı bulduğumuzu düşün. Aynı özelliği aynı konumda tuttuğumuz için her konumdaki sayıları ayrı ayrı toplayabiliriz. Gerçek hayattaki özellikleri toplamamız her zaman anlamlı olmayabilir; burada amaç, vektör işleminin nasıl çalıştığını görmektir.
+İki vektörü toplarken aynı konumdaki sayıları toplarız: ilk sayı ilk sayıyla, ikinci sayı ikinci sayıyla. Örneğin bir öğrenci matematik ve fizikten vizede `[2, 3]`, finalde `[4, 1]` ek puan almış olsun. Her dersin toplam ek puanını bulmak için matematiği matematikle, fiziği fizikle toplarız.
 
 ```python {.python-playground}
 a = [2, 3]

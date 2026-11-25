@@ -22,7 +22,7 @@ Ancak “temizlemek”, metindeki her farklılığı silmek demek değildir. Tü
 Bu örnekte önce Türkçe `İ` ve `I` harflerini doğru biçime dönüştürüyoruz, sonra çevredeki ve art arda gelen boşlukları tek boşluk yapıyoruz:
 
 ```python {.python-playground}
-def turkce_metin_normalleştir(metin):
+def turkce_metin_normallestir(metin):
     metin = metin.replace("İ", "i").replace("I", "ı").lower()
     return " ".join(metin.split())
 
@@ -33,18 +33,18 @@ ornekler = [
 ]
 
 for metin in ornekler:
-    print(turkce_metin_normalleştir(metin))
+    print(turkce_metin_normallestir(metin))
 ```
 ```text {.python-playground-expected}
 istanbul çok güzel
 ığdır ve izmir
 ```
 ```text {.python-playground-help}
-`def turkce_metin_normalleştir(metin):` | Bir işlev tanımlar. Parantezdeki `metin`, işlevin düzenleyeceği yazıyı alır.
+`def turkce_metin_normallestir(metin):` | Bir işlev tanımlar. Parantezdeki `metin`, işlevin düzenleyeceği yazıyı alır.
 `metin = metin.replace("İ", "i").replace("I", "ı").lower()` | İlk `replace` noktalı büyük `İ` harfini `i`, ikincisi noktasız büyük `I` harfini `ı` yapar. Sonundaki `lower()` diğer büyük harfleri küçültür; düzenlenen yazı yeniden `metin` değişkenine kaydedilir.
 `return " ".join(metin.split())` | `split()` yazıyı boşluk ve tablardan sözcüklere ayırır; `" ".join(...)` sözcükleri aralarına tek boşluk koyarak birleştirir. `return` bu yeni yazıyı işlevi çağıran yere verir.
 `for metin in ornekler:` | Döngü listedeki her yazıyı sırayla `metin` değişkenine koyar ve gövdesini her biri için çalıştırır.
-`print(turkce_metin_normalleştir(metin))` | O anki yazıyı temizleme işlevine gönderir; `print` işlevden geri gelen sonucu ekranda gösterir.
+`print(turkce_metin_normallestir(metin))` | O anki yazıyı temizleme işlevine gönderir; `print` işlevden geri gelen sonucu ekranda gösterir.
 ```
 
 `split()` boşluk türlerini ayırt etmeden sözcüklere ayırır; `" ".join(...)` de bu sözcükleri tek boşlukla birleştirir. Bu örnek noktalama işaretlerini silmez ve Türkçe harfleri Latin harflerine indirgemez.
@@ -84,26 +84,26 @@ Bu iki adımı tek işlevde birleştirebiliriz:
 import unicodedata
 
 
-def turkce_metin_normalleştir(metin):
+def turkce_metin_normallestir(metin):
     metin = unicodedata.normalize("NFC", metin)
     metin = metin.replace("İ", "i").replace("I", "ı").lower()
     return " ".join(metin.split())
 
 
 girdi = "  I\u0307STANBUL\tçok   güzel "
-print(turkce_metin_normalleştir(girdi))
+print(turkce_metin_normallestir(girdi))
 ```
 ```text {.python-playground-expected}
 istanbul çok güzel
 ```
 ```text {.python-playground-help}
 `import unicodedata` | Unicode yazı biçimlerini düzenleyen aracı kullanıma açar.
-`def turkce_metin_normalleştir(metin):` | Temizlenecek yazıyı `metin` adıyla alan işlevi başlatır; aşağıdaki adımlar bu değişkeni sırayla düzenler.
+`def turkce_metin_normallestir(metin):` | Temizlenecek yazıyı `metin` adıyla alan işlevi başlatır; aşağıdaki adımlar bu değişkeni sırayla düzenler.
 `metin = unicodedata.normalize("NFC", metin)` | Yazıyı ortak bir Unicode biçimine çevirir. Bu örnekte `I\u0307`, tek bir büyük `İ` harfi olur ve sonuç `metin` değişkenine kaydedilir.
 `metin = metin.replace("İ", "i").replace("I", "ı").lower()` | Türkçeye uygun `İ` ve `I` dönüşümlerini yapar, sonra kalan büyük harfleri küçültür; yeni metni aynı değişkende tutar.
 `return " ".join(metin.split())` | `split()` sözcükleri boşluk ve tablardan ayırır; `" ".join(...)` aralarına tek boşluk koyar. `return` temizlenmiş yazıyı işlev dışına verir.
 `girdi = "  I\u0307STANBUL\tçok   güzel "` | Bu örnekte başta boşluk, `\t` ile gösterilen bir tab ve art arda boşluklar vardır; `\u0307` büyük I harfinin üstündeki nokta işaretidir.
-`print(turkce_metin_normalleştir(girdi))` | Örnek yazıyı işlevimize gönderir ve dönen temiz metni ekrana basar.
+`print(turkce_metin_normallestir(girdi))` | Örnek yazıyı işlevimize gönderir ve dönen temiz metni ekrana basar.
 ```
 
 Burada NFC, `I` ile birleşen noktayı tek bir `İ` kod noktasına dönüştürür; ardından Türkçe harf eşlemesi `i` sonucunu üretir. Normalleştirme ve harf dönüşümünün sırası bu nedenle önemlidir.
@@ -142,9 +142,9 @@ Büyük projelerde normalleştirme kurallarını tek bir yerde tut, hangi alanla
 4. (Zor) Ham kullanıcı girdisi ve normalleştirilmiş arama alanı için iki ayrı değişken kullanan küçük bir örnek yaz.
 
 ??? success "Quiz cevapları"
-    1. `lower()` Türkçeye özel yerel ayar uygulamaz; `I` harfini `ı` yerine `i` yapabilir ve `İ` için birleşen nokta içeren bir sonuç üretebilir.
+    1. `lower()` Türkçeye özel kural uygulamaz; `I` harfini `ı` yerine `i` yapar ve `İ` harfini `i` + birleşen nokta olarak iki karaktere çevirir.
     2. Aynı görünen bir harfin tek kod noktası veya temel harf ile birleşen işaretlerden oluşan gösterimleri arasındaki farkı eşitlemeye yardımcı olur.
-    3. Noktalı ve noktasız harf ayrımını silerek farklı sözcükleri aynı yazıma indirebilir.
+    3. `ş/s`, `ç/c`, `ı/i` gibi ayrımları silerek farklı sözcükleri (`şiş`/`sis`, `kır`/`kir`) aynı yazıma indirebilir.
     4. Arama kolaylığı sağlarken özgün yazımı göstermek, incelemek veya daha sonra farklı kurallarla işlemek mümkün kalır.
 
 ## Özet

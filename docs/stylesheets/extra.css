@@ -53,10 +53,17 @@
   padding-bottom: 0.35em;
 }
 
+/* Ortalamak için yalnızca yatay kenarları "auto" yapıyoruz. "margin: 0 auto"
+   Material'ın mobil kenar boşluklarını siliyordu; metin ekran kenarına
+   yapışıyor ve kod blokları sayfayı yana taşırıyordu. */
 .md-content__inner {
   max-width: 860px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
 }
+
 
 .md-typeset table:not([class]) {
   border-radius: 3px;
@@ -1052,4 +1059,17 @@
 
 [data-md-color-scheme="slate"] .python-playground-widget--success .python-playground-status {
   color: #8fd3a5;
+}
+
+@media screen and (max-width: 76.1875em) {
+  /* Mobil çekmece menüsünde başlık çubuğu yok; listeyi ekran boyunca göster. */
+  .curriculum-nav {
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+  }
+
+  /* Menü açıkken sağ alttaki "Notlar" düğmesi menünün üstüne binmesin. */
+  body:has(#__drawer:checked) .lesson-notes-button {
+    display: none;
+  }
 }
