@@ -195,7 +195,7 @@ Bu örnek bir sohbet sistemi değildir. Ama yapay zekâ sistemlerinde aradığı
 
 ### Şimdi sen yaz: kural ekle
 
-Kural sözcüğüne yeni bir durum ekle ve kuralı olmayan durumda ne olacağını belirle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Kural sözcüğüne yeni bir durum ekle ve kuralı olmayan durumda ne olacağını belirle. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 kurallar = {

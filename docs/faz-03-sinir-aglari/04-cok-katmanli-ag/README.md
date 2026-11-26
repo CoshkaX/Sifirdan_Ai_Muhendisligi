@@ -181,7 +181,7 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: XNOR ağı
 
-Gizli katman hazır (VEYA ve VE nöronları). Çıktı nöronunu, girdiler aynıysa `1` verecek şekilde kur. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Gizli katman hazır (VEYA ve VE nöronları). Çıktı nöronunu, girdiler aynıysa `1` verecek şekilde kur. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def noron(girdiler, agirliklar, sabit):
@@ -194,7 +194,7 @@ def xnor_agi(a, b):
     h2 = noron([a, b], [1, 1], -1.5)     # VE
     # Çıktı nöronu şu üç durumu ayırmalı:
     #   (h1, h2) = (0, 0) → 1      (1, 0) → 0      (1, 1) → 1
-    # TODO 1: Önce sabiti (üçüncü boşluk) seç: (0, 0) iken toplam yalnızca sabittir.
+    # TODO 1: Önce sabiti (üçüncü kutu) seç: (0, 0) iken toplam yalnızca sabittir.
     # TODO 2: Sonra iki ağırlığı seç: h1 çıktıyı 0 yapmalı, h2 tekrar 1 yapmalı.
     return noron([h1, h2], [___, ___], ___)
 
@@ -211,8 +211,8 @@ for a in [0, 1]:
 ```
 ```text {.python-playground-help}
 `noron([h1, h2], [___, ___], ___)` | Çıktı nöronu `h1` ve `h2`'ye bakar. Hedef: `(h1, h2)` = `(0, 0)` için `1`, `(1, 0)` için `0`, `(1, 1)` için `1`.
-Sabit (üçüncü boşluk) | `(0, 0)` iken sadece sabit kalır; çıktı `1` olsun diye sabit pozitif olmalı: `0.5`.
-Ağırlıklar (ilk iki boşluk) | `(1, 0)` çıktıyı `0` yapsın diye `h1` ağırlığı negatif: `-1`. `(1, 1)` tekrar `1` olsun diye `h2` ağırlığı `2`.
+Sabit (üçüncü kutu) | `(0, 0)` iken sadece sabit kalır; çıktı `1` olsun diye sabit pozitif olmalı: `0.5`.
+Ağırlıklar (ilk iki kutu) | `(1, 0)` çıktıyı `0` yapsın diye `h1` ağırlığı negatif: `-1`. `(1, 1)` tekrar `1` olsun diye `h2` ağırlığı `2`.
 ```
 ```python {.python-playground-solution}
 def noron(girdiler, agirliklar, sabit):
@@ -225,7 +225,7 @@ def xnor_agi(a, b):
     h2 = noron([a, b], [1, 1], -1.5)     # VE
     # Çıktı nöronu şu üç durumu ayırmalı:
     #   (h1, h2) = (0, 0) → 1      (1, 0) → 0      (1, 1) → 1
-    # Önce sabiti (üçüncü boşluk) seç: (0, 0) iken toplam yalnızca sabittir.
+    # Önce sabiti (üçüncü kutu) seç: (0, 0) iken toplam yalnızca sabittir.
     # Sonra iki ağırlığı seç: h1 çıktıyı 0 yapmalı, h2 tekrar 1 yapmalı.
     return noron([h1, h2], [-1, 2], 0.5)
 

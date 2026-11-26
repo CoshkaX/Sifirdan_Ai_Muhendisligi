@@ -117,7 +117,7 @@ Ekleri baştan sona değil, sondan başa buluyoruz: `evlerimizden` önce `den`, 
 
 ### Şimdi sen yaz: çoğul eki
 
-Son ünlüye bakarak `-lar` veya `-ler` seçen fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Son ünlüye bakarak `-lar` veya `-ler` seçen fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def cogul_eki(kok):

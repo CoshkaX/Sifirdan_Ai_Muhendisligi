@@ -159,7 +159,7 @@ Yüzde `90` doğruluk kulağa iyi gelse de modelin duyarlılığı `0`'dır. İs
 
 ### Şimdi sen yaz: kesinlik ve duyarlılık
 
-Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 gercek = [1, 1, 0, 0, 1, 0, 1]

@@ -242,7 +242,7 @@ Burada değişkeni `ad` diye tanımlayıp `isim` diye kullandık. Hata mesajın�
 
 ### Şimdi sen yaz: yaşını hesapla
 
-Aşağıdaki kodda iki boşluk var. Doldurup çalıştır; yaşın doğru çıkmalı. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Aşağıdaki kodda iki kutu var. Doldurup çalıştır; yaşın doğru çıkmalı. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 ad = "Ece"

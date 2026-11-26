@@ -95,7 +95,7 @@ Bir parametre varsa onun için tek bir türev hesaplarız. Birden fazla parametr
 
 ### Şimdi sen yaz: gradyan inişi adımları
 
-Ağırlığı hedef olan `2`'ye yaklaştıran üç gradyan inişi adımı yaz. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Ağırlığı hedef olan `2`'ye yaklaştıran üç gradyan inişi adımı yaz. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 agirlik = 10.0

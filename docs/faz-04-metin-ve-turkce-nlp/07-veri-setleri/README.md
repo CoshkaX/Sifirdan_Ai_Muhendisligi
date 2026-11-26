@@ -228,7 +228,7 @@ Başkasının veri setini kullanırken de önce veri kartını oku. Veri kartı 
 
 ### Şimdi sen yaz: boş ve tekrar eden kayıtları say
 
-Veri kaydındaki boş metinleri ve tekrarları say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Veri kaydındaki boş metinleri ve tekrarları say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]

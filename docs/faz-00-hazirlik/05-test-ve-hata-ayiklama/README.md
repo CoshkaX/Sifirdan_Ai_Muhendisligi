@@ -110,7 +110,7 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: kendi testini yaz
 
-Fonksiyonu yaz, sonra testlerin beklenen değerlerini kâğıtta hesaplayıp doldur. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Fonksiyonu yaz, sonra testlerin beklenen değerlerini kâğıtta hesaplayıp doldur. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def dikdortgen_cevresi(en, boy):

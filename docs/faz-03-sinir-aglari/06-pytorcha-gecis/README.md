@@ -165,7 +165,7 @@ Fikir aynı; yalnızca ölçek ve hız farklı.
 
 ### Şimdi sen yaz: eğitim döngüsünün adımları
 
-Eğitim döngüsünün tahmin, türev ve güncelleme adımlarını yaz. Doğru cevap `agirlik = 3`. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Eğitim döngüsünün tahmin, türev ve güncelleme adımlarını yaz. Doğru cevap `agirlik = 3`. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 agirlik = 0.0

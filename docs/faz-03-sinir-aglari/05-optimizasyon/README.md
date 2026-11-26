@@ -222,7 +222,7 @@ Bu adımda kullanılan örnekler: [10, 7]
 
 ### Şimdi sen yaz: momentum adımı
 
-`x²` kaybını küçültmek için üç momentum adımı at. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+`x²` kaybını küçültmek için üç momentum adımı at. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def turev(x):

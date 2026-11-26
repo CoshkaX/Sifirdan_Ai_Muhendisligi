@@ -184,7 +184,7 @@ Bu veri bilerek tam doğrusal seçildiği için çizgi yaklaşık `y = 2x` olur.
 
 ### Şimdi sen yaz: tahmin ve hata
 
-Doğrusal modelin tahminini ve ortalama kare hatasını hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Doğrusal modelin tahminini ve ortalama kare hatasını hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 kilogramlar = [1, 2, 3]

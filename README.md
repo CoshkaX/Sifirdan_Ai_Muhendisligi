@@ -41,7 +41,7 @@ Her ders aynı dört adımı izler:
 Kodu kurulum yapmadan, sayfanın içinde çalıştırabilirsin (kod tarayıcında çalışır, hiçbir yere gönderilmez). İki tür pencere vardır:
 
 - **Örnek:** Hazır kodu çalıştır, sonra bir değeri değiştirip çıktının nasıl değiştiğine bak. Anlamadığın satır için **Anlamadıysan bas** düğmesi kodu satır satır açıklar.
-- **Kendin yaz:** Kodun eksik yerleri (`___`) sende. Doldurup çalıştır; çıktı doğruysa "✓ Başarılı" görürsün. Takılırsan **Yapamazsan buna bas** çözümün tamamını yeşil kodla ve açıklamasıyla gösterir.
+- **Kendin yaz:** Kod hazır gelir, eksik yerler kodun içinde boş kutu olarak durur. Kutulara yaz ve çalıştır; kodun geri kalanını değiştiremezsin. Çıktı doğruysa "✓ Başarılı" görürsün. Takılırsan **Yapamazsan buna bas** çözümün tamamını yeşil kodla ve açıklamasıyla gösterir.
 
 Ayrıca metni seçip vurgulayabilir ve not alabilirsin; notların yalnızca kendi tarayıcında saklanır.
 

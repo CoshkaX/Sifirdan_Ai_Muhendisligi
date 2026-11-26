@@ -148,7 +148,7 @@ Doğrulama kümesine bakarak model veya ayar seçtikten sonra test kümesini bu 
 
 ### Şimdi sen yaz: veriyi üçe böl
 
-On örneği yüzde 60 eğitim, yüzde 20 doğrulama, yüzde 20 test olarak dilimle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+On örneği yüzde 60 eğitim, yüzde 20 doğrulama, yüzde 20 test olarak dilimle. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 veriler = list(range(1, 11))   # 10 örnek: 1, 2, ..., 10

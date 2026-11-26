@@ -113,7 +113,7 @@ Burada NFC, `I` ile birleşen noktayı tek bir `İ` kod noktasına dönüştür�
 
 ### Şimdi sen yaz: metni temizle
 
-Üç temizleme adımını sırayla uygulayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Üç temizleme adımını sırayla uygulayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 import unicodedata

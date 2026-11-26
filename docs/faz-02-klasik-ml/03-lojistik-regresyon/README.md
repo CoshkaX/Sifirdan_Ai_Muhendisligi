@@ -191,7 +191,7 @@ Bu küçük veri kümesinde model eğitim örneklerini doğru sınıflara ayırd
 
 ### Şimdi sen yaz: sigmoid ve eşik
 
-Ham puandan olasılık hesapla ve eşiğe göre sınıf seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Ham puandan olasılık hesapla ve eşiğe göre sınıf seç. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 import math

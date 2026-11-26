@@ -76,7 +76,7 @@ Dilimlemede bitiş konumunun seçime girmemesi özellikle önemlidir. Örneğin 
 
 ### Şimdi sen yaz: ortalama ve dilimleme
 
-İki sınavın ortalamasını bul ve ortadaki iki değeri dilimle seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+İki sınavın ortalamasını bul ve ortadaki iki değeri dilimle seç. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 sinav1 = [60, 70, 80, 90]

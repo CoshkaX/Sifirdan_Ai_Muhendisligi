@@ -214,7 +214,7 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: olumsuzluğu birleştir
 
-`güzel değil` ifadesini tek bir özelliğe çeviren fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+`güzel değil` ifadesini tek bir özelliğe çeviren fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def ozellikler(metin):

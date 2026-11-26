@@ -110,7 +110,7 @@ Adil para için yazı gelme olasılığı `0.5`tir. Ama parayı yalnızca altı 
 
 ### Şimdi sen yaz: iki zar
 
-İki zar atıldığında toplamın 10 veya daha büyük gelme olasılığını say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+İki zar atıldığında toplamın 10 veya daha büyük gelme olasılığını say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 uygun = 0

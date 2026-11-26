@@ -256,7 +256,7 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: kök yaklaşımıyla eşleştir
 
-Sözcüklerin ilk 5 harfini terim yap ve sorguyla belgenin ortak terimlerini say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Sözcüklerin ilk 5 harfini terim yap ve sorguyla belgenin ortak terimlerini say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 from collections import Counter

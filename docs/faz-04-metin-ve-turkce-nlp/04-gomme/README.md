@@ -177,7 +177,7 @@ Bu sorunu azaltmanın iki yaygın yolu var:
 
 ### Şimdi sen yaz: kosinüs benzerliği
 
-İki vektörün kosinüs benzerliğini hesaplayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+İki vektörün kosinüs benzerliğini hesaplayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 import math

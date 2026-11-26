@@ -183,7 +183,7 @@ Kayıp her yüz turda küçülüyor ve tahminler hedeflere yaklaşıyor. Tahminl
 
 ### Şimdi sen yaz: bir nöronu eğit
 
-Geri geçişin üç türevini yaz ve nöronun kaybının küçüldüğünü izle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Geri geçişin üç türevini yaz ve nöronun kaybının küçüldüğünü izle. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 import math

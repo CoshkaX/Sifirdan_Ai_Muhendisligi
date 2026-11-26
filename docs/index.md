@@ -41,7 +41,7 @@ Kodu kurulum yapmadan, sayfanın içinde çalıştırırsın. İki tür pencere 
 
 | | **Örnek** | **Kendin yaz** |
 |---|---|---|
-| Ne yaparsın? | Hazır kodu çalıştırır, sonra bir sayıyı ya da metni değiştirip çıktının nasıl değiştiğine bakarsın | Eksik yerleri (`___`) kendin doldurur ve çalıştırırsın |
+| Ne yaparsın? | Hazır kodu çalıştırır, sonra bir sayıyı ya da metni değiştirip çıktının nasıl değiştiğine bakarsın | Kodun içindeki boş kutulara eksik kodu yazar ve çalıştırırsın; kodun geri kalanı değişmez |
 | Başarı | Rozet yok; amaç denemek | Çıktı doğruysa "✓ Başarılı" |
 | Takılırsan | **Anlamadıysan bas**: kodu satır satır açıklar | **Yapamazsan buna bas**: çözümün tamamını yeşil kodla ve açıklamasıyla gösterir |
 

@@ -157,7 +157,7 @@ Bu örnek tek bir soru bulduğu için **tek seviyeli ağaç** veya **karar küt�
 
 ### Şimdi sen yaz: Gini safsızlığı
 
-Gini fonksiyonunu tamamla ve bir bölmenin ağırlıklı Gini değerini hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Gini fonksiyonunu tamamla ve bir bölmenin ağırlıklı Gini değerini hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def gini(etiketler):

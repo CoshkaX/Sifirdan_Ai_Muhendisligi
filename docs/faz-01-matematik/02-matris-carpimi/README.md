@@ -133,7 +133,7 @@ Fonksiyon önce boş matrisleri, eşit uzunlukta olmayan satırları ve çarpım
 
 ### Şimdi sen yaz: noktasal çarpım
 
-Noktasal çarpımı hesaplayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Noktasal çarpımı hesaplayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 def noktasal_carpim(a, b):

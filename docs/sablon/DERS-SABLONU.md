@@ -19,7 +19,7 @@ Somut bir sorunla başla. Kısa bir örnek, bir hata, bir soru. Soyut tanımla b
 | | **Örnek** | **Kendin yaz** |
 |---|---|---|
 | Amaç | Çalışan kodu görmek, değiştirip ne olduğunu denemek | Eksik kodu kendin tamamlamak |
-| Kod nasıl gelir? | Eksiksiz | İskelet: yazılacak yerler `___`, notlar `# TODO` |
+| Kod nasıl gelir? | Eksiksiz; öğrenci kodu düzenleyebilir | İskelet: yazılacak yerler `___`, notlar `# TODO`. Sitede her `___` kodun içinde yazılabilir bir **kutu** olur; kodun geri kalanı salt okunurdur |
 | Başarı rozeti | Yok | Çıktı beklenenle eşleşirse "✓ Başarılı" |
 | Yardım düğmesi | **Anlamadıysan bas**: kodu satır satır açıklar | **Yapamazsan buna bas**: çözümün tamamını yeşil kodla ve satır satır açıklamasını gösterir |
 | Markdown işareti | `{.python-playground}` | `{.python-playground-task}` |
@@ -73,11 +73,11 @@ print(f"Toplam: {toplam} TL")
 
 Görev yazarken şu kurallara uy. Hepsi, yeni başlayan bir öğrencinin takıldığı yerlerden çıkarıldı:
 
-1. **Sıfırdan yazdırma, iskelet ver.** Öğrencinin yazacağı yeri `___` ile boş bırak, üstüne `# TODO: ...` notu yaz. `___` doluyken kutu çalışmaz; öğrenci önce boşluğu doldurur.
+1. **Sıfırdan yazdırma, iskelet ver.** Öğrencinin yazacağı yeri `___` ile boş bırak, üstüne `# TODO: ...` notu yaz. Site her `___` yerine bir yazma kutusu koyar; öğrenci yalnızca kutulara yazar, kodun geri kalanını değiştiremez. Boş kutu varken kod çalışmaz.
 2. **Cevabı yorumda söyleme.** `# TODO` notu *ne* yapılacağını söylesin, cevabı değil. Cevaba yardım düğmesi götürür.
 3. **Yalnızca derste öğretilen sözdizimini kullan.** Öğrencinin görmediği bir şey varsa (tek satırlık `if ... else`, `set`, iç içe döngü, `a = b = 0` gibi) iskelete bir açıklama satırı ekle.
 4. **Çarpma `*`, üs alma `**`.** Yorumlarda matematik yazımı (×) kullanırsan, öğrenci bunu koda yazmasın diye kutunun üstündeki yönerge zaten hatırlatır; yine de yardımda `*` yaz.
-5. **Boşluğu tırnağın içine koyma.** Koyman gerekiyorsa yardımda "tırnaklar hazır, yalnızca metni yaz" de.
+5. **Kutu tırnağın içinde olabilir.** Tırnaklar kodda hazır durur; öğrenci yalnızca metni yazar (`"___"` için `aıou` yazar, tırnak yazmaz). Kutunun içine tırnaklı metin yazması gerekiyorsa (`.replace(___, ___)` gibi) bunu yardımda söyle.
 6. **Çıktı, yanlış kodu yakalasın.** Yalnızca `print("başarılı")` yazdıran bir görevde yanlış çözüm de geçer. Fonksiyonların sonuçlarını yazdır; yanlış çözümlerin aynı çıktıyı vermemesi için simetrik veri seçme (örneğin yanlış pozitif ile yanlış negatif sayısı aynı olmasın).
 7. **Farklı ama doğru cevaplar da geçsin.** Kontrol çıktıya bakar. Sabit bir sayının tek doğru cevap olmadığı durumlarda (ör. bir eşik, bir ağırlık) beklenen çıktı bütün geçerli cevaplarda aynı olmalı.
 8. **Yardım adımları kısa olsun.** Boşluk içeren her satır için bir adım yaz; her adım en fazla iki kısa cümle. Önce açıklanan kod parçasını ters tırnak içinde, sonra `|` ayıracıyla açıklamasını yaz. Terimi tanımlamadan kullanma.

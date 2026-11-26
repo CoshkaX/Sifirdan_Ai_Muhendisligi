@@ -229,7 +229,7 @@ Testler, motorun bulduğu türevleri 1.3 dersindeki sonlu fark yöntemiyle karş
 
 ### Şimdi sen yaz: zincir kuralı
 
-`sonuc = a × b + c` hesabının türevlerini zincir kuralıyla bul. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+`sonuc = a × b + c` hesabının türevlerini zincir kuralıyla bul. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 a, b, c = 2, 3, 4

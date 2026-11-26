@@ -166,7 +166,7 @@ Bu hesapta iki listede de değişen değer bulunmalıdır. Listelerden biri sabi
 
 ### Şimdi sen yaz: varyans
 
-Dört notun varyansını adım adım hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+Dört notun varyansını adım adım hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
 
 ```python {.python-playground-task}
 notlar = [4, 8, 6, 10]
