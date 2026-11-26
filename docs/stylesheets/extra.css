@@ -1099,3 +1099,39 @@
   font-size: 0.72rem;
   line-height: 1.55;
 }
+
+/* Kendin yaz: yardım düğmesine basınca görünen yeşil çözüm */
+.python-playground-widget .python-playground-solution-title {
+  margin: 0.2rem 0 0.3rem !important;
+  font-family: "Fira Code", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #2f7849;
+}
+
+.python-playground-widget .python-playground-solution-code {
+  margin: 0 0 0.45rem !important;
+  padding: 0.6rem 0.75rem;
+  overflow: auto;
+  border: 1px solid #3b8f5a;
+  border-left-width: 3px;
+  border-radius: 3px;
+  background: rgba(59, 143, 90, 0.09);
+  color: #2f7849;
+  font-family: "Fira Code", monospace;
+  font-size: 0.68rem;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+.python-playground-widget .python-playground-solution-note {
+  margin: 0 0 0.6rem !important;
+  font-size: 0.68rem;
+}
+
+[data-md-color-scheme="slate"] .python-playground-widget .python-playground-solution-title,
+[data-md-color-scheme="slate"] .python-playground-widget .python-playground-solution-code {
+  color: #8fd3a5;
+}

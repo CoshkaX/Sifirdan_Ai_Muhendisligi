@@ -210,6 +210,28 @@ kedi - araba: 0.07
 `sum(y * y for y in ___)` | İkinci vektör `b` parametresidir.
 `return ___` | Noktasal çarpımı iki uzunluğun çarpımına böl: `nokta / (uzunluk_a * uzunluk_b)`.
 ```
+```python {.python-playground-solution}
+import math
+
+gomme = {
+    "kedi": [0.9, 0.8, 0.0],
+    "aslan": [0.9, 0.1, 0.0],
+    "araba": [0.0, 0.1, 0.9],
+}
+
+
+def kosinus(a, b):
+    nokta = sum(x * y for x, y in zip(a, b))
+    # Bir vektörün uzunluğu, sayılarının karelerinin toplamının karekökü.
+    uzunluk_a = math.sqrt(sum(x * x for x in a))
+    uzunluk_b = math.sqrt(sum(y * y for y in b))
+    # Kosinüs = noktasal çarpım / (uzunluk_a × uzunluk_b).
+    return nokta / (uzunluk_a * uzunluk_b)
+
+
+print("kedi - aslan:", round(kosinus(gomme["kedi"], gomme["aslan"]), 2))
+print("kedi - araba:", round(kosinus(gomme["kedi"], gomme["araba"]), 2))
+```
 
 ## 3. Kütüphaneyle yap
 

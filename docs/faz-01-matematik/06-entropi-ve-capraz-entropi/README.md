@@ -131,6 +131,22 @@ Kayıp: 1.0 bit
 `entropi += ___` | Entropi formülü `-p × log₂(p)`. Python'da `-p * math.log2(p)`.
 `kayip = ___` | Çapraz entropi, doğru sınıfın olasılığının `-log₂`'sidir: `-math.log2(0.5)`.
 ```
+```python {.python-playground-solution}
+import math
+
+olasiliklar = [0.25, 0.25, 0.25, 0.25]
+entropi = 0.0
+
+for p in olasiliklar:
+    # Entropiye -p × log2(p) ekle (math.log2).
+    entropi += -p * math.log2(p)
+
+# Doğru sınıfa 0.5 olasılık veren modelin kaybı -log2(0.5) bittir.
+kayip = -math.log2(0.5)
+
+print("Entropi:", entropi, "bit")
+print("Kayıp:", kayip, "bit")
+```
 
 ## 3. Kütüphaneyle yap
 

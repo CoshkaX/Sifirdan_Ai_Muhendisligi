@@ -183,7 +183,24 @@ Bölünme sonrası: 0.22
 ```
 ```text {.python-playground-help}
 `return ___` | Formül yorumda yazıyor. Oranların karelerini `** 2` ile al, topla ve `1`'den çıkar.
-`bolunme = ___` | Her grubun Gini değerini, o grubun örnek sayısının toplama oranıyla çarp: `len(sol) / 6 * gini(sol)`. Sağ grup için de aynısını yap ve topla.
+`bolunme = ___` | Her grubun Gini değerini grubun oranıyla çarp: `len(sol) / 6 * gini(sol)`. Sağ grup için aynısını yap, ikisini topla.
+```
+```python {.python-playground-solution}
+def gini(etiketler):
+    basarili_orani = sum(etiketler) / len(etiketler)
+    basarisiz_orani = 1 - basarili_orani
+    # Gini = 1 - (başarılı oranı² + başarısız oranı²)
+    return 1 - (basarili_orani ** 2 + basarisiz_orani ** 2)
+
+
+print("Karışık grup:", gini([0, 1, 0, 1]))
+print("Saf grup:", gini([1, 1, 1, 1]))
+
+sol = [0, 0, 0]
+sag = [1, 1, 0]
+# Ağırlıklı Gini = sol_oran × gini(sol) + sağ_oran × gini(sag). Toplam 6 örnek var.
+bolunme = len(sol) / 6 * gini(sol) + len(sag) / 6 * gini(sag)
+print("Bölünme sonrası:", round(bolunme, 2))
 ```
 
 ## 3. Kütüphaneyle yap

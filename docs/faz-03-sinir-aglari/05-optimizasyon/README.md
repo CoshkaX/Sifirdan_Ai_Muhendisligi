@@ -250,6 +250,23 @@ Adım 3: x = 0.248
 `hiz = ___` | Önceki hızın `beta` kadarı korunur, üstüne yeni türev eklenir: `beta * hiz + turev(x)`.
 `x = x - ___ * hiz` | Güncellemede türev yerine hız kullanılır; adım büyüklüğü öğrenme hızıdır.
 ```
+```python {.python-playground-solution}
+def turev(x):
+    return 2 * x          # kayıp: x²
+
+
+x = 4.0
+hiz = 0.0
+ogrenme_hizi = 0.1
+beta = 0.9
+
+for adim in range(1, 4):
+    # hız = beta × eski hız + yeni türev.
+    hiz = beta * hiz + turev(x)
+    # x'i hızın ters yönünde güncelle.
+    x = x - ogrenme_hizi * hiz
+    print(f"Adım {adim}: x = {x:.3f}")
+```
 
 ## 3. Kütüphaneyle yap
 

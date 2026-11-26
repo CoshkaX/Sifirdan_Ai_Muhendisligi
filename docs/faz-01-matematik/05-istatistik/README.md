@@ -190,6 +190,20 @@ Varyans: 5.0
 `kareli_sapmalar.append(___)` | Sapma, notun ortalamadan farkıdır: `n - ortalama`. Karesini almak için `** 2` yaz.
 `varyans = ___` | Kareli sapmaları `sum` ile topla ve not sayısına (`len(notlar)`) böl.
 ```
+```python {.python-playground-solution}
+notlar = [4, 8, 6, 10]
+ortalama = sum(notlar) / len(notlar)
+
+kareli_sapmalar = []
+for n in notlar:
+    # Notun ortalamadan farkını bul, karesini al ve listeye ekle.
+    kareli_sapmalar.append((n - ortalama) ** 2)
+
+# Kareli sapmaların toplamını not sayısına böl.
+varyans = sum(kareli_sapmalar) / len(notlar)
+print("Ortalama:", ortalama)
+print("Varyans:", varyans)
+```
 
 ## 3. Kütüphaneyle yap
 

@@ -240,6 +240,22 @@ print(ozellikler("Çok güzel, beğendim"))
 `if sozcuk == "değil" and ___:` | Boş bir liste `False` sayılır. `birlesik` doluysa önceki sözcük var demektir.
 `birlesik[-1] + ___` | `birlesik[-1]` son sözcüktür. Sonuna `"_değil"` metnini ekle.
 ```
+```python {.python-playground-solution}
+def ozellikler(metin):
+    sozcukler = metin.lower().replace(",", "").split()
+    birlesik = []
+    for sozcuk in sozcukler:
+        # Sözcük "değil" ise ve öncesinde bir sözcük varsa öncekine "_değil" ekle.
+        if sozcuk == "değil" and birlesik:
+            birlesik[-1] = birlesik[-1] + "_değil"
+        else:
+            birlesik.append(sozcuk)
+    return birlesik
+
+
+print(ozellikler("Rengi güzel değil"))
+print(ozellikler("Çok güzel, beğendim"))
+```
 
 ## 3. Kütüphaneyle yap
 

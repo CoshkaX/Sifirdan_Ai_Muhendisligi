@@ -117,6 +117,17 @@ Adım 3: ağırlık = 3.0
 `gradyan = ___` | Türev formülü yorumda yazıyor: `2 × (agirlik - 2)`. Python'da `2 * (agirlik - 2)` yaz.
 `agirlik = agirlik - ___ * gradyan` | Gradyan inişi: eski ağırlıktan öğrenme hızı × gradyan çıkarılır.
 ```
+```python {.python-playground-solution}
+agirlik = 10.0
+ogrenme_hizi = 0.25
+
+for adim in range(3):
+    # Kayıp (agirlik - 2) ** 2 ise türevi 2 × (agirlik - 2)'dir.
+    gradyan = 2 * (agirlik - 2)
+    # Ağırlığı gradyanın ters yönünde güncelle.
+    agirlik = agirlik - ogrenme_hizi * gradyan
+    print(f"Adım {adim + 1}: ağırlık = {agirlik}")
+```
 
 ## 3. Kütüphaneyle yap
 

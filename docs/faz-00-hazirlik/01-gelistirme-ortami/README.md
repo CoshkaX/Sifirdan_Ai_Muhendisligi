@@ -262,6 +262,17 @@ Merhaba, Ece! 26 yaşındasın.
 `yas = ___` | Yaş, bu yıl ile doğum yılı arasındaki farktır. İki değişkeni `-` ile çıkar.
 `print(f"Merhaba, {ad}! {___} yaşındasın.")` | Süslü parantezin içine yazdığın değişkenin değeri cümleye girer. Hesapladığın değişkenin adını yaz.
 ```
+```python {.python-playground-solution}
+ad = "Ece"
+dogum_yili = 2000
+bu_yil = 2026
+
+# Yaşı hesapla (bu yıl eksi doğum yılı).
+yas = bu_yil - dogum_yili
+
+# Süslü parantezin içine yaş değişkenini yaz.
+print(f"Merhaba, {ad}! {yas} yaşındasın.")
+```
 
 ## 8. Kurulumun tam olduğunu kontrol et
 

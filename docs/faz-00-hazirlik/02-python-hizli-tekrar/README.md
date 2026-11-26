@@ -266,6 +266,19 @@ Mert: 70.0
 `return ___` | `sum(notlar)` toplamı, `len(notlar)` not sayısını verir. Toplamı sayıya böl.
 `ortalama(___)` | Sözlükte her öğrencinin notları ad anahtarının karşısında durur; `sinif[ad]` o listeyi verir.
 ```
+```python {.python-playground-solution}
+def ortalama(notlar):
+    # Notların toplamını not sayısına böl ve sonucu geri ver.
+    return sum(notlar) / len(notlar)
+
+
+sinif = {"Ece": [80, 90, 100], "Mert": [60, 70, 80]}
+
+for ad in sinif:
+    # Öğrencinin notlarını ortalama() fonksiyonuna ver.
+    sonuc = ortalama(sinif[ad])
+    print(f"{ad}: {sonuc}")
+```
 
 ## 3. Kütüphaneyle yap
 

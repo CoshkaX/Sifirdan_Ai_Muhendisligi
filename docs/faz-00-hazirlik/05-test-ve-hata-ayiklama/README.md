@@ -133,6 +133,18 @@ print("Çevreler:", dikdortgen_cevresi(3, 4), dikdortgen_cevresi(5, 5))
 `assert dikdortgen_cevresi(3, 4) == ___` | Beklenen sonucu önce kendin hesapla: `2 × (3 + 4)`. Kodun çıktısından kopyalama.
 `assert dikdortgen_cevresi(5, 5) == ___` | Aynı işlemi `5` ve `5` için yap.
 ```
+```python {.python-playground-solution}
+def dikdortgen_cevresi(en, boy):
+    # Çevre = 2 × (en + boy). Sonucu geri ver.
+    return 2 * (en + boy)
+
+
+# Beklenen değerleri kendin hesapla ve yaz.
+assert dikdortgen_cevresi(3, 4) == 14
+assert dikdortgen_cevresi(5, 5) == 20
+print("İki test de başarılı.")
+print("Çevreler:", dikdortgen_cevresi(3, 4), dikdortgen_cevresi(5, 5))
+```
 
 ## 3. Kütüphaneyle yap
 

@@ -136,6 +136,22 @@ Olasılık: 0.167
 `if ___:` | Koşul, iki zarın toplamının en az `10` olmasıdır: `z1 + z2 >= 10`.
 `olasilik = ___` | Olasılık = uygun sonuç sayısı / bütün sonuçların sayısı.
 ```
+```python {.python-playground-solution}
+uygun = 0
+toplam_sonuc = 0
+
+for z1 in range(1, 7):
+    for z2 in range(1, 7):
+        toplam_sonuc += 1
+        # İki zarın toplamı 10 veya daha büyükse uygun sonucu say.
+        if z1 + z2 >= 10:
+            uygun += 1
+
+# Olasılık = uygun sonuç sayısı / bütün sonuçların sayısı.
+olasilik = uygun / toplam_sonuc
+print("Uygun:", uygun, "Toplam:", toplam_sonuc)
+print("Olasılık:", round(olasilik, 3))
+```
 
 ## 3. Kütüphaneyle yap
 

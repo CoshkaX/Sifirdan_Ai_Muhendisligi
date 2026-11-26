@@ -192,6 +192,27 @@ Kesinlik: 0.67 Duyarlılık: 0.5
 `kesinlik = ___` | Modelin `1` dediklerinin kaçı gerçekten `1`: `tp / (tp + fp)`.
 `duyarlilik = ___` | Gerçek `1`'lerin kaçını yakaladık: `tp / (tp + fn)`.
 ```
+```python {.python-playground-solution}
+gercek = [1, 1, 0, 0, 1, 0, 1]
+tahmin = [1, 0, 0, 1, 1, 0, 0]
+
+tp = fp = fn = 0
+for g, t in zip(gercek, tahmin):
+    if g == 1 and t == 1:
+        tp += 1
+    # Gerçek 0 iken tahmin 1 ise yanlış pozitiftir.
+    elif g == 0 and t == 1:
+        fp += 1
+    # Gerçek 1 iken tahmin 0 ise yanlış negatiftir.
+    elif g == 1 and t == 0:
+        fn += 1
+
+# Kesinlik = tp / (tp + fp), duyarlılık = tp / (tp + fn).
+kesinlik = tp / (tp + fp)
+duyarlilik = tp / (tp + fn)
+print("TP, FP, FN:", tp, fp, fn)
+print("Kesinlik:", round(kesinlik, 2), "Duyarlılık:", round(duyarlilik, 2))
+```
 
 ## 3. Kütüphaneyle yap
 

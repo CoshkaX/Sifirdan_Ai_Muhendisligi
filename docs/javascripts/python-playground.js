@@ -117,6 +117,16 @@
         }).filter(Boolean)
       : [];
 
+    // "Kendin yaz" görevlerinde çözümün tamamı ayrı bir blokta gelir; yardım
+    // düğmesine basılınca yeşil kod olarak gösterilir.
+    var afterHelp = helpBlock ? helpBlock.nextElementSibling : possibleHelpBlock;
+    var solutionBlock = afterHelp &&
+      afterHelp.classList.contains("python-playground-solution")
+      ? afterHelp
+      : null;
+    var solutionCode = solutionBlock ? solutionBlock.querySelector("code") : null;
+    var solutionText = solutionCode ? solutionCode.textContent.replace(/\n$/, "") : "";
+
     var widget = document.createElement("section");
     widget.className = "python-playground-widget " +
       (isTask ? "python-playground-widget--task" : "python-playground-widget--example");
@@ -231,6 +241,23 @@
       helpPanel.id = "python-playground-help-" + nextId;
       helpPanel.hidden = true;
       helpButton.setAttribute("aria-controls", helpPanel.id);
+
+      if (isTask && solutionText) {
+        var solutionTitle = document.createElement("p");
+        solutionTitle.className = "python-playground-solution-title";
+        solutionTitle.textContent = "Çözüm · kodun tamamı";
+        helpPanel.appendChild(solutionTitle);
+
+        var solutionPre = document.createElement("pre");
+        solutionPre.className = "python-playground-solution-code";
+        solutionPre.textContent = solutionText;
+        helpPanel.appendChild(solutionPre);
+
+        var solutionNote = document.createElement("p");
+        solutionNote.className = "python-playground-solution-note";
+        solutionNote.textContent = "Önce kendi kodunla karşılaştır; sonra kendi kutuna yaz ve çalıştır. Aşağıda satır satır açıklaması var.";
+        helpPanel.appendChild(solutionNote);
+      }
 
       var helpTitle = document.createElement("p");
       helpTitle.className = "python-playground-help-title";
@@ -427,6 +454,7 @@
 
     if (expectedBlock) expectedBlock.remove();
     if (helpBlock) helpBlock.remove();
+    if (solutionBlock) solutionBlock.remove();
     block.replaceWith(widget);
   }
 

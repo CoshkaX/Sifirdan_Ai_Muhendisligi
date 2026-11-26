@@ -259,6 +259,25 @@ Türevler: 3 2 1
 `d_a = ___` | Çarpmada `a`'ya göre yerel türev `b`'dir: `b * d_e`.
 `d_b = ___` | `b`'ye göre yerel türev `a`'dır: `a * d_e`.
 ```
+```python {.python-playground-solution}
+a, b, c = 2, 3, 4
+
+# İleri hesap
+e = a * b
+sonuc = e + c
+
+# Geri hesap: sondan başa doğru
+d_sonuc = 1
+# Toplamada gelen türev olduğu gibi geçer.
+d_e = 1 * d_sonuc
+d_c = 1 * d_sonuc
+# Çarpmada a'nın türevi b × d_e, b'nin türevi a × d_e'dir.
+d_a = b * d_e
+d_b = a * d_e
+
+print("sonuc =", sonuc)
+print("Türevler:", d_a, d_b, d_c)
+```
 
 ## 3. Kütüphaneyle yap
 

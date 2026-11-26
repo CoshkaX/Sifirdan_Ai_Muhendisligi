@@ -138,6 +138,21 @@ print(temizle("  IĞDIR    İLİ \t güzel  "))
 `.___()` (ilki) | Büyük harfleri küçültmek için `lower()` kullanılır.
 `.___()` (ikincisi) | `split()` metni boşluklardan sözcüklere ayırır; `join` onları tek boşlukla birleştirir.
 ```
+```python {.python-playground-solution}
+import unicodedata
+
+
+def temizle(metin):
+    # Unicode NFC biçimine çevir.
+    metin = unicodedata.normalize("NFC", metin)
+    # İ ve I dönüşümlerinden sonra küçük harfe çevir.
+    metin = metin.replace("İ", "i").replace("I", "ı").lower()
+    # Fazla boşlukları tek boşluğa indir (split ve join).
+    return " ".join(metin.split())
+
+
+print(temizle("  IĞDIR    İLİ \t güzel  "))
+```
 
 ## 3. Kütüphaneyle yap
 

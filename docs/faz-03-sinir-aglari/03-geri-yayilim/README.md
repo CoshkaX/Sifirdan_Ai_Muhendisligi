@@ -215,6 +215,25 @@ Adım 3: tahmin 0.837, kayıp 0.027
 `w -= ogrenme_hizi * ___` | `z = w × x + b` olduğundan `w`'nin türevi `d_z * x`.
 `b -= ogrenme_hizi * ___` | Sabitin yerel türevi `1`'dir; yani `b`'nin türevi `d_z`.
 ```
+```python {.python-playground-solution}
+import math
+
+x, y = 2.0, 1
+w, b = 0.0, 0.0
+ogrenme_hizi = 1.0
+
+for adim in range(3):
+    z = w * x + b
+    p = 1 / (1 + math.exp(-z))
+    # Kayıp (p - y)² için d_p = 2 × (p - y).
+    d_p = 2 * (p - y)
+    # Sigmoidin türevi p × (1 - p). Gelen d_p ile çarp.
+    d_z = d_p * p * (1 - p)
+    # w'nin türevi d_z × x, b'nin türevi d_z.
+    w -= ogrenme_hizi * d_z * x
+    b -= ogrenme_hizi * d_z
+    print(f"Adım {adim + 1}: tahmin {p:.3f}, kayıp {(p - y) ** 2:.3f}")
+```
 
 ## 3. Kütüphaneyle yap
 

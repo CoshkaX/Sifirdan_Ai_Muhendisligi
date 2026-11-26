@@ -143,6 +143,20 @@ ağaçlar
 `if harf in "___":` (ilki) | `lar` alan ünlüler: `a`, `ı`, `o`, `u`. Tırnağın içine bu harfleri yan yana yaz.
 `if harf in "___":` (ikincisi) | `ler` alan ünlüler: `e`, `i`, `ö`, `ü`.
 ```
+```python {.python-playground-solution}
+def cogul_eki(kok):
+    for harf in reversed(kok):
+        # Son ünlü a, ı, o veya u ise "lar" döndür.
+        if harf in "aıou":
+            return "lar"
+        # Son ünlü e, i, ö veya ü ise "ler" döndür.
+        if harf in "eiöü":
+            return "ler"
+
+
+for kok in ["kalem", "okul", "gözlük", "ağaç"]:
+    print(kok + cogul_eki(kok))
+```
 
 ## 3. Kütüphaneyle yap
 

@@ -286,6 +286,26 @@ Ortak terim sayısı: 2
 `sozcuk[:___]` | `sozcuk[:5]` sözcüğün ilk 5 harfini verir. Ek içeren biçimler aynı köke düşer.
 `t in ___` | Terimin ikinci vektörde de olup olmadığına bakıyoruz; ikinci vektör fonksiyonun `b` parametresidir.
 ```
+```python {.python-playground-solution}
+from collections import Counter
+
+
+def vektorlestir(metin):
+    sozcukler = metin.lower().split()
+    # Her sözcüğün ilk 5 harfini al ve Counter ile say.
+    return Counter(sozcuk[:5] for sozcuk in sozcukler)
+
+
+def ortak_terim_sayisi(a, b):
+    # a'daki terimlerden b'de de bulunanları say.
+    return len([t for t in a if t in b])
+
+
+belge = vektorlestir("yağmurlu havada sahilde yürüdük")
+sorgu = vektorlestir("yağmurda sahil")
+print("Belge terimleri:", dict(belge))
+print("Ortak terim sayısı:", ortak_terim_sayisi(sorgu, belge))
+```
 
 ## 3. Kütüphaneyle yap
 

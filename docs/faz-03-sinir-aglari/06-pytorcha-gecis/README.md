@@ -193,6 +193,22 @@ Adım 3: kayıp 0.06, ağırlık 2.98
 `turev = ___` | Yorumdaki formülü Python'a çevir: `2 * (tahmin - y) * x`.
 `agirlik -= ___ * turev` | Gradyan inişi: ağırlıktan öğrenme hızı × türev çıkarılır.
 ```
+```python {.python-playground-solution}
+agirlik = 0.0
+ogrenme_hizi = 0.1
+x, y = 2.0, 6.0
+
+for adim in range(3):
+    # 1. Tahmin et (ağırlık × x).
+    tahmin = agirlik * x
+    # 2. Kaybı hesapla (kare hata).
+    kayip = (tahmin - y) ** 2
+    # 3. Türev = 2 × (tahmin - y) × x.
+    turev = 2 * (tahmin - y) * x
+    # 4. Ağırlığı güncelle.
+    agirlik -= ogrenme_hizi * turev
+    print(f"Adım {adim + 1}: kayıp {kayip:.2f}, ağırlık {agirlik:.2f}")
+```
 
 ## 3. Kütüphaneyle yap
 

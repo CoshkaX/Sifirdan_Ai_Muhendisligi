@@ -257,6 +257,26 @@ Boş: 1 Tekrar: 1
 `if ___:` | Temizlenince hiçbir şey kalmadıysa `temiz` boş metindir: `temiz == ""`.
 `elif temiz in ___:` | Daha önce gördüğümüz metinleri `gorulen` kümesinde tutuyoruz; metin orada varsa tekrardır.
 ```
+```python {.python-playground-solution}
+veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]
+
+bos_sayisi = 0
+gorulen = set()
+tekrar_sayisi = 0
+
+for metin, etiket in veri:
+    temiz = metin.lower().strip()
+    # Temizlenince boş kalan metni say.
+    if temiz == "":
+        bos_sayisi += 1
+    # Daha önce görülen metni tekrar olarak say.
+    elif temiz in gorulen:
+        tekrar_sayisi += 1
+    else:
+        gorulen.add(temiz)
+
+print("Boş:", bos_sayisi, "Tekrar:", tekrar_sayisi)
+```
 
 ## 4. Kütüphaneyle yap
 

@@ -218,6 +218,19 @@ rüzgârlı: Kuralım yok.
 `"___": "___",` | Sözlükte `anahtar: değer` biçiminde yazılır. Anahtar hava durumu, değer öneridir.
 `kurallar.___(hava, "Kuralım yok.")` | `get` anahtar varsa değerini, yoksa ikinci değeri verir.
 ```
+```python {.python-playground-solution}
+kurallar = {
+    "yağmurlu": "Şemsiye al.",
+    "güneşli": "Güneş kremi al.",
+    # "karlı" hava için "Bot giy." önerisini ekle.
+    "karlı": "Bot giy.",
+}
+
+for hava in ["karlı", "rüzgârlı"]:
+    # Kuralı bul; kural yoksa "Kuralım yok." döndür (.get metodu).
+    oneri = kurallar.get(hava, "Kuralım yok.")
+    print(f"{hava}: {oneri}")
+```
 
 ## 7. Öğrenme: örnekler sonraki sonucu değiştiriyor mu?
 

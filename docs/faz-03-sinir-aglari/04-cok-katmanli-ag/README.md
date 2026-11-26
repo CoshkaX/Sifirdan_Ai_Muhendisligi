@@ -193,7 +193,6 @@ def xnor_agi(a, b):
     h1 = noron([a, b], [1, 1], -0.5)     # VEYA
     h2 = noron([a, b], [1, 1], -1.5)     # VE
     # TODO: (h1, h2) = (0, 0) için 1, (1, 0) için 0, (1, 1) için 1 vermeli.
-    # İpucu: ağırlıklar [-1, 2], sabit 0.5 işe yarar.
     return noron([h1, h2], [___, ___], ___)
 
 
@@ -208,9 +207,26 @@ for a in [0, 1]:
 1 XNOR 1 = 1
 ```
 ```text {.python-playground-help}
-`noron([h1, h2], [___, ___], ___)` | Üç durumu tek tek dene: `(0,0)` için `0×w1 + 0×w2 + sabit >= 0` olmalı, yani sabit pozitif.
-`(1, 0)` durumu | `h1 = 1, h2 = 0` iken toplam sıfırın altında kalmalı; bu yüzden `h1`'in ağırlığı negatif (`-1`).
-`(1, 1)` durumu | `h2` çıktıyı geri `1` yapmalı; `h2`'nin ağırlığı `2` olursa toplam `-1 + 2 + 0.5 = 1.5` olur.
+`noron([h1, h2], [___, ___], ___)` | Çıktı nöronu `h1` ve `h2`'ye bakar. Hedef: `(h1, h2)` = `(0, 0)` için `1`, `(1, 0)` için `0`, `(1, 1)` için `1`.
+Sabit (üçüncü boşluk) | `(0, 0)` iken sadece sabit kalır; çıktı `1` olsun diye sabit pozitif olmalı: `0.5`.
+Ağırlıklar (ilk iki boşluk) | `(1, 0)` çıktıyı `0` yapsın diye `h1` ağırlığı negatif: `-1`. `(1, 1)` tekrar `1` olsun diye `h2` ağırlığı `2`.
+```
+```python {.python-playground-solution}
+def noron(girdiler, agirliklar, sabit):
+    z = sum(g * a for g, a in zip(girdiler, agirliklar)) + sabit
+    return 1 if z >= 0 else 0
+
+
+def xnor_agi(a, b):
+    h1 = noron([a, b], [1, 1], -0.5)     # VEYA
+    h2 = noron([a, b], [1, 1], -1.5)     # VE
+    # (h1, h2) = (0, 0) için 1, (1, 0) için 0, (1, 1) için 1 vermeli.
+    return noron([h1, h2], [-1, 2], 0.5)
+
+
+for a in [0, 1]:
+    for b in [0, 1]:
+        print(f"{a} XNOR {b} = {xnor_agi(a, b)}")
 ```
 
 ## 3. Kütüphaneyle yap

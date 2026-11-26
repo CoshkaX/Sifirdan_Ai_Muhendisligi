@@ -211,6 +211,23 @@ Ortalama kare hata: 1.0
 `tahmin = ___` | Doğru çizginin formülü: ağırlık × girdi + sabit. Girdi `kilogramlar[i]`.
 `hata = ___` | Hata, tahmin ile gerçek değer arasındaki farktır. Burada `tahmin - gercek_fiyatlar[i]`.
 ```
+```python {.python-playground-solution}
+kilogramlar = [1, 2, 3]
+gercek_fiyatlar = [3, 5, 7]
+agirlik = 2
+sabit = 0
+
+kareli_hatalar = []
+for i in range(len(kilogramlar)):
+    # Tahmin = ağırlık × kilogram + sabit.
+    tahmin = agirlik * kilogramlar[i] + sabit
+    # Hata = tahmin - gerçek fiyat.
+    hata = tahmin - gercek_fiyatlar[i]
+    kareli_hatalar.append(hata ** 2)
+
+print("Kareli hatalar:", kareli_hatalar)
+print("Ortalama kare hata:", sum(kareli_hatalar) / len(kareli_hatalar))
+```
 
 ## 3. Kütüphaneyle yap
 

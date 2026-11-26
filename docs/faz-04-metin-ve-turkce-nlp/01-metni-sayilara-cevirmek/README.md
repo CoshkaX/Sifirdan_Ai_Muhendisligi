@@ -340,6 +340,20 @@ print(turkce_kucuk_harf("IŞIK İÇİN"))
 `return ___` (ilki) | `metin.encode("utf-8")` baytları verir; `len` kaç tane olduğunu sayar.
 `.replace(___, ___)` | Birinci boşluğa aranacak harfi, ikinciye yerine yazılacak harfi yaz. Metinleri tırnak içinde yaz.
 ```
+```python {.python-playground-solution}
+def utf8_bayt_sayisi(metin):
+    # Metni "utf-8" ile encode et ve baytların sayısını (len) geri ver.
+    return len(metin.encode("utf-8"))
+
+
+def turkce_kucuk_harf(metin):
+    # "I" harfini "ı" yap (önce "İ" → "i" yapılıyor).
+    return metin.replace("İ", "i").replace("I", "ı").lower()
+
+
+print(utf8_bayt_sayisi("çığ"))
+print(turkce_kucuk_harf("IŞIK İÇİN"))
+```
 
 ## 3. Kütüphaneyle yap
 

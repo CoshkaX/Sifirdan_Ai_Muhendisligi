@@ -99,7 +99,22 @@ Ortadakiler: [72.5, 82.5]
 ```
 ```text {.python-playground-help}
 `ortalamalar.append(___)` | Aynı konumdaki iki notu topla ve `2`'ye böl.
-`ortalamalar[___:___]` | Dilimlemede başlangıç dahil, bitiş dahil değildir. 2. öğe `1` konumunda; 3. öğe `2` konumunda, bu yüzden bitiş `3`.
+`ortalamalar[___:___]` | Saymaya 0'dan başlanır: 2. öğe `1`, 3. öğe `2` konumundadır. Bitiş dahil olmadığı için bitişe `3` yaz.
+```
+```python {.python-playground-solution}
+sinav1 = [60, 70, 80, 90]
+sinav2 = [70, 75, 85, 95]
+ortalamalar = []
+
+for i in range(len(sinav1)):
+    # İki sınavın aynı konumdaki notlarının ortalamasını bul.
+    ortalamalar.append((sinav1[i] + sinav2[i]) / 2)
+
+# Dilimle ortalamalar listesinden yalnızca 2. ve 3. öğeyi seç.
+ortadakiler = ortalamalar[1:3]
+
+print("Ortalamalar:", ortalamalar)
+print("Ortadakiler:", ortadakiler)
 ```
 
 ## 3. Kütüphaneyle yap

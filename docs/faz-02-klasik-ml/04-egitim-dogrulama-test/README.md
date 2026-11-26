@@ -172,6 +172,18 @@ Test: [9, 10]
 `veriler[___:___]` | Doğrulama, eğitimin bittiği yerden (`6`) başlar ve 2 örnek sürer, yani `8`'e kadar gider.
 `veriler[___:]` | Test, doğrulamanın bittiği yerden (`8`) sona kadar olan örneklerdir.
 ```
+```python {.python-playground-solution}
+veriler = list(range(1, 11))   # 10 örnek: 1, 2, ..., 10
+
+# İlk 6 örnek eğitim, sonraki 2 doğrulama, kalan test olsun.
+egitim = veriler[:6]
+dogrulama = veriler[6:8]
+test = veriler[8:]
+
+print("Eğitim:", egitim)
+print("Doğrulama:", dogrulama)
+print("Test:", test)
+```
 
 ## 3. Kütüphaneyle yap
 

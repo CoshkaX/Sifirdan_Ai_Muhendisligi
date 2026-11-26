@@ -129,7 +129,24 @@ Seçilen sayı: 6
 ```
 ```text {.python-playground-help}
 `toplam.append(___)` | `a[i]` ve `b[i]`, aynı konumdaki iki sayıdır. İkisini topla.
-`matris[___][___]` | İlk köşeli ayraç satırı, ikincisi sütunu seçer. Sayım `0`'dan başlar: 3. satır `2`, 2. sütun `1` konumundadır.
+`matris[___][___]` | İlk ayraç satırı, ikinci ayraç sütunu seçer. Saymaya 0'dan başlanır: 3. satır için `2`, 2. sütun için `1` yaz.
+```
+```python {.python-playground-solution}
+a = [1, 2, 3]
+b = [10, 20, 30]
+toplam = []
+
+for i in range(len(a)):
+    # Aynı konumdaki iki sayıyı topla ve listeye ekle.
+    toplam.append(a[i] + b[i])
+
+matris = [[1, 2], [3, 4], [5, 6]]
+# 3. satırın 2. sütunundaki sayıyı seç (konumlar 0'dan başlar).
+deger = matris[2][1]
+
+print("Toplam:", toplam)
+print("Matris boyutu:", len(matris), "x", len(matris[0]))
+print("Seçilen sayı:", deger)
 ```
 
 ## 3. Kütüphaneyle yap

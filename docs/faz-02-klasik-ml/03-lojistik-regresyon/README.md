@@ -214,6 +214,17 @@ for saat in [1, 3, 5]:
 `olasilik = ___` | Sigmoid formülü: `1 / (1 + math.exp(-ham_puan))`.
 `... if ___ else ...` | Olasılık `0.5` veya daha büyükse sınıf başarılıdır.
 ```
+```python {.python-playground-solution}
+import math
+
+for saat in [1, 3, 5]:
+    # Ham puan = 1.0 × saat + (-3.0).
+    ham_puan = 1.0 * saat - 3.0
+    # Sigmoid: 1 / (1 + e üzeri -ham_puan). math.exp kullan.
+    olasilik = 1 / (1 + math.exp(-ham_puan))
+    sinif = "Başarılı" if olasilik >= 0.5 else "Başarısız"
+    print(f"{saat} saat: {sinif} ({round(olasilik, 2)})")
+```
 
 ## 3. Kütüphaneyle yap
 

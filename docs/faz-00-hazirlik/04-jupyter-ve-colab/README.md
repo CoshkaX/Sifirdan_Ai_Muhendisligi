@@ -97,6 +97,18 @@ Konular: ['Python', 'Colab']
 `konular.___("Colab")` | Bir listenin sonuna öğe eklemek için `append` kullanılır.
 `sayi = ___(konular)` | Listedeki öğe sayısını `len` verir.
 ```
+```python {.python-playground-solution}
+konular = ["Python"]
+
+# Listeye "Colab" öğesini ekle (append metodu).
+konular.append("Colab")
+
+# Listedeki öğe sayısını bul (len fonksiyonu).
+sayi = len(konular)
+
+print("Konular:", konular)
+print("Öğe sayısı:", sayi)
+```
 
 ## 3. Kütüphaneyle yap
 

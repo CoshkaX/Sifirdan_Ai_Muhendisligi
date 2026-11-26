@@ -222,6 +222,21 @@ for a in [0, 1]:
 `z += ___` | Ağırlıklı toplamda her girdi kendi ağırlığıyla çarpılır: `girdiler[i] * agirliklar[i]`.
 `noron([a, b], [1, 1], ___)` | Girdilerden biri `1` olunca toplam `1` olur; bunun sıfırı geçmesi için sabit `-0.5` olmalı.
 ```
+```python {.python-playground-solution}
+def noron(girdiler, agirliklar, sabit):
+    z = 0
+    for i in range(len(girdiler)):
+        # Girdiyi kendi ağırlığıyla çarpıp z'ye ekle.
+        z += girdiler[i] * agirliklar[i]
+    z += sabit
+    return 1 if z >= 0 else 0
+
+
+# VEYA kapısı için sabit -0.5 olmalı (ağırlıklar [1, 1]).
+for a in [0, 1]:
+    for b in [0, 1]:
+        print(f"{a} VEYA {b} = {noron([a, b], [1, 1], -0.5)}")
+```
 
 ## 3. Kütüphaneyle yap
 

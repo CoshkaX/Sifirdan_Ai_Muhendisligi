@@ -157,6 +157,21 @@ Puan: 15
 `toplam += ___` | Noktasal çarpımda aynı konumdaki sayılar çarpılır: `a[i] * b[i]`.
 `noktasal_carpim(___, ___)` | Fonksiyon iki liste bekler: önce özellikleri, sonra katsayıları ver.
 ```
+```python {.python-playground-solution}
+def noktasal_carpim(a, b):
+    toplam = 0
+    for i in range(len(a)):
+        # Aynı konumdaki iki sayıyı çarp ve toplama ekle.
+        toplam += a[i] * b[i]
+    return toplam
+
+
+ozellikler = [2, 3, 4]
+katsayilar = [5, -1, 2]
+# Fonksiyonu özellikler ve katsayılarla çağır.
+puan = noktasal_carpim(ozellikler, katsayilar)
+print("Puan:", puan)
+```
 
 ## 3. Kütüphaneyle yap
 
