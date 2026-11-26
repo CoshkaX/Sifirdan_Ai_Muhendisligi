@@ -195,7 +195,9 @@ Bu örnek bir sohbet sistemi değildir. Ama yapay zekâ sistemlerinde aradığı
 
 ### Şimdi sen yaz: kural ekle
 
-Kural sözcüğüne yeni bir durum ekle ve kuralı olmayan durumda ne olacağını belirle. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `kurallar` sözlüğüne yeni bir hava durumu ekleyeceksin. Sonra iki havayı sırayla deneyeceksin: kuralı olan hava için öneri, kuralı olmayan için `Kuralım yok.` görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 kurallar = {

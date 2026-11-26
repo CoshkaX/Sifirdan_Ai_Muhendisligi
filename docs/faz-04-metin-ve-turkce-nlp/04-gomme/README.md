@@ -177,7 +177,9 @@ Bu sorunu azaltmanın iki yaygın yolu var:
 
 ### Şimdi sen yaz: kosinüs benzerliği
 
-İki vektörün kosinüs benzerliğini hesaplayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Kedi, aslan ve araba vektörleri hazır. Kosinüs benzerliği fonksiyonunu tamamlayıp kedinin hangisine daha çok benzediğine bakacaksın; iki benzerlik değeri yazılır.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 import math

@@ -191,7 +191,9 @@ Bu küçük veri kümesinde model eğitim örneklerini doğru sınıflara ayırd
 
 ### Şimdi sen yaz: sigmoid ve eşik
 
-Ham puandan olasılık hesapla ve eşiğe göre sınıf seç. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Üç öğrencinin çalışma saatinden başarı olasılığını hesaplayacaksın: önce ham puan, sonra sigmoid, sonra `0.5` eşiği. Her satırda saat, sınıf ve olasılık görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 import math

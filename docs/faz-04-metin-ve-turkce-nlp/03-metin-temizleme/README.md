@@ -113,7 +113,9 @@ Burada NFC, `I` ile birleşen noktayı tek bir `İ` kod noktasına dönüştür�
 
 ### Şimdi sen yaz: metni temizle
 
-Üç temizleme adımını sırayla uygulayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Bir metni arama için hazırlayan fonksiyon: Unicode'u düzeltir, Türkçe kurala göre küçük harfe çevirir ve fazla boşlukları siler. Sonunda ekranda `ığdır ili güzel` görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 import unicodedata

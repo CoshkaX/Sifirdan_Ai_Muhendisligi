@@ -148,12 +148,15 @@ Doğrulama kümesine bakarak model veya ayar seçtikten sonra test kümesini bu 
 
 ### Şimdi sen yaz: veriyi üçe böl
 
-On örneği yüzde 60 eğitim, yüzde 20 doğrulama, yüzde 20 test olarak dilimle. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `veriler` listesinde 10 örnek var. Dilimleme ile ilk 6'sını eğitim, sonraki 2'sini doğrulama, kalan 2'sini test olarak ayıracaksın; üç liste ekrana yazılır.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 veriler = list(range(1, 11))   # 10 örnek: 1, 2, ..., 10
 
 # TODO: İlk 6 örnek eğitim, sonraki 2 doğrulama, kalan test olsun.
+# (Dilimde başlangıç dahil, bitiş dahil değildir.)
 egitim = veriler[:___]
 dogrulama = veriler[___:___]
 test = veriler[___:]
@@ -176,6 +179,7 @@ Test: [9, 10]
 veriler = list(range(1, 11))   # 10 örnek: 1, 2, ..., 10
 
 # İlk 6 örnek eğitim, sonraki 2 doğrulama, kalan test olsun.
+# (Dilimde başlangıç dahil, bitiş dahil değildir.)
 egitim = veriler[:6]
 dogrulama = veriler[6:8]
 test = veriler[8:]

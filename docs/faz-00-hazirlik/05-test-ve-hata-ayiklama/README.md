@@ -110,7 +110,9 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: kendi testini yaz
 
-Fonksiyonu yaz, sonra testlerin beklenen değerlerini kâğıtta hesaplayıp doldur. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Önce dikdörtgenin çevresini hesaplayan fonksiyonu yazacaksın. Sonra iki `assert` testinin beklenen değerlerini, fonksiyona bakmadan, kâğıtta kendin hesaplayıp yazacaksın. Testler geçerse çevreler ekrana yazılır.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def dikdortgen_cevresi(en, boy):

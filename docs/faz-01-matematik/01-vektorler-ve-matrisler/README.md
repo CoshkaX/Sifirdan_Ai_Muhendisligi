@@ -103,7 +103,9 @@ Bu örnekte matrisin boyutu **2 satır × 3 sütun**dur. Matrisin boyutu, hangi 
 
 ### Şimdi sen yaz: vektör topla, matristen seç
 
-İki vektörü topla ve bir matristen belirli bir sayıyı seç. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** İki vektörü aynı konumlarından toplayacak ve bir matristen belirli bir sayıyı seçeceksin. Ekranda toplam vektör, matrisin boyutu ve seçtiğin sayı görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 a = [1, 2, 3]

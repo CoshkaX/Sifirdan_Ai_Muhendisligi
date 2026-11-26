@@ -243,7 +243,9 @@ Ada: 94
 
 ### Şimdi sen yaz: ortalama fonksiyonu
 
-Bir sınıftaki öğrencilerin not ortalamasını bulan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `ortalama` fonksiyonu bir not listesinin ortalamasını bulmalı. Önce fonksiyonu yazacak, sonra sınıftaki her öğrencinin notlarını ona vereceksin. Ekranda her öğrencinin adı ve ortalaması görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def ortalama(notlar):

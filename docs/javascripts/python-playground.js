@@ -257,7 +257,9 @@
       expectedDetails.className = "python-playground-expected-details";
 
       var expectedSummary = document.createElement("summary");
-      expectedSummary.textContent = isTask ? "Beklenen çıktıyı gör" : "Başlangıç koduyla çıkan çıktı";
+      expectedSummary.textContent = isTask ? "Hedef çıktı: ekranda bunu görmelisin" : "Başlangıç koduyla çıkan çıktı";
+      // Görevde öğrenci neyi hedeflediğini baştan görsün.
+      if (isTask) expectedDetails.open = true;
       expectedDetails.appendChild(expectedSummary);
 
       var expected = document.createElement("pre");

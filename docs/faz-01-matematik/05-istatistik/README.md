@@ -166,7 +166,9 @@ Bu hesapta iki listede de değişen değer bulunmalıdır. Listelerden biri sabi
 
 ### Şimdi sen yaz: varyans
 
-Dört notun varyansını adım adım hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Dört notun ortalaması kodda hazır. Her notun ortalamadan farkının karesini bulacak, bu karelerin ortalamasıyla varyansı hesaplayacaksın.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 notlar = [4, 8, 6, 10]

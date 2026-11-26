@@ -195,7 +195,9 @@ Ağırlıklar: [0.1, 0.1] Sabit: -0.1
 
 ### Şimdi sen yaz: VEYA kapısı
 
-Nöron fonksiyonunu tamamla ve VEYA kapısı için sabit terimi seç. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `noron` fonksiyonu girdileri ağırlıklarıyla çarpıp toplar ve sabiti ekler. Fonksiyonu tamamlayıp VEYA kapısı olarak çalıştıracaksın: girdilerden biri `1` ise çıktı `1` olmalı.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def noron(girdiler, agirliklar, sabit):

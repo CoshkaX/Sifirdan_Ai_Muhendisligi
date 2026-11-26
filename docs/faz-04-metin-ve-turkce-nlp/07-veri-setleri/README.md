@@ -228,7 +228,9 @@ Başkasının veri setini kullanırken de önce veri kartını oku. Veri kartı 
 
 ### Şimdi sen yaz: boş ve tekrar eden kayıtları say
 
-Veri kaydındaki boş metinleri ve tekrarları say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Dört kayıtlık küçük bir veri setinde boş metinleri ve tekrar eden metinleri sayacaksın. Ekranda boş kayıt sayısı ve tekrar sayısı görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]

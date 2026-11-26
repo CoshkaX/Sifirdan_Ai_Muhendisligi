@@ -71,10 +71,12 @@ toplam = fiyat * adet
 print(f"Toplam: {toplam} TL")
 ```
 
+Görev başlığının altına `**Görev:**` ile başlayan bir açıklama yaz. Açıklama üç şeyi söylesin: kodda ne hazır, öğrenci ne yapacak, ekranda ne görünmeli. "Fonksiyonu tamamla" gibi tek satırlık etiketler yetmez; öğrenci yalnızca hedef çıktıya bakarak neyin istendiğini anlayamaz. Hedef çıktı (beklenen çıktı bloğu) kutunun altında varsayılan olarak açık gösterilir.
+
 Görev yazarken şu kurallara uy. Hepsi, yeni başlayan bir öğrencinin takıldığı yerlerden çıkarıldı:
 
 1. **Sıfırdan yazdırma, iskelet ver.** Öğrencinin yazacağı yeri `___` ile boş bırak, üstüne `# TODO: ...` notu yaz. Site her `___` yerine bir yazma kutusu koyar; öğrenci yalnızca kutulara yazar, kodun geri kalanını değiştiremez. Boş kutu varken kod çalışmaz.
-2. **Cevabı yorumda söyleme.** `# TODO` notu *ne* yapılacağını söylesin, cevabı değil. Cevaba yardım düğmesi götürür.
+2. **Her kutunun yanında bir `# TODO` notu olsun.** Not *ne* yapılacağını söylesin, cevabı değil; cevaba yardım düğmesi götürür.
 3. **Yalnızca derste öğretilen sözdizimini kullan.** Öğrencinin görmediği bir şey varsa (tek satırlık `if ... else`, `set`, iç içe döngü, `a = b = 0` gibi) iskelete bir açıklama satırı ekle.
 4. **Çarpma `*`, üs alma `**`.** Yorumlarda matematik yazımı (×) kullanırsan, öğrenci bunu koda yazmasın diye kutunun üstündeki yönerge zaten hatırlatır; yine de yardımda `*` yaz.
 5. **Kutu tırnağın içinde olabilir.** Tırnaklar kodda hazır durur; öğrenci yalnızca metni yazar (`"___"` için `aıou` yazar, tırnak yazmaz). Kutunun içine tırnaklı metin yazması gerekiyorsa (`.replace(___, ___)` gibi) bunu yardımda söyle.

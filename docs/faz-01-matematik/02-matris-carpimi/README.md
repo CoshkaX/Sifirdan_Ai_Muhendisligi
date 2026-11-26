@@ -133,7 +133,9 @@ Fonksiyon önce boş matrisleri, eşit uzunlukta olmayan satırları ve çarpım
 
 ### Şimdi sen yaz: noktasal çarpım
 
-Noktasal çarpımı hesaplayan fonksiyonu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Noktasal çarpımda aynı konumdaki sayılar çarpılıp toplanır. Fonksiyonu tamamlayıp bir evin özellikleri ile katsayılarından tek bir puan hesaplayacaksın; ekranda bu puan görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def noktasal_carpim(a, b):

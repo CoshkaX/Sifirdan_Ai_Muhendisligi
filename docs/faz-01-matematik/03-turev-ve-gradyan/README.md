@@ -95,7 +95,9 @@ Bir parametre varsa onun için tek bir türev hesaplarız. Birden fazla parametr
 
 ### Şimdi sen yaz: gradyan inişi adımları
 
-Ağırlığı hedef olan `2`'ye yaklaştıran üç gradyan inişi adımı yaz. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Ağırlık `10`'dan başlıyor, hedef `2`. Gradyan inişiyle üç adımda ağırlığı hedefe yaklaştıracaksın. Her adımda yeni ağırlık yazılır ve sayı küçülerek `2`'ye yaklaşır.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 agirlik = 10.0

@@ -222,7 +222,9 @@ Bu adımda kullanılan örnekler: [10, 7]
 
 ### Şimdi sen yaz: momentum adımı
 
-`x²` kaybını küçültmek için üç momentum adımı at. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `x²` kaybında `x`, `4`'ten başlıyor ve `0`'a inmeli. Momentum ile üç adım atacaksın; her adımda hızı ve yeni `x` değerini hesaplayacaksın.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def turev(x):

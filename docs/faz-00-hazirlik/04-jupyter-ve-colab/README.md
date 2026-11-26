@@ -75,7 +75,9 @@ Colab defterini Google Drive'a kaydedebilir ve bağlantıyla paylaşabilirsin. P
 
 ### Şimdi sen yaz: listeyle çalış
 
-Colab'daki bir hücrede yazacağın türden kısa bir kod: listeye öğe ekle ve say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Bir listeye öğe ekleyip kaç öğesi olduğunu bulacaksın; Colab'da bir hücreye yazacağın türden kısa bir kod. Sonunda ekranda liste ve öğe sayısı görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 konular = ["Python"]

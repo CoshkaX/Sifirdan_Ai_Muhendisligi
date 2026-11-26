@@ -316,7 +316,9 @@ On testin de `ok` ile tamamlanması gerekir. [`test/test_tokenizer_demo.py`](tes
 
 ### Şimdi sen yaz: bayt sayısı ve küçük harf
 
-UTF-8 bayt sayısını hesapla ve Türkçe küçük harf fonksiyonunu tamamla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** İki küçük fonksiyon yazacaksın: bir metnin UTF-8'de kaç bayt tuttuğunu bulan ve Türkçe kurala göre küçük harfe çeviren. Ekranda `çığ` için bayt sayısı ve `IŞIK İÇİN` yazısının küçük hâli görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def utf8_bayt_sayisi(metin):

@@ -157,7 +157,9 @@ Bu örnek tek bir soru bulduğu için **tek seviyeli ağaç** veya **karar küt�
 
 ### Şimdi sen yaz: Gini safsızlığı
 
-Gini fonksiyonunu tamamla ve bir bölmenin ağırlıklı Gini değerini hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** `gini` fonksiyonu bir grubun ne kadar karışık olduğunu ölçer: tek sınıflıysa `0`, yarı yarıya karışıksa `0.5`. Fonksiyonu tamamlayıp bir bölmenin ağırlıklı Gini değerini de hesaplayacaksın.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def gini(etiketler):

@@ -105,7 +105,9 @@ Bu örnekte tek bir doğru sınıfı olan tek bir gözlemi inceliyoruz. Eğitimd
 
 ### Şimdi sen yaz: entropi ve kayıp
 
-Dört eşit olasılıklı sonucun entropisini ve bir tahminin çapraz entropi kaybını hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** İki hesap yapacaksın: dört eşit olasılıklı sonucun entropisini ve doğru sınıfa `0.5` olasılık veren bir modelin kaybını. İkisi de bit cinsinden yazılır.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 import math

@@ -159,7 +159,9 @@ Yüzde `90` doğruluk kulağa iyi gelse de modelin duyarlılığı `0`'dır. İs
 
 ### Şimdi sen yaz: kesinlik ve duyarlılık
 
-Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Model 7 örneğe tahmin yapmış. Her gerçek ve tahmin çiftine bakıp doğru pozitif, yanlış pozitif ve yanlış negatifleri sayacak, sonra kesinlik ve duyarlılığı hesaplayacaksın.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 gercek = [1, 1, 0, 0, 1, 0, 1]

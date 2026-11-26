@@ -256,7 +256,9 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: kök yaklaşımıyla eşleştir
 
-Sözcüklerin ilk 5 harfini terim yap ve sorguyla belgenin ortak terimlerini say. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Bir belge ile bir sorguyu sözcüklerin ilk 5 harfine göre terimlere ayıracak, sonra kaç terimin ortak olduğunu sayacaksın. Ekranda belgenin terimleri ve ortak terim sayısı görünmeli.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 from collections import Counter

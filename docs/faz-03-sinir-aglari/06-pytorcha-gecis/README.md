@@ -165,7 +165,9 @@ Fikir aynı; yalnızca ölçek ve hız farklı.
 
 ### Şimdi sen yaz: eğitim döngüsünün adımları
 
-Eğitim döngüsünün tahmin, türev ve güncelleme adımlarını yaz. Doğru cevap `agirlik = 3`. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Tek ağırlıklı bir modelin eğitim döngüsü: tahmin et, kaybı hesapla, türevi bul, ağırlığı güncelle. Doğru ağırlık `3`; her adımda kayıp küçülmeli ve ağırlık `3`'e yaklaşmalı.
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 agirlik = 0.0

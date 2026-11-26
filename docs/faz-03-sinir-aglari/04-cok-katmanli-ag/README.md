@@ -181,7 +181,9 @@ python -m unittest discover -s test -v
 
 ### Şimdi sen yaz: XNOR ağı
 
-Gizli katman hazır (VEYA ve VE nöronları). Çıktı nöronunu, girdiler aynıysa `1` verecek şekilde kur. Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur, sonra çalıştır.
+**Görev:** Gizli katman hazır: `h1` bir VEYA, `h2` bir VE kapısı. Sen çıktı nöronunun sabitini ve ağırlıklarını seçeceksin. Ağ girdiler aynıysa `1`, farklıysa `0` vermeli (XNOR).
+
+Sitede `___` yazan her yer yazılabilir bir kutu olur; `# TODO` notlarına bakarak kutuları doldur ve çalıştır. Çıktın aşağıdaki **Hedef çıktı** ile aynıysa başardın.
 
 ```python {.python-playground-task}
 def noron(girdiler, agirliklar, sabit):
