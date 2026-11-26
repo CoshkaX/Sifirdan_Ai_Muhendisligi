@@ -192,7 +192,10 @@ def noron(girdiler, agirliklar, sabit):
 def xnor_agi(a, b):
     h1 = noron([a, b], [1, 1], -0.5)     # VEYA
     h2 = noron([a, b], [1, 1], -1.5)     # VE
-    # TODO: (h1, h2) = (0, 0) için 1, (1, 0) için 0, (1, 1) için 1 vermeli.
+    # Çıktı nöronu şu üç durumu ayırmalı:
+    #   (h1, h2) = (0, 0) → 1      (1, 0) → 0      (1, 1) → 1
+    # TODO 1: Önce sabiti (üçüncü boşluk) seç: (0, 0) iken toplam yalnızca sabittir.
+    # TODO 2: Sonra iki ağırlığı seç: h1 çıktıyı 0 yapmalı, h2 tekrar 1 yapmalı.
     return noron([h1, h2], [___, ___], ___)
 
 
@@ -220,7 +223,10 @@ def noron(girdiler, agirliklar, sabit):
 def xnor_agi(a, b):
     h1 = noron([a, b], [1, 1], -0.5)     # VEYA
     h2 = noron([a, b], [1, 1], -1.5)     # VE
-    # (h1, h2) = (0, 0) için 1, (1, 0) için 0, (1, 1) için 1 vermeli.
+    # Çıktı nöronu şu üç durumu ayırmalı:
+    #   (h1, h2) = (0, 0) → 1      (1, 0) → 0      (1, 1) → 1
+    # Önce sabiti (üçüncü boşluk) seç: (0, 0) iken toplam yalnızca sabittir.
+    # Sonra iki ağırlığı seç: h1 çıktıyı 0 yapmalı, h2 tekrar 1 yapmalı.
     return noron([h1, h2], [-1, 2], 0.5)
 
 

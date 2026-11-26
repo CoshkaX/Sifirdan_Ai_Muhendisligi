@@ -29,11 +29,25 @@ Bu seride her konuyu önce **küçük ve sade bir sürümle kendin yazarsın**: 
 | Adım | Ne yaparsın? | Neden? |
 |---|---|---|
 | **1. Problem** | Somut bir sorunla başlarsın | Neden bu konuyu öğrendiğini görürsün |
-| **2. Kendin yaz** | Framework'süz, sade kod yazarsın | Mekanizmayı gerçekten anlarsın |
+| **2. Kendin yaz** | Önce çalışan örnekleri değiştirip denersin, sonra eksik kodu kendin tamamlarsın | Mekanizmayı gerçekten anlarsın |
 | **3. Kütüphaneyle yap** | Aynı işi gerçek araçlarla yaparsın | Üretimde nasıl kullanıldığını görürsün |
 | **4. Pekiştir** | Quiz ve alıştırmalar çözersin | Öğrendiğini sınarsın |
 
-Her dersin başında tahmini süre, ön koşul ve gereken araçlar yazar. Uygun örnekler sayfada düzenlenip çalıştırılabilir; yerel dosya veya test gerektiren dersler bunları ayrıca belirtir. Testler, sınadıkları davranışın beklendiği gibi çalışıp çalışmadığını kontrol eder.
+Her dersin başında tahmini süre, ön koşul ve gereken araçlar yazar. Yerel dosya veya paket gerektiren dersler bunları ayrıca belirtir.
+
+### Sayfadaki kod pencereleri
+
+Kodu kurulum yapmadan, sayfanın içinde çalıştırırsın. İki tür pencere vardır:
+
+| | **Örnek** | **Kendin yaz** |
+|---|---|---|
+| Ne yaparsın? | Hazır kodu çalıştırır, sonra bir sayıyı ya da metni değiştirip çıktının nasıl değiştiğine bakarsın | Eksik yerleri (`___`) kendin doldurur ve çalıştırırsın |
+| Başarı | Rozet yok; amaç denemek | Çıktı doğruysa "✓ Başarılı" |
+| Takılırsan | **Anlamadıysan bas**: kodu satır satır açıklar | **Yapamazsan buna bas**: çözümün tamamını yeşil kodla ve açıklamasıyla gösterir |
+
+Önce **Örnek**'i çalıştırıp değiştir, sonra **Kendin yaz**'ı dene. Yardıma bakmak yasak değil; ama önce kendin dene, sonra çözümle karşılaştır.
+
+Kodların hepsi tarayıcında çalışır, hiçbir yere gönderilmez. İlk çalıştırmada Python çalışma zamanı indirilir, bu birkaç saniye sürebilir.
 
 ## Müfredata genel bakış
 
@@ -101,6 +115,9 @@ GPU'n yoksa sorun değil. Dersler CPU'da ya da ücretsiz Colab/Kaggle ortamında
 
 ??? question "İngilizce bilmem gerekir mi?"
     Dersler Türkçe. Ama makaleler ve resmî dokümanlar çoğunlukla İngilizce olduğundan, her dersin "Kaynaklar" bölümünde bunları da veriyoruz. Mesleki olarak ilerlerken İngilizce okumak sana yardımcı olacaktır.
+
+??? question "Görevi çözemiyorum, çözümü görmem yasak mı?"
+    Hayır. "Kendin yaz" kutusundaki **Yapamazsan buna bas** düğmesi tam bunun için var: çözümün tamamını ve açıklamasını gösterir. Önce kendin dene, takılınca bak, sonra kodu kendi kutuna yazıp çalıştır. Çözümü okumak öğrenmenin parçasıdır.
 
 ??? question "Ücretli mi? Sertifika veriyor mu?"
     Tamamen ücretsiz ve açık kaynak. Sertifika vermiyoruz; amaç gerçek bir beceri kazandırmak.

@@ -207,7 +207,8 @@ def noron(girdiler, agirliklar, sabit):
     return 1 if z >= 0 else 0
 
 
-# TODO: VEYA kapısı için sabit -0.5 olmalı (ağırlıklar [1, 1]).
+# TODO: VEYA kapısı için uygun sabiti seç. Ağırlıklar [1, 1].
+# (0, 0) için çıktı 0, diğer üç girdi için 1 olmalı.
 for a in [0, 1]:
     for b in [0, 1]:
         print(f"{a} VEYA {b} = {noron([a, b], [1, 1], ___)}")
@@ -220,7 +221,7 @@ for a in [0, 1]:
 ```
 ```text {.python-playground-help}
 `z += ___` | Ağırlıklı toplamda her girdi kendi ağırlığıyla çarpılır: `girdiler[i] * agirliklar[i]`.
-`noron([a, b], [1, 1], ___)` | Girdilerden biri `1` olunca toplam `1` olur; bunun sıfırı geçmesi için sabit `-0.5` olmalı.
+`noron([a, b], [1, 1], ___)` | `(0, 0)` iken toplam sadece sabittir ve çıktı `0` olmalı: sabit negatif. `(0, 1)` iken `1 + sabit` sıfırdan küçük olmamalı. `-0.5` ikisini de sağlar.
 ```
 ```python {.python-playground-solution}
 def noron(girdiler, agirliklar, sabit):
@@ -232,7 +233,8 @@ def noron(girdiler, agirliklar, sabit):
     return 1 if z >= 0 else 0
 
 
-# VEYA kapısı için sabit -0.5 olmalı (ağırlıklar [1, 1]).
+# VEYA kapısı için uygun sabiti seç. Ağırlıklar [1, 1].
+# (0, 0) için çıktı 0, diğer üç girdi için 1 olmalı.
 for a in [0, 1]:
     for b in [0, 1]:
         print(f"{a} VEYA {b} = {noron([a, b], [1, 1], -0.5)}")

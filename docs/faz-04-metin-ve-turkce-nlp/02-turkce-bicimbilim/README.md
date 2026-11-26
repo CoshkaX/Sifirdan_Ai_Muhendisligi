@@ -140,8 +140,8 @@ gözlükler
 ağaçlar
 ```
 ```text {.python-playground-help}
-`if harf in "___":` (ilki) | `lar` alan ünlüler: `a`, `ı`, `o`, `u`. Tırnağın içine bu harfleri yan yana yaz.
-`if harf in "___":` (ikincisi) | `ler` alan ünlüler: `e`, `i`, `ö`, `ü`.
+`if harf in "___":` (ilki) | Tırnaklar hazır, yalnızca harfleri yaz. `lar` alan ünlüler: `a`, `ı`, `o`, `u`.
+`if harf in "___":` (ikincisi) | Burada da tırnaklar hazır. `ler` alan ünlüler: `e`, `i`, `ö`, `ü`.
 ```
 ```python {.python-playground-solution}
 def cogul_eki(kok):

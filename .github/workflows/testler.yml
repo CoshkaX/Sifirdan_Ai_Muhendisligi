@@ -19,3 +19,5 @@ jobs:
             echo "=== $d ==="
             python -m unittest discover -s "$d" -v
           done
+      - name: Etkileşimli örnekleri ve görevleri doğrula
+        run: python scripts/ornekleri_dogrula.py

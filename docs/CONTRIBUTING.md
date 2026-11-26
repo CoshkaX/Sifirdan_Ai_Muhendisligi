@@ -30,7 +30,7 @@ Bu proje öğrenenler için, öğrenenlerle birlikte yazılıyor. Her katkı de�
         test/          # varsa, kodu doğrulayan testler
     ```
 
-4. **Örnekleri çalıştır ve doğrula.** Tarayıcı çalışma alanındaki örnekler tek başına çalışmalı ve belirtilen çıktıyı üretmeli. Yerel `kod/` dosyası eklediysen onu da test et.
+4. **Örnekleri çalıştır ve doğrula.** Tarayıcı çalışma alanındaki örnekler tek başına çalışmalı ve belirtilen çıktıyı üretmeli. Yerel `kod/` dosyası eklediysen onu da test et. `python scripts/ornekleri_dogrula.py` bütün Örnek kutularını ve görev çözümlerini denetler.
 5. **Menülere ekle.** Dersi `mkdocs.yml` içindeki `nav:` bölümüne ve özel sol menü olan [`overrides/partials/nav.html`](overrides/partials/nav.html) dosyasına ekle. Tamamlanmış dersin bağlantısını gerçek ders sayfasına yönlendirip `available` olarak işaretle; henüz yazılmamış dersleri `planned` bırak.
 6. **Müfredatı güncelle.** [MUFREDAT.md](MUFREDAT.md) içinde dersin durumunu ✅ yap ve bağlantı ver.
 7. **Pull request aç.** Kontrol listesini doldur.
@@ -56,11 +56,10 @@ Bu proje öğrenenler için, öğrenenlerle birlikte yazılıyor. Her katkı de�
 
 - Mümkünse yalnızca standart kütüphane kullan. Ek paket gerekiyorsa dersin başında belirt.
 - Fonksiyonlara kısa bir açıklama (docstring) ekle. Değişken ve fonksiyon adları Türkçe olabilir, ama tek bir derste tutarlı ol.
-- Öğrencinin değiştirmesi ve çalıştırması yararlı olan, kendi başına çalışabilen saf Python örneklerini `{.python-playground}` ile etkileşimli yap. Bu kutular sitede **Örnek** olarak görünür; başarı rozeti vermez, öğrenciden değer değiştirip tekrar çalıştırmasını ister.
-- Her dersin "Kendin yaz" bölümüne en az bir **görev** kutusu ekle: `{.python-playground-task}`. Kodun tamamını yazdırma; iskeleti ver, öğrencinin yazacağı yerleri `___` ile boş bırak ve üstüne `# TODO: ...` notu yaz. Görev kutusunun arkasına sırayla beklenen çıktıyı `{.python-playground-expected}`, satır satır yardımı `{.python-playground-help}` ve kodun tamamını gösteren çözümü `{.python-playground-solution}` ile ekle. Çözüm, yardım düğmesine basınca yeşil kod olarak görünür. Beklenen çıktıyı, çözümü çalıştırarak al; yardım satırlarını kısa ve sade tut (en fazla iki cümle).
+- Kod kutuları iki türdür: **Örnek** (`{.python-playground}`) ve **Kendin yaz** görevi (`{.python-playground-task}`). Her fikir için bir Örnek, her dersin "Kendin yaz" bölümünün sonunda en az bir görev yaz. Çalışan örnekler ve ayrıntılı kurallar [ders şablonundadır](sablon/DERS-SABLONU.md).
+- Görevde iskelet ver: yazılacak yerleri `___` ve `# TODO` ile belirt, cevabı yorumda söyleme, derste öğretilmemiş sözdizimini iskelet içinde açıkla. Yardım adımlarını kısa tut (boşluk başına en fazla iki cümle) ve kodun tamamını ayrı bir `{.python-playground-solution}` bloğunda ver. Beklenen çıktıyı çözümü çalıştırarak al.
+- Kutuları ekledikten sonra `python scripts/ornekleri_dogrula.py` komutunu çalıştır. Bu betik GitHub'da her gönderimde de çalışır.
 - Terminal komutlarını, işletim sistemine özgü kurulum adımlarını, sınıf bağlamına bağlı eksik kod parçalarını ve yerel dosya/özel paket gerektiren örnekleri normal kod bloğunda tut. Bunları tarayıcı çalışma alanının yerine geçiyormuş gibi sunma.
-- Öğrencinin takılabileceği örneklerde beklenen çıktı bloğunun arkasına `{.python-playground-help}` ekle. Her satıra `` `kod parçası` | açıklama `` biçiminde, birebir kod ifadesini ve sade açıklamasını yaz. Hangi değeri aldığını, ne yaptığını ve sonraki satırla nasıl bağlandığını yeni başlayan birine anlat; görev yönergesini tekrar etmekle yetinme.
-- Beklenen çıktılı örneklerde görevin yalnızca sabit `print()` çağrılarıyla geçilemeyeceğini doğrula; çıktı eşleşmesini tek başına kavrayış kanıtı sayma. Kestirme uyarıları destekleyici ve yargılamayan bir dille yaz.
 - Yerel `kod/` dosyasıyla aynı örnek gösteriliyorsa ikisini eşzamanlı tut; küçük öğretici parçalar kendi başına çalışabilir.
 - Testler `unittest` ile yazılır ve `python -m unittest discover -s test` ile çalışır.
 
@@ -80,6 +79,8 @@ Sonra tarayıcıda `http://127.0.0.1:8000` adresini aç. Bu adım isteğe bağl�
 - [ ] [Ders şablonundaki](sablon/DERS-SABLONU.md) bölümlerin hepsi var
 - [ ] Kod temiz bir ortamda çalışıyor
 - [ ] Testler geçiyor
+- [ ] `python scripts/ornekleri_dogrula.py` hatasız bitiyor
+- [ ] Dersin "Kendin yaz" bölümünde en az bir görev kutusu var
 - [ ] `mkdocs.yml` ve özel sol menüdeki ders bağlantıları güncel
 - [ ] Terimler sözlükle tutarlı, yeni terimler sözlüğe eklendi
 - [ ] Kaynaklar listelenmiş

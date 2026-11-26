@@ -215,7 +215,7 @@ karlı: Bot giy.
 rüzgârlı: Kuralım yok.
 ```
 ```text {.python-playground-help}
-`"___": "___",` | Sözlükte `anahtar: değer` biçiminde yazılır. Anahtar hava durumu, değer öneridir.
+`"___": "___",` | Tırnaklar hazır, yalnızca metinleri yaz. Sözlükte `anahtar: değer` biçiminde yazılır: anahtar hava durumu, değer öneridir.
 `kurallar.___(hava, "Kuralım yok.")` | `get` anahtar varsa değerini, yoksa ikinci değeri verir.
 ```
 ```python {.python-playground-solution}
