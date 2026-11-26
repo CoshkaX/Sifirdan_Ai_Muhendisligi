@@ -140,7 +140,7 @@
     var hint = document.createElement("p");
     hint.className = "python-playground-hint";
     hint.textContent = isTask
-      ? "# TODO yazan yerlerdeki ___ boşluklarını tamamla, sonra çalıştır. Takılırsan aşağıdaki yardım düğmesine bas."
+      ? "Kodda ___ yazan yerleri sil, yerine istenen kodu yaz (# ile başlayan satırlar açıklamadır). Yorumlardaki × işareti Python'da * olarak yazılır. Takılırsan aşağıdaki yardım düğmesine bas."
       : "Önce çalıştır. Sonra koddaki bir sayıyı ya da metni değiştirip tekrar çalıştır ve çıktının nasıl değiştiğine bak.";
     widget.appendChild(hint);
 

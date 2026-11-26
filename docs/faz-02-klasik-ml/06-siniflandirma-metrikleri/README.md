@@ -165,6 +165,7 @@ Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. `# TODO`
 gercek = [1, 1, 0, 0, 1, 0, 1]
 tahmin = [1, 0, 0, 1, 1, 0, 0]
 
+# tp = fp = fn = 0, üç değişkene de aynı anda 0 verir.
 tp = fp = fn = 0
 for g, t in zip(gercek, tahmin):
     if g == 1 and t == 1:
@@ -196,6 +197,7 @@ Kesinlik: 0.67 Duyarlılık: 0.5
 gercek = [1, 1, 0, 0, 1, 0, 1]
 tahmin = [1, 0, 0, 1, 1, 0, 0]
 
+# tp = fp = fn = 0, üç değişkene de aynı anda 0 verir.
 tp = fp = fn = 0
 for g, t in zip(gercek, tahmin):
     if g == 1 and t == 1:

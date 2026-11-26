@@ -234,6 +234,7 @@ Veri kaydındaki boş metinleri ve tekrarları say. `# TODO` yazan yerlerdeki `_
 veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]
 
 bos_sayisi = 0
+# set: tekrarsız öğeler kümesi. .add() ile öğe eklenir, in ile var mı diye bakılır.
 gorulen = set()
 tekrar_sayisi = 0
 
@@ -261,6 +262,7 @@ Boş: 1 Tekrar: 1
 veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]
 
 bos_sayisi = 0
+# set: tekrarsız öğeler kümesi. .add() ile öğe eklenir, in ile var mı diye bakılır.
 gorulen = set()
 tekrar_sayisi = 0
 

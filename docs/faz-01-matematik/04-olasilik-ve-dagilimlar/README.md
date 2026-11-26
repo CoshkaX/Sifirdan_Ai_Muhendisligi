@@ -116,6 +116,7 @@ Adil para için yazı gelme olasılığı `0.5`tir. Ama parayı yalnızca altı 
 uygun = 0
 toplam_sonuc = 0
 
+# İç içe iki döngü: iki zarın 36 olası çiftini sırayla dener.
 for z1 in range(1, 7):
     for z2 in range(1, 7):
         toplam_sonuc += 1
@@ -140,6 +141,7 @@ Olasılık: 0.167
 uygun = 0
 toplam_sonuc = 0
 
+# İç içe iki döngü: iki zarın 36 olası çiftini sırayla dener.
 for z1 in range(1, 7):
     for z2 in range(1, 7):
         toplam_sonuc += 1

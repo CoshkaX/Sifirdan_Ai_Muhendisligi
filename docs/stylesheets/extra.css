@@ -1135,3 +1135,34 @@
 [data-md-color-scheme="slate"] .python-playground-widget .python-playground-solution-code {
   color: #8fd3a5;
 }
+
+/* Yardım düğmesi: küçük bir bağlantı gibi değil, basılabilir bir düğme gibi görünsün */
+.python-playground-widget .python-playground-help-toggle {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--md-primary-fg-color--dark);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--md-primary-fg-color--dark);
+  font: 700 0.72rem "Nunito Sans", sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.python-playground-widget .python-playground-help-toggle:hover,
+.python-playground-widget .python-playground-help-toggle[aria-expanded="true"] {
+  background: var(--md-primary-fg-color--dark);
+  color: var(--md-default-bg-color);
+}
+
+[data-md-color-scheme="slate"] .python-playground-widget .python-playground-help-toggle {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
+}
+
+[data-md-color-scheme="slate"] .python-playground-widget .python-playground-help-toggle:hover,
+[data-md-color-scheme="slate"] .python-playground-widget .python-playground-help-toggle[aria-expanded="true"] {
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+}

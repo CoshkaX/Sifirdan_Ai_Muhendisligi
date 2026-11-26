@@ -253,6 +253,7 @@ def ortalama(notlar):
 
 sinif = {"Ece": [80, 90, 100], "Mert": [60, 70, 80]}
 
+# Sözlükte for döngüsü anahtarları, yani öğrenci adlarını sırayla verir.
 for ad in sinif:
     # TODO: Öğrencinin notlarını ortalama() fonksiyonuna ver.
     sonuc = ortalama(___)
@@ -274,6 +275,7 @@ def ortalama(notlar):
 
 sinif = {"Ece": [80, 90, 100], "Mert": [60, 70, 80]}
 
+# Sözlükte for döngüsü anahtarları, yani öğrenci adlarını sırayla verir.
 for ad in sinif:
     # Öğrencinin notlarını ortalama() fonksiyonuna ver.
     sonuc = ortalama(sinif[ad])

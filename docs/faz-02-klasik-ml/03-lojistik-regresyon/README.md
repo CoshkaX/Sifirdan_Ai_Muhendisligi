@@ -201,6 +201,8 @@ for saat in [1, 3, 5]:
     ham_puan = ___
     # TODO: Sigmoid: 1 / (1 + e üzeri -ham_puan). math.exp kullan.
     olasilik = ___
+    # TODO: Olasılık 0.5 veya büyükse "Başarılı" seçilsin.
+    # Tek satırlık koşul: değer1 if koşul else değer2 (koşul doğruysa değer1 seçilir).
     sinif = "Başarılı" if ___ else "Başarısız"
     print(f"{saat} saat: {sinif} ({round(olasilik, 2)})")
 ```
@@ -222,6 +224,8 @@ for saat in [1, 3, 5]:
     ham_puan = 1.0 * saat - 3.0
     # Sigmoid: 1 / (1 + e üzeri -ham_puan). math.exp kullan.
     olasilik = 1 / (1 + math.exp(-ham_puan))
+    # Olasılık 0.5 veya büyükse "Başarılı" seçilsin.
+    # Tek satırlık koşul: değer1 if koşul else değer2 (koşul doğruysa değer1 seçilir).
     sinif = "Başarılı" if olasilik >= 0.5 else "Başarısız"
     print(f"{saat} saat: {sinif} ({round(olasilik, 2)})")
 ```
