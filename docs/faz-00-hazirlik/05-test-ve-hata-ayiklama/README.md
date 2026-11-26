@@ -122,9 +122,11 @@ def dikdortgen_cevresi(en, boy):
 assert dikdortgen_cevresi(3, 4) == ___
 assert dikdortgen_cevresi(5, 5) == ___
 print("İki test de başarılı.")
+print("Çevreler:", dikdortgen_cevresi(3, 4), dikdortgen_cevresi(5, 5))
 ```
 ```text {.python-playground-expected}
 İki test de başarılı.
+Çevreler: 14 20
 ```
 ```text {.python-playground-help}
 `return ___` | Dikdörtgenin çevresi iki kısa ve iki uzun kenarın toplamıdır: `2 × (en + boy)`.

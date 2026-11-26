@@ -162,8 +162,8 @@ Yüzde `90` doğruluk kulağa iyi gelse de modelin duyarlılığı `0`'dır. İs
 Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
 
 ```python {.python-playground-task}
-gercek = [1, 1, 0, 0, 1, 0]
-tahmin = [1, 0, 0, 1, 1, 0]
+gercek = [1, 1, 0, 0, 1, 0, 1]
+tahmin = [1, 0, 0, 1, 1, 0, 0]
 
 tp = fp = fn = 0
 for g, t in zip(gercek, tahmin):
@@ -183,8 +183,8 @@ print("TP, FP, FN:", tp, fp, fn)
 print("Kesinlik:", round(kesinlik, 2), "Duyarlılık:", round(duyarlilik, 2))
 ```
 ```text {.python-playground-expected}
-TP, FP, FN: 2 1 1
-Kesinlik: 0.67 Duyarlılık: 0.67
+TP, FP, FN: 2 1 2
+Kesinlik: 0.67 Duyarlılık: 0.5
 ```
 ```text {.python-playground-help}
 `elif ___:` (ilki) | Yanlış pozitif: gerçek `0` ama model `1` demiş. `g == 0 and t == 1`.
