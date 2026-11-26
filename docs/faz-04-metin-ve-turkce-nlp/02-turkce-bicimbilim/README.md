@@ -115,6 +115,35 @@ Ekleri baştan sona değil, sondan başa buluyoruz: `evlerimizden` önce `den`, 
 !!! warning "Bu bir dilbilim çözümleyicisi değil"
     Kod, listedeki yazımları sözcüğün sonundan eşleştirir. Sözcüğün gerçekten o köke ait olup olmadığını, eklerin o sırada kullanılabilir olup olmadığını veya ses değişimlerini denetlemez. Örneğin listedeki bir ek rastlantıyla başka bir sözcüğün sonunda geçerse yanlış bölme yapabilir. Bu örneği gerçek metni çözümlemek için değil, ek eşleştirme fikrini görmek için kullan.
 
+### Şimdi sen yaz: çoğul eki
+
+Son ünlüye bakarak `-lar` veya `-ler` seçen fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def cogul_eki(kok):
+    for harf in reversed(kok):
+        # TODO: Son ünlü a, ı, o veya u ise "lar" döndür.
+        if harf in "___":
+            return "lar"
+        # TODO: Son ünlü e, i, ö veya ü ise "ler" döndür.
+        if harf in "___":
+            return "ler"
+
+
+for kok in ["kalem", "okul", "gözlük", "ağaç"]:
+    print(kok + cogul_eki(kok))
+```
+```text {.python-playground-expected}
+kalemler
+okullar
+gözlükler
+ağaçlar
+```
+```text {.python-playground-help}
+`if harf in "___":` (ilki) | `lar` alan ünlüler: `a`, `ı`, `o`, `u`. Tırnağın içine bu harfleri yan yana yaz.
+`if harf in "___":` (ikincisi) | `ler` alan ünlüler: `e`, `i`, `ö`, `ü`.
+```
+
 ## 3. Kütüphaneyle yap
 
 Gerçek bir Türkçe biçimbilim çözümleyicisi yalnızca sondaki harflere bakmaz. Olası kökleri ve ek dizilerini sözlükle karşılaştırır; ses değişimlerini ve dilbilgisel kuralları hesaba katar. Aynı sözcüğün birden fazla çözümlemesi de olabileceği için bağlam önem kazanabilir.

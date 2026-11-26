@@ -157,6 +157,42 @@ Yakalanan istenmeyen posta: 0
 
 Yüzde `90` doğruluk kulağa iyi gelse de modelin duyarlılığı `0`'dır. İstenmeyen postaları kaçırmak bizim için önemliyse doğruluğa tek başına güvenemeyiz. Benzer biçimde, yanlışlıkla normal e-postaları spam klasörüne atmak daha maliyetliyse kesinliğe özellikle bakmalıyız.
 
+### Şimdi sen yaz: kesinlik ve duyarlılık
+
+Hata sayaçlarını tamamla, sonra kesinlik ve duyarlılığı hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+gercek = [1, 1, 0, 0, 1, 0]
+tahmin = [1, 0, 0, 1, 1, 0]
+
+tp = fp = fn = 0
+for g, t in zip(gercek, tahmin):
+    if g == 1 and t == 1:
+        tp += 1
+    # TODO: Gerçek 0 iken tahmin 1 ise yanlış pozitiftir.
+    elif ___:
+        fp += 1
+    # TODO: Gerçek 1 iken tahmin 0 ise yanlış negatiftir.
+    elif ___:
+        fn += 1
+
+# TODO: Kesinlik = tp / (tp + fp), duyarlılık = tp / (tp + fn).
+kesinlik = ___
+duyarlilik = ___
+print("TP, FP, FN:", tp, fp, fn)
+print("Kesinlik:", round(kesinlik, 2), "Duyarlılık:", round(duyarlilik, 2))
+```
+```text {.python-playground-expected}
+TP, FP, FN: 2 1 1
+Kesinlik: 0.67 Duyarlılık: 0.67
+```
+```text {.python-playground-help}
+`elif ___:` (ilki) | Yanlış pozitif: gerçek `0` ama model `1` demiş. `g == 0 and t == 1`.
+`elif ___:` (ikincisi) | Yanlış negatif: gerçek `1` ama model `0` demiş. `g == 1 and t == 0`.
+`kesinlik = ___` | Modelin `1` dediklerinin kaçı gerçekten `1`: `tp / (tp + fp)`.
+`duyarlilik = ___` | Gerçek `1`'lerin kaçını yakaladık: `tp / (tp + fn)`.
+```
+
 ## 3. Kütüphaneyle yap
 
 Scikit-learn, bu metrikleri hazır işlevlerle hesaplar. Karmaşıklık matrisinde satırlar gerçek sınıfı, sütunlar tahmin edilen sınıfı gösterir; `labels=[0, 1]` sırası kullanıldığında matris `[[TN, FP], [FN, TP]]` biçimindedir.

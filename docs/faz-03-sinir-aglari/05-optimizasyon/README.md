@@ -220,6 +220,37 @@ Bu adımda kullanılan örnekler: [10, 7]
 
 10 örnek ve 4'lük parçalarla bir tur üç güncellemeden oluşur. Her parça bütün verinin yalnızca bir bölümü olduğu için türevi biraz "gürültülüdür"; ama adımlar çok daha ucuzdur ve bu gürültü çoğu zaman öğrenmeye zarar vermez, hatta yardımcı olabilir. "SGD" adındaki "S" (stochastic, yani rastlantısal) buradan gelir.
 
+### Şimdi sen yaz: momentum adımı
+
+`x²` kaybını küçültmek için üç momentum adımı at. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def turev(x):
+    return 2 * x          # kayıp: x²
+
+
+x = 4.0
+hiz = 0.0
+ogrenme_hizi = 0.1
+beta = 0.9
+
+for adim in range(1, 4):
+    # TODO: hız = beta × eski hız + yeni türev.
+    hiz = ___
+    # TODO: x'i hızın ters yönünde güncelle.
+    x = x - ___ * hiz
+    print(f"Adım {adim}: x = {x:.3f}")
+```
+```text {.python-playground-expected}
+Adım 1: x = 3.200
+Adım 2: x = 1.840
+Adım 3: x = 0.248
+```
+```text {.python-playground-help}
+`hiz = ___` | Önceki hızın `beta` kadarı korunur, üstüne yeni türev eklenir: `beta * hiz + turev(x)`.
+`x = x - ___ * hiz` | Güncellemede türev yerine hız kullanılır; adım büyüklüğü öğrenme hızıdır.
+```
+
 ## 3. Kütüphaneyle yap
 
 PyTorch'ta bu yöntemlerin hepsi hazırdır ve aynı biçimde kullanılır. Yalnızca optimizer satırı değişir:

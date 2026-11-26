@@ -155,6 +155,37 @@ Bölünmeden sonra ağırlıklı Gini: 0.0
 
 Bu örnek tek bir soru bulduğu için **tek seviyeli ağaç** veya **karar kütüğü** olarak düşünülebilir. Gerçek bir ağaç aynı bölme fikrini alt gruplarda da tekrarlayarak birden çok düğüm oluşturabilir. Gini `0` çıktığında, bu örnekteki her yaprak tek bir sınıftan oluşmuştur; bu küçük ve düzenli veri, gerçek verilerin her zaman bu kadar kolay ayrılacağı anlamına gelmez.
 
+### Şimdi sen yaz: Gini safsızlığı
+
+Gini fonksiyonunu tamamla ve bir bölmenin ağırlıklı Gini değerini hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def gini(etiketler):
+    basarili_orani = sum(etiketler) / len(etiketler)
+    basarisiz_orani = 1 - basarili_orani
+    # TODO: Gini = 1 - (başarılı oranı² + başarısız oranı²)
+    return ___
+
+
+print("Karışık grup:", gini([0, 1, 0, 1]))
+print("Saf grup:", gini([1, 1, 1, 1]))
+
+sol = [0, 0, 0]
+sag = [1, 1, 0]
+# TODO: Ağırlıklı Gini = sol_oran × gini(sol) + sağ_oran × gini(sag). Toplam 6 örnek var.
+bolunme = ___
+print("Bölünme sonrası:", round(bolunme, 2))
+```
+```text {.python-playground-expected}
+Karışık grup: 0.5
+Saf grup: 0.0
+Bölünme sonrası: 0.22
+```
+```text {.python-playground-help}
+`return ___` | Formül yorumda yazıyor. Oranların karelerini `** 2` ile al, topla ve `1`'den çıkar.
+`bolunme = ___` | Her grubun Gini değerini, o grubun örnek sayısının toplama oranıyla çarp: `len(sol) / 6 * gini(sol)`. Sağ grup için de aynısını yap ve topla.
+```
+
 ## 3. Kütüphaneyle yap
 
 Scikit-learn, karar ağacını veriden eğitmeye yarar. `max_depth=1` diyerek ağacın tek bir soru sormasına izin veriyoruz; böylece az önce elle bulduğumuz basit ağaçla karşılaştırabiliriz.

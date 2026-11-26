@@ -182,6 +182,36 @@ Tahminler: [2.0, 4.0, 6.0]
 
 Bu veri bilerek tam doğrusal seçildiği için çizgi yaklaşık `y = 2x` olur. Gerçek veride noktalar çizginin tam üzerinde bulunmaz; amaç her noktayı kusursuz yakalamak değil, genel eğilimi iyi açıklayan parametreleri bulmaktır. `ogrenme_hizi` veya veri değerlerini değiştirirsen beklenen çıktı da değişir; bu, tek başına kodun bozulduğu anlamına gelmez.
 
+### Şimdi sen yaz: tahmin ve hata
+
+Doğrusal modelin tahminini ve ortalama kare hatasını hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+kilogramlar = [1, 2, 3]
+gercek_fiyatlar = [3, 5, 7]
+agirlik = 2
+sabit = 0
+
+kareli_hatalar = []
+for i in range(len(kilogramlar)):
+    # TODO: Tahmin = ağırlık × kilogram + sabit.
+    tahmin = ___
+    # TODO: Hata = tahmin - gerçek fiyat.
+    hata = ___
+    kareli_hatalar.append(hata ** 2)
+
+print("Kareli hatalar:", kareli_hatalar)
+print("Ortalama kare hata:", sum(kareli_hatalar) / len(kareli_hatalar))
+```
+```text {.python-playground-expected}
+Kareli hatalar: [1, 1, 1]
+Ortalama kare hata: 1.0
+```
+```text {.python-playground-help}
+`tahmin = ___` | Doğru çizginin formülü: ağırlık × girdi + sabit. Girdi `kilogramlar[i]`.
+`hata = ___` | Hata, tahmin ile gerçek değer arasındaki farktır. Burada `tahmin - gercek_fiyatlar[i]`.
+```
+
 ## 3. Kütüphaneyle yap
 
 NumPy, aynı hesabı sayıları tek tek döngüyle dolaşmadan yazmamızı sağlar. Aşağıdaki kod önceki bölümdeki gradyan inişini NumPy dizileriyle uygular. NumPy kurulumu ve dizilerin temel kullanımı için 2.1 dersine bak.

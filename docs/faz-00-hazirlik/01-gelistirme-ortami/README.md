@@ -240,6 +240,29 @@ Hata mesajını **aşağıdan yukarıya** oku:
 
 Burada değişkeni `ad` diye tanımlayıp `isim` diye kullandık. Hata mesajını okumak, programcılığın en değerli alışkanlığıdır: mesaj genellikle sorunun nerede olduğunu doğrudan söyler.
 
+### Şimdi sen yaz: yaşını hesapla
+
+Aşağıdaki kodda iki boşluk var. Doldurup çalıştır; yaşın doğru çıkmalı. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+ad = "Ece"
+dogum_yili = 2000
+bu_yil = 2026
+
+# TODO: Yaşı hesapla (bu yıl eksi doğum yılı).
+yas = ___
+
+# TODO: Süslü parantezin içine yaş değişkenini yaz.
+print(f"Merhaba, {ad}! {___} yaşındasın.")
+```
+```text {.python-playground-expected}
+Merhaba, Ece! 26 yaşındasın.
+```
+```text {.python-playground-help}
+`yas = ___` | Yaş, bu yıl ile doğum yılı arasındaki farktır. İki değişkeni `-` ile çıkar.
+`print(f"Merhaba, {ad}! {___} yaşındasın.")` | Süslü parantezin içine yazdığın değişkenin değeri cümleye girer. Hesapladığın değişkenin adını yaz.
+```
+
 ## 8. Kurulumun tam olduğunu kontrol et
 
 Aşağıdakilerin hepsini yapabiliyorsan hazırsın:

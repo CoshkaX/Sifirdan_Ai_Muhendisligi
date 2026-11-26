@@ -1073,3 +1073,29 @@
     display: none;
   }
 }
+
+/* Örnek / Kendin yaz etiketleri */
+.python-playground-kind {
+  display: inline-block;
+  margin: 0 0 0.35rem !important;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--md-accent-fg-color);
+  border-radius: 2px;
+  font-family: "Fira Code", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+
+.python-playground-widget--task .python-playground-kind {
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+}
+
+.python-playground-hint {
+  margin: 0 0 0.5rem !important;
+  font-size: 0.72rem;
+  line-height: 1.55;
+}

@@ -93,6 +93,31 @@ Bir parametre varsa onun için tek bir türev hesaplarız. Birden fazla parametr
 
 `ogrenme_hizi` değerini `0.01` yapıp beş adım sonra ne olduğunu dene: ağırlık yaklaşık `0.38` olur, yani hedefe daha yavaş yaklaşır. Bu özel örnekte `0.5` seçilirse ilk adım ağırlığı doğrudan `4`'e taşır; bu, `0.5` değerinin başka bir model veya kayıp için de uygun olacağı anlamına gelmez. Çok büyük bir adım hedefin ötesine sıçrayabilir ve kaybı azaltmak yerine artırabilir; bu yüzden öğrenme hızını dikkatli seçeriz. Değiştirdiğin değer için ekrandaki sonuç başlangıçtaki beklenen değerle aynı olmayabilir.
 
+### Şimdi sen yaz: gradyan inişi adımları
+
+Ağırlığı hedef olan `2`'ye yaklaştıran üç gradyan inişi adımı yaz. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+agirlik = 10.0
+ogrenme_hizi = 0.25
+
+for adim in range(3):
+    # TODO: Kayıp (agirlik - 2) ** 2 ise türevi 2 × (agirlik - 2)'dir.
+    gradyan = ___
+    # TODO: Ağırlığı gradyanın ters yönünde güncelle.
+    agirlik = agirlik - ___ * gradyan
+    print(f"Adım {adim + 1}: ağırlık = {agirlik}")
+```
+```text {.python-playground-expected}
+Adım 1: ağırlık = 6.0
+Adım 2: ağırlık = 4.0
+Adım 3: ağırlık = 3.0
+```
+```text {.python-playground-help}
+`gradyan = ___` | Türev formülü yorumda yazıyor: `2 × (agirlik - 2)`. Python'da `2 * (agirlik - 2)` yaz.
+`agirlik = agirlik - ___ * gradyan` | Gradyan inişi: eski ağırlıktan öğrenme hızı × gradyan çıkarılır.
+```
+
 ## 3. Kütüphaneyle yap
 
 Elle yazdığımız örnek, tek parametrenin gradyanını kendimiz hesapladı. PyTorch gibi kütüphaneler, daha karmaşık hesaplamalarda türevleri otomatik bulabilir. Bu özelliğe **otomatik türev alma** denir.

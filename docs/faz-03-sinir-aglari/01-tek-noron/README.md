@@ -193,6 +193,36 @@ Ağırlıklar: [0.1, 0.1] Sabit: -0.1
 !!! warning "Tek nöronun sınırı"
     Tek bir nöron girdileri **düz bir çizgiyle** ikiye ayırabilir. VE ve VEYA kapıları böyle ayrılabilir; ama **XOR** (girdiler farklıysa `1`) ayrılamaz. Alıştırma 4'te bunu kendin göreceksin. 1969'da Minsky ve Papert'in bu sınırı göstermesi, sinir ağlarına ilgiyi yıllarca azalttı. Çözüm birden fazla katmandır; 3.4 dersinde XOR'u çok katmanlı bir ağla öğreteceğiz.
 
+### Şimdi sen yaz: VEYA kapısı
+
+Nöron fonksiyonunu tamamla ve VEYA kapısı için sabit terimi seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def noron(girdiler, agirliklar, sabit):
+    z = 0
+    for i in range(len(girdiler)):
+        # TODO: Girdiyi kendi ağırlığıyla çarpıp z'ye ekle.
+        z += ___
+    z += sabit
+    return 1 if z >= 0 else 0
+
+
+# TODO: VEYA kapısı için sabit -0.5 olmalı (ağırlıklar [1, 1]).
+for a in [0, 1]:
+    for b in [0, 1]:
+        print(f"{a} VEYA {b} = {noron([a, b], [1, 1], ___)}")
+```
+```text {.python-playground-expected}
+0 VEYA 0 = 0
+0 VEYA 1 = 1
+1 VEYA 0 = 1
+1 VEYA 1 = 1
+```
+```text {.python-playground-help}
+`z += ___` | Ağırlıklı toplamda her girdi kendi ağırlığıyla çarpılır: `girdiler[i] * agirliklar[i]`.
+`noron([a, b], [1, 1], ___)` | Girdilerden biri `1` olunca toplam `1` olur; bunun sıfırı geçmesi için sabit `-0.5` olmalı.
+```
+
 ## 3. Kütüphaneyle yap
 
 Gerçek ağlarda tek tek döngü yazmak yerine bütün örnekleri bir matris olarak tutar, ağırlıklı toplamı tek bir matris çarpımıyla hesaplarız. NumPy'yi 2.1 dersindeki gibi kur, aşağıdaki kodu `noron_numpy.py` adıyla kaydedip `python noron_numpy.py` ile çalıştır:

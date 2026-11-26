@@ -189,6 +189,32 @@ Tahmin edilen sınıflar: [0, 0, 1, 1]
 
 Bu küçük veri kümesinde model eğitim örneklerini doğru sınıflara ayırdı. Bu, yeni öğrencilerde de kesinlikle doğru tahmin yapacağını kanıtlamaz; yeni örneklerdeki başarısını ayrıca ölçmeliyiz. Olasılığı değiştirmekle sınıf kararını değiştirmek de aynı şey değildir: eşik değişirse sınıf listesi değişebilir, fakat modelin hesapladığı olasılıklar aynı kalır.
 
+### Şimdi sen yaz: sigmoid ve eşik
+
+Ham puandan olasılık hesapla ve eşiğe göre sınıf seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+import math
+
+for saat in [1, 3, 5]:
+    # TODO: Ham puan = 1.0 × saat + (-3.0).
+    ham_puan = ___
+    # TODO: Sigmoid: 1 / (1 + e üzeri -ham_puan). math.exp kullan.
+    olasilik = ___
+    sinif = "Başarılı" if ___ else "Başarısız"
+    print(f"{saat} saat: {sinif} ({round(olasilik, 2)})")
+```
+```text {.python-playground-expected}
+1 saat: Başarısız (0.12)
+3 saat: Başarılı (0.5)
+5 saat: Başarılı (0.88)
+```
+```text {.python-playground-help}
+`ham_puan = ___` | Ağırlık `1.0`, sabit `-3.0`: `1.0 * saat - 3.0`.
+`olasilik = ___` | Sigmoid formülü: `1 / (1 + math.exp(-ham_puan))`.
+`... if ___ else ...` | Olasılık `0.5` veya daha büyükse sınıf başarılıdır.
+```
+
 ## 3. Kütüphaneyle yap
 
 NumPy, sigmoid ve gradyan işlemlerini tek tek Python listelerinde dolaşmadan bütün örneklere uygular. Aşağıdaki kod aynı modeli ve aynı güncelleme kuralını NumPy dizileriyle eğitir. NumPy kurulumu için 2.1 dersindeki yönergeyi kullan.

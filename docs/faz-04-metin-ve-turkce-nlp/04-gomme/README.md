@@ -175,6 +175,42 @@ Bu sorunu azaltmanın iki yaygın yolu var:
 - **Alt-kelime token'ları** (4.1 dersi): `kedi + ler` gibi bölündüğünde `kedi` parçasının vektörü bütün biçimler arasında paylaşılır.
 - **Karakter parçaları:** FastText gibi yöntemler bir sözcüğün vektörünü içindeki harf dizilerinin (`ked`, `edi`, `dil`...) vektörlerinden oluşturur. Böylece daha önce hiç görülmemiş bir biçim için bile anlamlı bir vektör üretilebilir. Ekli diller için bu özellikle yararlıdır.
 
+### Şimdi sen yaz: kosinüs benzerliği
+
+İki vektörün kosinüs benzerliğini hesaplayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+import math
+
+gomme = {
+    "kedi": [0.9, 0.8, 0.0],
+    "aslan": [0.9, 0.1, 0.0],
+    "araba": [0.0, 0.1, 0.9],
+}
+
+
+def kosinus(a, b):
+    nokta = sum(x * y for x, y in zip(a, b))
+    # TODO: Bir vektörün uzunluğu, sayılarının karelerinin toplamının karekökü.
+    uzunluk_a = math.sqrt(sum(x * x for x in ___))
+    uzunluk_b = math.sqrt(sum(y * y for y in ___))
+    # TODO: Kosinüs = noktasal çarpım / (uzunluk_a × uzunluk_b).
+    return ___
+
+
+print("kedi - aslan:", round(kosinus(gomme["kedi"], gomme["aslan"]), 2))
+print("kedi - araba:", round(kosinus(gomme["kedi"], gomme["araba"]), 2))
+```
+```text {.python-playground-expected}
+kedi - aslan: 0.82
+kedi - araba: 0.07
+```
+```text {.python-playground-help}
+`sum(x * x for x in ___)` | İlk vektörün uzunluğunu hesaplıyoruz; vektör fonksiyonun `a` parametresidir.
+`sum(y * y for y in ___)` | İkinci vektör `b` parametresidir.
+`return ___` | Noktasal çarpımı iki uzunluğun çarpımına böl: `nokta / (uzunluk_a * uzunluk_b)`.
+```
+
 ## 3. Kütüphaneyle yap
 
 PyTorch'ta gömme tablosu `nn.Embedding` katmanıdır. İki sayı alır: sözlükteki token sayısı ve her vektörün uzunluğu. Başlangıçta sayılar rastgeledir; model eğitilirken diğer ağırlıklar gibi geri yayılımla güncellenir.

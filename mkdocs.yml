@@ -52,11 +52,11 @@ markdown_extensions:
       alternate_style: true
 
 extra_css:
-  - stylesheets/extra.css?v=20261125-2
+  - stylesheets/extra.css?v=20261126-1
 
 extra_javascript:
   - javascripts/highlights.js?v=20261125-2
-  - javascripts/python-playground.js?v=20261125-2
+  - javascripts/python-playground.js?v=20261126-1
   - javascripts/github-yildiz.js?v=1
 
 

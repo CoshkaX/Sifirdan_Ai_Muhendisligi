@@ -254,6 +254,39 @@ python kod/turkce_arama.py
 python -m unittest discover -s test -v
 ```
 
+### Şimdi sen yaz: kök yaklaşımıyla eşleştir
+
+Sözcüklerin ilk 5 harfini terim yap ve sorguyla belgenin ortak terimlerini say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+from collections import Counter
+
+
+def vektorlestir(metin):
+    sozcukler = metin.lower().split()
+    # TODO: Her sözcüğün ilk 5 harfini al ve Counter ile say.
+    return Counter(sozcuk[:___] for sozcuk in sozcukler)
+
+
+def ortak_terim_sayisi(a, b):
+    # TODO: a'daki terimlerden b'de de bulunanları say.
+    return len([t for t in a if t in ___])
+
+
+belge = vektorlestir("yağmurlu havada sahilde yürüdük")
+sorgu = vektorlestir("yağmurda sahil")
+print("Belge terimleri:", dict(belge))
+print("Ortak terim sayısı:", ortak_terim_sayisi(sorgu, belge))
+```
+```text {.python-playground-expected}
+Belge terimleri: {'yağmu': 1, 'havad': 1, 'sahil': 1, 'yürüd': 1}
+Ortak terim sayısı: 2
+```
+```text {.python-playground-help}
+`sozcuk[:___]` | `sozcuk[:5]` sözcüğün ilk 5 harfini verir. Ek içeren biçimler aynı köke düşer.
+`t in ___` | Terimin ikinci vektörde de olup olmadığına bakıyoruz; ikinci vektör fonksiyonun `b` parametresidir.
+```
+
 ## 3. Kütüphaneyle yap
 
 Scikit-learn'deki `TfidfVectorizer` belgeleri TF-IDF vektörlerine, `cosine_similarity` de benzerlik tablosuna çevirir. Kendi Türkçe adımlarımızı `tokenizer` parametresiyle verebiliriz. scikit-learn'ü 2.4 dersindeki gibi kur, kodu `tfidf_arama.py` adıyla kaydedip `python tfidf_arama.py` ile çalıştır:

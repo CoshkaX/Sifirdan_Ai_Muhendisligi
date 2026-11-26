@@ -90,6 +90,9 @@
   function addPlayground(block) {
     var code = block.querySelector("code");
     if (!code) return;
+    // "Kendin yaz" kutuları (.python-playground-task) boşluk doldurmalı görevlerdir;
+    // diğerleri "Örnek"tir: çalıştırılır, değiştirilir, ama başarı rozeti verilmez.
+    var isTask = block.classList.contains("python-playground-task");
 
     var nextBlock = block.nextElementSibling;
     var expectedBlock = nextBlock &&
@@ -115,17 +118,30 @@
       : [];
 
     var widget = document.createElement("section");
-    widget.className = "python-playground-widget";
+    widget.className = "python-playground-widget " +
+      (isTask ? "python-playground-widget--task" : "python-playground-widget--example");
     widget.setAttribute("aria-label", "Etkileşimli Python çalışma alanı");
+
+    var kind = document.createElement("p");
+    kind.className = "python-playground-kind";
+    kind.textContent = isTask ? "Kendin yaz" : "Örnek";
+    widget.appendChild(kind);
+
+    var hint = document.createElement("p");
+    hint.className = "python-playground-hint";
+    hint.textContent = isTask
+      ? "# TODO yazan yerlerdeki ___ boşluklarını tamamla, sonra çalıştır. Takılırsan aşağıdaki yardım düğmesine bas."
+      : "Önce çalıştır. Sonra koddaki bir sayıyı ya da metni değiştirip tekrar çalıştır ve çıktının nasıl değiştiğine bak.";
+    widget.appendChild(hint);
 
     var label = document.createElement("label");
     label.className = "python-playground-label";
-    label.textContent = "Python kodunu düzenle ve çalıştır";
+    label.textContent = isTask ? "Kodu tamamla ve çalıştır" : "Python kodunu düzenle ve çalıştır";
 
     var editor = document.createElement("textarea");
     editor.className = "python-playground-editor";
     editor.value = code.textContent.replace(/\n$/, "");
-    editor.rows = Math.max(5, Math.min(10, editor.value.split("\n").length));
+    editor.rows = Math.max(5, Math.min(isTask ? 16 : 10, editor.value.split("\n").length));
     editor.spellcheck = false;
     editor.autocapitalize = "off";
     editor.autocomplete = "off";
@@ -163,7 +179,9 @@
     status.className = "python-playground-status";
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
-    status.textContent = "Kod tarayıcında çalışır.";
+    status.textContent = isTask
+      ? "Boşlukları tamamlayıp çalıştır."
+      : "Kod tarayıcında çalışır. Çalıştır, sonra bir değeri değiştirip tekrar dene.";
     widget.appendChild(status);
 
     var outputLabel = document.createElement("p");
@@ -183,7 +201,7 @@
       expectedDetails.className = "python-playground-expected-details";
 
       var expectedSummary = document.createElement("summary");
-      expectedSummary.textContent = "Beklenen çıktıyı gör";
+      expectedSummary.textContent = isTask ? "Beklenen çıktıyı gör" : "Başlangıç koduyla çıkan çıktı";
       expectedDetails.appendChild(expectedSummary);
 
       var expected = document.createElement("pre");
@@ -192,17 +210,20 @@
       expectedDetails.appendChild(expected);
       widget.appendChild(expectedDetails);
 
-      var learningNote = document.createElement("p");
-      learningNote.className = "python-playground-learning-note";
-      learningNote.textContent = "Beklenen metni doğrudan yazdırma; kodun istenen işlemi yapmasını sağla.";
-      widget.appendChild(learningNote);
+      if (isTask) {
+        var learningNote = document.createElement("p");
+        learningNote.className = "python-playground-learning-note";
+        learningNote.textContent = "Beklenen metni doğrudan yazdırma; kodun istenen işlemi yapmasını sağla.";
+        widget.appendChild(learningNote);
+      }
     }
 
     if (helpSteps.length) {
       var helpButton = document.createElement("button");
       helpButton.type = "button";
       helpButton.className = "python-playground-help-toggle";
-      helpButton.textContent = "Yapamazsan buna bas";
+      var helpOpenText = isTask ? "Yapamazsan buna bas" : "Anlamadıysan bas";
+      helpButton.textContent = helpOpenText;
       helpButton.setAttribute("aria-expanded", "false");
 
       var helpPanel = document.createElement("div");
@@ -252,7 +273,7 @@
         var isOpen = !helpPanel.hidden;
         helpPanel.hidden = isOpen;
         helpButton.setAttribute("aria-expanded", String(!isOpen));
-        helpButton.textContent = isOpen ? "Yapamazsan buna bas" : "İpuçlarını kapat";
+        helpButton.textContent = isOpen ? helpOpenText : "İpuçlarını kapat";
       });
     }
 
@@ -322,7 +343,9 @@
         } else if (event.data.type === "stdout" || event.data.type === "stderr") {
           appendOutput(event.data.text);
         } else if (event.data.type === "done") {
-          if (expectedOutput === null) {
+          if (!isTask) {
+            finish("Çalıştırıldı. Şimdi koddaki bir değeri değiştirip tekrar çalıştır.", false);
+          } else if (expectedOutput === null) {
             finish("Çalıştırma tamamlandı.", false);
           } else if (normalizeOutput(output.textContent) === normalizeOutput(expectedOutput)) {
             finish("Beklenen çıktı eşleşti. Harika!", false, true);
@@ -347,6 +370,10 @@
 
     run.addEventListener("click", function () {
       if (busy) return;
+      if (isTask && editor.value.indexOf("___") !== -1) {
+        status.textContent = "Önce ___ olan yerleri tamamla, sonra çalıştır.";
+        return;
+      }
       busy = true;
       hasRun = true;
       editor.disabled = true;
@@ -361,7 +388,7 @@
         getWorker().postMessage({
           type: "run",
           code: editor.value,
-          checkExpected: expectedOutput !== null
+          checkExpected: isTask && expectedOutput !== null
         });
       } catch (error) {
         finish("Python çalışma alanı başlatılamadı.", true);
@@ -403,5 +430,5 @@
     block.replaceWith(widget);
   }
 
-  document.querySelectorAll(".python-playground").forEach(addPlayground);
+  document.querySelectorAll(".python-playground, .python-playground-task").forEach(addPlayground);
 })();

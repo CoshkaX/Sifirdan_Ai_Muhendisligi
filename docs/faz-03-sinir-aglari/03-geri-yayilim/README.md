@@ -181,6 +181,41 @@ Kayıp her yüz turda küçülüyor ve tahminler hedeflere yaklaşıyor. Tahminl
 !!! note "Kaybolan gradyan"
     Sigmoidin türevi `p × (1 - p)` en fazla `0.25` olur. Çok katmanlı bir ağda geri geçiş her sigmoid katmanında bu sayıyla çarpılır; on katmandan sonra türev `0.25¹⁰ ≈ 0.000001` kadar küçülebilir. İlk katmanlar neredeyse hiç öğrenemez. Buna **kaybolan gradyan** (vanishing gradient) denir. Modern ağların gizli katmanlarda genellikle ReLU kullanmasının bir nedeni budur: ReLU'nun türevi pozitif bölgede `1`'dir.
 
+### Şimdi sen yaz: bir nöronu eğit
+
+Geri geçişin üç türevini yaz ve nöronun kaybının küçüldüğünü izle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+import math
+
+x, y = 2.0, 1
+w, b = 0.0, 0.0
+ogrenme_hizi = 1.0
+
+for adim in range(3):
+    z = w * x + b
+    p = 1 / (1 + math.exp(-z))
+    # TODO: Kayıp (p - y)² için d_p = 2 × (p - y).
+    d_p = ___
+    # TODO: Sigmoidin türevi p × (1 - p). Gelen d_p ile çarp.
+    d_z = d_p * ___
+    # TODO: w'nin türevi d_z × x, b'nin türevi d_z.
+    w -= ogrenme_hizi * ___
+    b -= ogrenme_hizi * ___
+    print(f"Adım {adim + 1}: tahmin {p:.3f}, kayıp {(p - y) ** 2:.3f}")
+```
+```text {.python-playground-expected}
+Adım 1: tahmin 0.500, kayıp 0.250
+Adım 2: tahmin 0.777, kayıp 0.050
+Adım 3: tahmin 0.837, kayıp 0.027
+```
+```text {.python-playground-help}
+`d_p = ___` | Kaybın `p`'ye göre türevi `2 × (p - y)`.
+`d_z = d_p * ___` | Sigmoidin yerel türevi `p * (1 - p)`.
+`w -= ogrenme_hizi * ___` | `z = w × x + b` olduğundan `w`'nin türevi `d_z * x`.
+`b -= ogrenme_hizi * ___` | Sabitin yerel türevi `1`'dir; yani `b`'nin türevi `d_z`.
+```
+
 ## 3. Kütüphaneyle yap
 
 PyTorch, 2.1'deki geri geçişi kendisi yapar. Aynı nöronu yazıp türevlerin bizimkilerle aynı olduğunu görebilirsin:

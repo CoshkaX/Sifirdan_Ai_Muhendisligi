@@ -73,6 +73,31 @@ Sonuçların karıştığını düşünüyorsan **Runtime → Restart session** 
 
 Colab defterini Google Drive'a kaydedebilir ve bağlantıyla paylaşabilirsin. Paylaşım iznini göndermeden önce kontrol et. Gizli anahtar, parola veya kişisel veri içeren dosyaları herkese açık bir deftere koyma. Yerel Jupyter'de defter `.ipynb` dosyası olarak bilgisayarında saklanır.
 
+### Şimdi sen yaz: listeyle çalış
+
+Colab'daki bir hücrede yazacağın türden kısa bir kod: listeye öğe ekle ve say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+konular = ["Python"]
+
+# TODO 1: Listeye "Colab" öğesini ekle (append metodu).
+konular.___("Colab")
+
+# TODO 2: Listedeki öğe sayısını bul (len fonksiyonu).
+sayi = ___(konular)
+
+print("Konular:", konular)
+print("Öğe sayısı:", sayi)
+```
+```text {.python-playground-expected}
+Konular: ['Python', 'Colab']
+Öğe sayısı: 2
+```
+```text {.python-playground-help}
+`konular.___("Colab")` | Bir listenin sonuna öğe eklemek için `append` kullanılır.
+`sayi = ___(konular)` | Listedeki öğe sayısını `len` verir.
+```
+
 ## 3. Kütüphaneyle yap
 
 Jupyter ve Colab, Python kütüphanesi değil; kodu hücreler halinde çalıştırıp açıklamalarla birlikte tutmaya yarayan araçlardır.

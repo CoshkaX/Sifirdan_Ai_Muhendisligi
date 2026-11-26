@@ -164,6 +164,33 @@ Bu örnekte sayılar birlikte aynı yönde değiştiği için korelasyon `1.0` �
 
 Bu hesapta iki listede de değişen değer bulunmalıdır. Listelerden biri sabitse payda `0` olur ve korelasyon hesaplanamaz. Gerçek veride ayrıca iki listenin eşit uzunlukta olduğundan ve her sıranın aynı kişiye ya da olaya ait olduğundan emin ol.
 
+### Şimdi sen yaz: varyans
+
+Dört notun varyansını adım adım hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+notlar = [4, 8, 6, 10]
+ortalama = sum(notlar) / len(notlar)
+
+kareli_sapmalar = []
+for n in notlar:
+    # TODO: Notun ortalamadan farkını bul, karesini al ve listeye ekle.
+    kareli_sapmalar.append(___)
+
+# TODO: Kareli sapmaların toplamını not sayısına böl.
+varyans = ___
+print("Ortalama:", ortalama)
+print("Varyans:", varyans)
+```
+```text {.python-playground-expected}
+Ortalama: 7.0
+Varyans: 5.0
+```
+```text {.python-playground-help}
+`kareli_sapmalar.append(___)` | Sapma, notun ortalamadan farkıdır: `n - ortalama`. Karesini almak için `** 2` yaz.
+`varyans = ___` | Kareli sapmaları `sum` ile topla ve not sayısına (`len(notlar)`) böl.
+```
+
 ## 3. Kütüphaneyle yap
 
 Python'ın standart `statistics` modülü, ortalama ve varyans gibi yaygın ölçüleri hazır olarak sunar. Bu modül Python ile birlikte gelir; ayrıca kurulum yapman gerekmez. Korelasyon için de eşleştirilmiş iki liste veriyoruz.

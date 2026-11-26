@@ -227,6 +227,39 @@ python -m unittest discover -s test -v
 
 Testler, motorun bulduğu türevleri 1.3 dersindeki sonlu fark yöntemiyle karşılaştırır. Bu karşılaştırmaya **gradyan kontrolü** denir ve 3.3 dersinde ayrıntılı göreceğiz.
 
+### Şimdi sen yaz: zincir kuralı
+
+`sonuc = a × b + c` hesabının türevlerini zincir kuralıyla bul. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+a, b, c = 2, 3, 4
+
+# İleri hesap
+e = a * b
+sonuc = e + c
+
+# Geri hesap: sondan başa doğru
+d_sonuc = 1
+# TODO: Toplamada gelen türev olduğu gibi geçer.
+d_e = ___
+d_c = ___
+# TODO: Çarpmada a'nın türevi b × d_e, b'nin türevi a × d_e'dir.
+d_a = ___
+d_b = ___
+
+print("sonuc =", sonuc)
+print("Türevler:", d_a, d_b, d_c)
+```
+```text {.python-playground-expected}
+sonuc = 10
+Türevler: 3 2 1
+```
+```text {.python-playground-help}
+`d_e = ___` ve `d_c = ___` | Toplamanın yerel türevi `1`'dir. Gelen türev `d_sonuc` ile çarpılır.
+`d_a = ___` | Çarpmada `a`'ya göre yerel türev `b`'dir: `b * d_e`.
+`d_b = ___` | `b`'ye göre yerel türev `a`'dır: `a * d_e`.
+```
+
 ## 3. Kütüphaneyle yap
 
 PyTorch'un autograd sistemi aynı fikirle çalışır: `requires_grad=True` olan tensörlerle yapılan her işlem grafiğe kaydedilir, `backward()` zincir kuralını uygular, türevler `.grad` içinde birikir.

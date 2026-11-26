@@ -314,6 +314,33 @@ python -m unittest discover -s test -v
 
 On testin de `ok` ile tamamlanması gerekir. [`test/test_tokenizer_demo.py`](test/test_tokenizer_demo.py) dosyası, örneklerdeki temel davranışları otomatik olarak denetler. Kodu değiştirdiğinde testleri yeniden çalıştırıp beklenmedik bir değişiklik olup olmadığını kontrol edebilirsin.
 
+### Şimdi sen yaz: bayt sayısı ve küçük harf
+
+UTF-8 bayt sayısını hesapla ve Türkçe küçük harf fonksiyonunu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def utf8_bayt_sayisi(metin):
+    # TODO: Metni "utf-8" ile encode et ve baytların sayısını (len) geri ver.
+    return ___
+
+
+def turkce_kucuk_harf(metin):
+    # TODO: "I" harfini "ı" yap (önce "İ" → "i" yapılıyor).
+    return metin.replace("İ", "i").replace(___, ___).lower()
+
+
+print(utf8_bayt_sayisi("çığ"))
+print(turkce_kucuk_harf("IŞIK İÇİN"))
+```
+```text {.python-playground-expected}
+6
+ışık için
+```
+```text {.python-playground-help}
+`return ___` (ilki) | `metin.encode("utf-8")` baytları verir; `len` kaç tane olduğunu sayar.
+`.replace(___, ___)` | Birinci boşluğa aranacak harfi, ikinciye yerine yazılacak harfi yaz. Metinleri tırnak içinde yaz.
+```
+
 ## 3. Kütüphaneyle yap
 
 Bu dersi bilerek kütüphanesiz bıraktık. Gerçek tokenizer'ları (Hugging Face `tokenizers` gibi) Faz 6'da kullanacağız. O zaman burada yazdığın fikrin onların içinde nasıl çalıştığını görürsün.

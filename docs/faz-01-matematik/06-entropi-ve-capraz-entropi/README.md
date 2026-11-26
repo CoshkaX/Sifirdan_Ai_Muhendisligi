@@ -103,6 +103,35 @@ Entropi, çapraz entropi ve kayıp aynı şey değildir. Entropi bir dağılım�
 
 Bu örnekte tek bir doğru sınıfı olan tek bir gözlemi inceliyoruz. Eğitimde birden fazla örneğin kayıpları genellikle bir araya getirilip ortalanır. Gerçek cevap tek bir sınıf yerine belirsiz bir dağılım olarak verilirse, tahmin bu dağılımla tamamen aynı olsa bile çapraz entropi sıfır olmak zorunda değildir.
 
+### Şimdi sen yaz: entropi ve kayıp
+
+Dört eşit olasılıklı sonucun entropisini ve bir tahminin çapraz entropi kaybını hesapla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+import math
+
+olasiliklar = [0.25, 0.25, 0.25, 0.25]
+entropi = 0.0
+
+for p in olasiliklar:
+    # TODO: Entropiye -p × log2(p) ekle (math.log2).
+    entropi += ___
+
+# TODO: Doğru sınıfa 0.5 olasılık veren modelin kaybı -log2(0.5) bittir.
+kayip = ___
+
+print("Entropi:", entropi, "bit")
+print("Kayıp:", kayip, "bit")
+```
+```text {.python-playground-expected}
+Entropi: 2.0 bit
+Kayıp: 1.0 bit
+```
+```text {.python-playground-help}
+`entropi += ___` | Entropi formülü `-p × log₂(p)`. Python'da `-p * math.log2(p)`.
+`kayip = ___` | Çapraz entropi, doğru sınıfın olasılığının `-log₂`'sidir: `-math.log2(0.5)`.
+```
+
 ## 3. Kütüphaneyle yap
 
 Önceki pencereler Python'ın standart `math` modülünü kullandı; bunlar tarayıcıda ek paket olmadan çalışır. Gerçek bir sinir ağı eğitirken PyTorch gibi bir çerçeve çapraz entropi hesabını hazır sunar. Aşağıdaki kod, modele ait ham puanları (**logit'leri**) ve doğru sınıfın numarasını verir:

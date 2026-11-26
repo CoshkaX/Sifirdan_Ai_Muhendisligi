@@ -131,6 +131,33 @@ Boyut kontrolü testi: ValueError
 
 Fonksiyon önce boş matrisleri, eşit uzunlukta olmayan satırları ve çarpım için uyumsuz boyutları kontrol eder. Örneğin `a` matrisinde üç sütun, `b` matrisinde iki satır varsa işlem `ValueError` ile durur. Bu kontrol olmasaydı döngü `b`'nin satır sayısı kadar ilerleyip `a`'nın üçüncü sütununu sessizce atlayabilir ve yanlış bir sonuç verebilirdi; `b`'nin satır sayısı `a`'nın sütun sayısından büyük olduğunda ise `IndexError` oluşabilirdi. `try-except` bölümünde hatayı yakalayıp türünü yazdırıyoruz; böylece bu kontrolü 0.5 dersinde öğrendiğin test yaklaşımıyla doğrulayabiliriz.
 
+### Şimdi sen yaz: noktasal çarpım
+
+Noktasal çarpımı hesaplayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def noktasal_carpim(a, b):
+    toplam = 0
+    for i in range(len(a)):
+        # TODO: Aynı konumdaki iki sayıyı çarp ve toplama ekle.
+        toplam += ___
+    return toplam
+
+
+ozellikler = [2, 3, 4]
+katsayilar = [5, -1, 2]
+# TODO: Fonksiyonu özellikler ve katsayılarla çağır.
+puan = noktasal_carpim(___, ___)
+print("Puan:", puan)
+```
+```text {.python-playground-expected}
+Puan: 15
+```
+```text {.python-playground-help}
+`toplam += ___` | Noktasal çarpımda aynı konumdaki sayılar çarpılır: `a[i] * b[i]`.
+`noktasal_carpim(___, ___)` | Fonksiyon iki liste bekler: önce özellikleri, sonra katsayıları ver.
+```
+
 ## 3. Kütüphaneyle yap
 
 NumPy'de matris çarpımı için `@` işleci kullanılır. Burada `*` yerine `@` yazmak önemlidir: NumPy'de `*` aynı konumlardaki elemanları çarpar, `@` ise matris çarpımını yapar.

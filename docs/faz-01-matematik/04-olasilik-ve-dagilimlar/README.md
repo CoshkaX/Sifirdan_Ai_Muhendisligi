@@ -108,6 +108,35 @@ Adil para için yazı gelme olasılığı `0.5`tir. Ama parayı yalnızca altı 
 
 Örneğin altı atışta beş kez yazı geldiyse, bu deneydeki yazı oranı `5 / 6` olur. Bu tek küçük deney, paranın gerçek olasılığının `5 / 6` olduğunu kanıtlamaz. Teorik olasılık, deneyin kurallarına dayanır; gözlenen oran ise yaptığın denemelerin sonucudur.
 
+### Şimdi sen yaz: iki zar
+
+İki zar atıldığında toplamın 10 veya daha büyük gelme olasılığını say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+uygun = 0
+toplam_sonuc = 0
+
+for z1 in range(1, 7):
+    for z2 in range(1, 7):
+        toplam_sonuc += 1
+        # TODO: İki zarın toplamı 10 veya daha büyükse uygun sonucu say.
+        if ___:
+            uygun += 1
+
+# TODO: Olasılık = uygun sonuç sayısı / bütün sonuçların sayısı.
+olasilik = ___
+print("Uygun:", uygun, "Toplam:", toplam_sonuc)
+print("Olasılık:", round(olasilik, 3))
+```
+```text {.python-playground-expected}
+Uygun: 6 Toplam: 36
+Olasılık: 0.167
+```
+```text {.python-playground-help}
+`if ___:` | Koşul, iki zarın toplamının en az `10` olmasıdır: `z1 + z2 >= 10`.
+`olasilik = ___` | Olasılık = uygun sonuç sayısı / bütün sonuçların sayısı.
+```
+
 ## 3. Kütüphaneyle yap
 
 Python'ın standart `random` modülü, bilgisayar içinde örnek rastgele sonuçlar üretir. Aşağıdaki kodu çalıştırdığında her seferinde `1` ile `6` arasında bir sayı görürsün; sonuç her çalıştırmada değişebileceği için burada tek bir beklenen çıktı yoktur.

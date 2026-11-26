@@ -212,6 +212,35 @@ python kod/duygu_analizi.py
 python -m unittest discover -s test -v
 ```
 
+### Şimdi sen yaz: olumsuzluğu birleştir
+
+`güzel değil` ifadesini tek bir özelliğe çeviren fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def ozellikler(metin):
+    sozcukler = metin.lower().replace(",", "").split()
+    birlesik = []
+    for sozcuk in sozcukler:
+        # TODO: Sözcük "değil" ise ve öncesinde bir sözcük varsa öncekine "_değil" ekle.
+        if sozcuk == "değil" and ___:
+            birlesik[-1] = birlesik[-1] + ___
+        else:
+            birlesik.append(sozcuk)
+    return birlesik
+
+
+print(ozellikler("Rengi güzel değil"))
+print(ozellikler("Çok güzel, beğendim"))
+```
+```text {.python-playground-expected}
+['rengi', 'güzel_değil']
+['çok', 'güzel', 'beğendim']
+```
+```text {.python-playground-help}
+`if sozcuk == "değil" and ___:` | Boş bir liste `False` sayılır. `birlesik` doluysa önceki sözcük var demektir.
+`birlesik[-1] + ___` | `birlesik[-1]` son sözcüktür. Sonuna `"_değil"` metnini ekle.
+```
+
 ## 3. Kütüphaneyle yap
 
 Scikit-learn'de `CountVectorizer` metinleri özellik vektörlerine, `LogisticRegression` de sınıflandırıcıya karşılık gelir. Kendi `ozellikler` fonksiyonumuzu kullanmak için kodu ders klasöründe `duygu_sklearn.py` adıyla kaydet ve `python duygu_sklearn.py` ile çalıştır:

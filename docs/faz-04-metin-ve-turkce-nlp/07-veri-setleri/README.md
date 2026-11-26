@@ -226,6 +226,38 @@ python -m unittest discover -s test -v
 
 Başkasının veri setini kullanırken de önce veri kartını oku. Veri kartı yoksa veya çok kısaysa bunu bir uyarı işareti say.
 
+### Şimdi sen yaz: boş ve tekrar eden kayıtları say
+
+Veri kaydındaki boş metinleri ve tekrarları say. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+veri = [("Harika ürün", 1), ("harika ürün", 1), ("", 0), ("Kötü", 0)]
+
+bos_sayisi = 0
+gorulen = set()
+tekrar_sayisi = 0
+
+for metin, etiket in veri:
+    temiz = metin.lower().strip()
+    # TODO: Temizlenince boş kalan metni say.
+    if ___:
+        bos_sayisi += 1
+    # TODO: Daha önce görülen metni tekrar olarak say.
+    elif temiz in ___:
+        tekrar_sayisi += 1
+    else:
+        gorulen.add(temiz)
+
+print("Boş:", bos_sayisi, "Tekrar:", tekrar_sayisi)
+```
+```text {.python-playground-expected}
+Boş: 1 Tekrar: 1
+```
+```text {.python-playground-help}
+`if ___:` | Temizlenince hiçbir şey kalmadıysa `temiz` boş metindir: `temiz == ""`.
+`elif temiz in ___:` | Daha önce gördüğümüz metinleri `gorulen` kümesinde tutuyoruz; metin orada varsa tekrardır.
+```
+
 ## 4. Kütüphaneyle yap
 
 Hugging Face'in `datasets` kütüphanesi, Hub'daki veri setlerini tek satırla indirmeyi ve büyük verilerde filtreleme, dönüştürme ve bölme işlemlerini verimli yapmayı sağlar. Aynı araçlar kendi CSV dosyaların için de çalışır. Aşağıdaki örnek internet bağlantısı gerektirmez.

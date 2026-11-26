@@ -146,6 +146,33 @@ Ezberci yöntem eğitim kümesinde yüzde 100 doğru görünür; çünkü cevapl
 
 Doğrulama kümesine bakarak model veya ayar seçtikten sonra test kümesini bu seçimi değiştirmek için tekrar tekrar kullanma. Test sonucuna göre modeli yeniden ayarlarsan test verisi de karar sürecine katılmış olur; artık tarafsız bir son ölçüm sayılmaz. Test (veya doğrulama) verisinden gelen bilgi yanlışlıkla modelin eğitimine ya da seçimine karışırsa buna **veri sızıntısı** denir.
 
+### Şimdi sen yaz: veriyi üçe böl
+
+On örneği yüzde 60 eğitim, yüzde 20 doğrulama, yüzde 20 test olarak dilimle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+veriler = list(range(1, 11))   # 10 örnek: 1, 2, ..., 10
+
+# TODO: İlk 6 örnek eğitim, sonraki 2 doğrulama, kalan test olsun.
+egitim = veriler[:___]
+dogrulama = veriler[___:___]
+test = veriler[___:]
+
+print("Eğitim:", egitim)
+print("Doğrulama:", dogrulama)
+print("Test:", test)
+```
+```text {.python-playground-expected}
+Eğitim: [1, 2, 3, 4, 5, 6]
+Doğrulama: [7, 8]
+Test: [9, 10]
+```
+```text {.python-playground-help}
+`veriler[:___]` | Eğitim kümesi ilk 6 örnektir; dilimin bitişi `6`.
+`veriler[___:___]` | Doğrulama, eğitimin bittiği yerden (`6`) başlar ve 2 örnek sürer, yani `8`'e kadar gider.
+`veriler[___:]` | Test, doğrulamanın bittiği yerden (`8`) sona kadar olan örneklerdir.
+```
+
 ## 3. Kütüphaneyle yap
 
 Scikit-learn, veri ayırma işini `train_test_split` ile yapabilir. Burada önce verinin yüzde 60'ını eğitim, yüzde 40'ını geçici bölüm olarak ayırırız. Geçici bölümü yarıya böldüğümüzde doğrulama ve test kümelerinin her biri toplam verinin yüzde 20'si olur.

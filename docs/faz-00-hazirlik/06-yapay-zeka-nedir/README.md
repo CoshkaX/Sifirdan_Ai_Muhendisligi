@@ -193,6 +193,32 @@ Bellek özeti: {'hava': 2, 'plan': 2}
 
 Bu örnek bir sohbet sistemi değildir. Ama yapay zekâ sistemlerinde aradığımız parçaları açık biçimde gösterir: veri temsil edilir, gözlem saklanır, çıkarım yapılır ve kararın nedeni açıklanır.
 
+### Şimdi sen yaz: kural ekle
+
+Kural sözcüğüne yeni bir durum ekle ve kuralı olmayan durumda ne olacağını belirle. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+kurallar = {
+    "yağmurlu": "Şemsiye al.",
+    "güneşli": "Güneş kremi al.",
+    # TODO: "karlı" hava için "Bot giy." önerisini ekle.
+    "___": "___",
+}
+
+for hava in ["karlı", "rüzgârlı"]:
+    # TODO: Kuralı bul; kural yoksa "Kuralım yok." döndür (.get metodu).
+    oneri = kurallar.___(hava, "Kuralım yok.")
+    print(f"{hava}: {oneri}")
+```
+```text {.python-playground-expected}
+karlı: Bot giy.
+rüzgârlı: Kuralım yok.
+```
+```text {.python-playground-help}
+`"___": "___",` | Sözlükte `anahtar: değer` biçiminde yazılır. Anahtar hava durumu, değer öneridir.
+`kurallar.___(hava, "Kuralım yok.")` | `get` anahtar varsa değerini, yoksa ikinci değeri verir.
+```
+
 ## 7. Öğrenme: örnekler sonraki sonucu değiştiriyor mu?
 
 Yukarıdaki şemsiye örneğinde kuralı biz yazdık: hava yağmurluysa şemsiye öner. Program bu kuralı uyguluyor; **öğrenmiyor**. Yeni bir gözlemi listeye eklemek de tek başına öğrenme sayılmaz, çünkü karar kuralı değişmemiştir.

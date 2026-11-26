@@ -108,6 +108,30 @@ python -m unittest discover -s test -v
 
 `unittest` Python ile birlikte gelen test aracıdır. `TestCase` sınıfı testleri toplar; adı `test_` ile başlayan yöntemler ayrı test olarak çalıştırılır. `assertEqual(gerçek, beklenen)` iki değerin eşit olup olmadığını sınar. Testler geçtiğinde `OK`, tek bir test başarısız olduğunda özet satırında `FAILED (failures=1)` görürsün.
 
+### Şimdi sen yaz: kendi testini yaz
+
+Fonksiyonu yaz, sonra testlerin beklenen değerlerini kâğıtta hesaplayıp doldur. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def dikdortgen_cevresi(en, boy):
+    # TODO: Çevre = 2 × (en + boy). Sonucu geri ver.
+    return ___
+
+
+# TODO: Beklenen değerleri kendin hesapla ve yaz.
+assert dikdortgen_cevresi(3, 4) == ___
+assert dikdortgen_cevresi(5, 5) == ___
+print("İki test de başarılı.")
+```
+```text {.python-playground-expected}
+İki test de başarılı.
+```
+```text {.python-playground-help}
+`return ___` | Dikdörtgenin çevresi iki kısa ve iki uzun kenarın toplamıdır: `2 × (en + boy)`.
+`assert dikdortgen_cevresi(3, 4) == ___` | Beklenen sonucu önce kendin hesapla: `2 × (3 + 4)`. Kodun çıktısından kopyalama.
+`assert dikdortgen_cevresi(5, 5) == ___` | Aynı işlemi `5` ve `5` için yap.
+```
+
 ## 3. Kütüphaneyle yap
 
 `assert` hızlı bir deneme için yararlıdır; ancak kalıcı testleri `unittest` gibi test araçlarıyla yazmak daha uygundur. Test aracı testleri bulur, çalıştırır ve sonuçları toplu gösterir.

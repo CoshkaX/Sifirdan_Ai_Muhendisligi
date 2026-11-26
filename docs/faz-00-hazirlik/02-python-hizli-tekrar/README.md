@@ -241,6 +241,32 @@ Ada: 94
 
 `zip` ile eşleştirdiğin listelerin uzunluğu ve sırası aynı olmalı. Aksi hâlde değerler yanlış kişiye bağlanabilir veya kısa listenin bittiği yerde eşleştirme durur.
 
+### Şimdi sen yaz: ortalama fonksiyonu
+
+Bir sınıftaki öğrencilerin not ortalamasını bulan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def ortalama(notlar):
+    # TODO: Notların toplamını not sayısına böl ve sonucu geri ver.
+    return ___
+
+
+sinif = {"Ece": [80, 90, 100], "Mert": [60, 70, 80]}
+
+for ad in sinif:
+    # TODO: Öğrencinin notlarını ortalama() fonksiyonuna ver.
+    sonuc = ortalama(___)
+    print(f"{ad}: {sonuc}")
+```
+```text {.python-playground-expected}
+Ece: 90.0
+Mert: 70.0
+```
+```text {.python-playground-help}
+`return ___` | `sum(notlar)` toplamı, `len(notlar)` not sayısını verir. Toplamı sayıya böl.
+`ortalama(___)` | Sözlükte her öğrencinin notları ad anahtarının karşısında durur; `sinif[ad]` o listeyi verir.
+```
+
 ## 3. Kütüphaneyle yap
 
 Bu örnekler Python'ın yerleşik özelliklerini kullanır; ek paket kurmaya gerek yoktur. Listeler, sözlükler ve fonksiyonlar Python'ın temel parçalarıdır. Sonraki derslerde NumPy veya PyTorch gibi kütüphaneler, bu tür işlemleri büyük veri ve modeller üzerinde daha verimli yapmamıza yardım edecek.

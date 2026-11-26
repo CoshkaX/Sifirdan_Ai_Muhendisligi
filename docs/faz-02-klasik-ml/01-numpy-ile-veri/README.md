@@ -74,6 +74,34 @@ Seçilen bölüm: [19, 21, 24]
 
 Dilimlemede bitiş konumunun seçime girmemesi özellikle önemlidir. Örneğin `[2:5]`, `2`, `3` ve `4` konumlarını seçer. Aynı dilimleme yazımı NumPy'nin tek boyutlu dizilerinde de kullanılır.
 
+### Şimdi sen yaz: ortalama ve dilimleme
+
+İki sınavın ortalamasını bul ve ortadaki iki değeri dilimle seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+sinav1 = [60, 70, 80, 90]
+sinav2 = [70, 75, 85, 95]
+ortalamalar = []
+
+for i in range(len(sinav1)):
+    # TODO: İki sınavın aynı konumdaki notlarının ortalamasını bul.
+    ortalamalar.append(___)
+
+# TODO: Dilimle ortalamalar listesinden yalnızca 2. ve 3. öğeyi seç.
+ortadakiler = ortalamalar[___:___]
+
+print("Ortalamalar:", ortalamalar)
+print("Ortadakiler:", ortadakiler)
+```
+```text {.python-playground-expected}
+Ortalamalar: [65.0, 72.5, 82.5, 92.5]
+Ortadakiler: [72.5, 82.5]
+```
+```text {.python-playground-help}
+`ortalamalar.append(___)` | Aynı konumdaki iki notu topla ve `2`'ye böl.
+`ortalamalar[___:___]` | Dilimlemede başlangıç dahil, bitiş dahil değildir. 2. öğe `1` konumunda; 3. öğe `2` konumunda, bu yüzden bitiş `3`.
+```
+
 ## 3. Kütüphaneyle yap
 
 NumPy dizisi (`array`), sayısal verileri düzenli biçimde saklar ve aynı işlemi bütün elemanlara uygular. NumPy'yi ilk kez kullanıyorsan bilgisayarındaki Python ortamına kur:

@@ -179,6 +179,40 @@ python kod/xor_agi.py
 python -m unittest discover -s test -v
 ```
 
+### Şimdi sen yaz: XNOR ağı
+
+Gizli katman hazır (VEYA ve VE nöronları). Çıktı nöronunu, girdiler aynıysa `1` verecek şekilde kur. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+def noron(girdiler, agirliklar, sabit):
+    z = sum(g * a for g, a in zip(girdiler, agirliklar)) + sabit
+    return 1 if z >= 0 else 0
+
+
+def xnor_agi(a, b):
+    h1 = noron([a, b], [1, 1], -0.5)     # VEYA
+    h2 = noron([a, b], [1, 1], -1.5)     # VE
+    # TODO: (h1, h2) = (0, 0) için 1, (1, 0) için 0, (1, 1) için 1 vermeli.
+    # İpucu: ağırlıklar [-1, 2], sabit 0.5 işe yarar.
+    return noron([h1, h2], [___, ___], ___)
+
+
+for a in [0, 1]:
+    for b in [0, 1]:
+        print(f"{a} XNOR {b} = {xnor_agi(a, b)}")
+```
+```text {.python-playground-expected}
+0 XNOR 0 = 1
+0 XNOR 1 = 0
+1 XNOR 0 = 0
+1 XNOR 1 = 1
+```
+```text {.python-playground-help}
+`noron([h1, h2], [___, ___], ___)` | Üç durumu tek tek dene: `(0,0)` için `0×w1 + 0×w2 + sabit >= 0` olmalı, yani sabit pozitif.
+`(1, 0)` durumu | `h1 = 1, h2 = 0` iken toplam sıfırın altında kalmalı; bu yüzden `h1`'in ağırlığı negatif (`-1`).
+`(1, 1)` durumu | `h2` çıktıyı geri `1` yapmalı; `h2`'nin ağırlığı `2` olursa toplam `-1 + 2 + 0.5 = 1.5` olur.
+```
+
 ## 3. Kütüphaneyle yap
 
 Bu ağı PyTorch ile yazmak birkaç satır sürer; bunu 3.6 dersinde yapacağız. O derste aynı başlangıç ağırlıklarını kullanıp burada bulduğumuz sonuçların aynısını elde edeceğiz. Önce 3.5 dersinde ağırlık güncellemesini hızlandıran yöntemleri göreceğiz.

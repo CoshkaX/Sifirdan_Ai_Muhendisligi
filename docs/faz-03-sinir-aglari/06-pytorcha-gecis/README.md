@@ -163,6 +163,37 @@ Model ağırlığı `2`'ye, sabiti `0`'a yaklaşıyor. 2.2 dersindeki sonuçla a
 
 Fikir aynı; yalnızca ölçek ve hız farklı.
 
+### Şimdi sen yaz: eğitim döngüsünün adımları
+
+Eğitim döngüsünün tahmin, türev ve güncelleme adımlarını yaz. Doğru cevap `agirlik = 3`. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+agirlik = 0.0
+ogrenme_hizi = 0.1
+x, y = 2.0, 6.0
+
+for adim in range(3):
+    # 1. TODO: Tahmin et (ağırlık × x).
+    tahmin = ___
+    # 2. Kaybı hesapla (kare hata).
+    kayip = (tahmin - y) ** 2
+    # 3. TODO: Türev = 2 × (tahmin - y) × x.
+    turev = ___
+    # 4. TODO: Ağırlığı güncelle.
+    agirlik -= ___ * turev
+    print(f"Adım {adim + 1}: kayıp {kayip:.2f}, ağırlık {agirlik:.2f}")
+```
+```text {.python-playground-expected}
+Adım 1: kayıp 36.00, ağırlık 2.40
+Adım 2: kayıp 1.44, ağırlık 2.88
+Adım 3: kayıp 0.06, ağırlık 2.98
+```
+```text {.python-playground-help}
+`tahmin = ___` | Model tek ağırlıklı: tahmin `agirlik * x`.
+`turev = ___` | Yorumdaki formülü Python'a çevir: `2 * (tahmin - y) * x`.
+`agirlik -= ___ * turev` | Gradyan inişi: ağırlıktan öğrenme hızı × türev çıkarılır.
+```
+
 ## 3. Kütüphaneyle yap
 
 ### 3.1 Kurulum

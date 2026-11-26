@@ -111,6 +111,34 @@ Burada NFC, `I` ile birleşen noktayı tek bir `İ` kod noktasına dönüştür�
 !!! note "Ham metni sakla"
     Arama veya karşılaştırma için normalleştirilmiş bir alan oluşturabilirsin; ancak kullanıcı girdisinin özgün halini de korumak çoğu uygulamada yararlıdır. Böylece gösterim ve denetim için orijinal metne geri dönebilirsin.
 
+### Şimdi sen yaz: metni temizle
+
+Üç temizleme adımını sırayla uygulayan fonksiyonu tamamla. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+import unicodedata
+
+
+def temizle(metin):
+    # TODO 1: Unicode NFC biçimine çevir.
+    metin = unicodedata.normalize(___, metin)
+    # TODO 2: İ ve I dönüşümlerinden sonra küçük harfe çevir.
+    metin = metin.replace("İ", "i").replace("I", "ı").___()
+    # TODO 3: Fazla boşlukları tek boşluğa indir (split ve join).
+    return " ".join(metin.___())
+
+
+print(temizle("  IĞDIR    İLİ \t güzel  "))
+```
+```text {.python-playground-expected}
+ığdır ili güzel
+```
+```text {.python-playground-help}
+`unicodedata.normalize(___, metin)` | Birinci parametre biçimin adıdır: `"NFC"`.
+`.___()` (ilki) | Büyük harfleri küçültmek için `lower()` kullanılır.
+`.___()` (ikincisi) | `split()` metni boşluklardan sözcüklere ayırır; `join` onları tek boşlukla birleştirir.
+```
+
 ## 3. Kütüphaneyle yap
 
 Python'ın standart `unicodedata` modülü Unicode normalleştirmeyi sağlar. Boşlukları düzenlemek için `str.split()` ve `str.join()` yeterlidir. Türkçe büyük-küçük harf dönüşümü için ise uygulamanın dil kurallarını açıkça belirtmek gerekir; genel Unicode işlemleri tek başına Türkçeye özel davranacağı anlamına gelmez.

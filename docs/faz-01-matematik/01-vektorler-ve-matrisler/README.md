@@ -101,6 +101,37 @@ Ev sayısı: 2
 
 Bu örnekte matrisin boyutu **2 satır × 3 sütun**dur. Matrisin boyutu, hangi işlemlerin yapılabileceğini belirler; örneğin her satırın aynı sayıda sütunu olmalıdır.
 
+### Şimdi sen yaz: vektör topla, matristen seç
+
+İki vektörü topla ve bir matristen belirli bir sayıyı seç. `# TODO` yazan yerlerdeki `___` boşluklarını tamamla, sonra çalıştır.
+
+```python {.python-playground-task}
+a = [1, 2, 3]
+b = [10, 20, 30]
+toplam = []
+
+for i in range(len(a)):
+    # TODO: Aynı konumdaki iki sayıyı topla ve listeye ekle.
+    toplam.append(___)
+
+matris = [[1, 2], [3, 4], [5, 6]]
+# TODO: 3. satırın 2. sütunundaki sayıyı seç (konumlar 0'dan başlar).
+deger = matris[___][___]
+
+print("Toplam:", toplam)
+print("Matris boyutu:", len(matris), "x", len(matris[0]))
+print("Seçilen sayı:", deger)
+```
+```text {.python-playground-expected}
+Toplam: [11, 22, 33]
+Matris boyutu: 3 x 2
+Seçilen sayı: 6
+```
+```text {.python-playground-help}
+`toplam.append(___)` | `a[i]` ve `b[i]`, aynı konumdaki iki sayıdır. İkisini topla.
+`matris[___][___]` | İlk köşeli ayraç satırı, ikincisi sütunu seçer. Sayım `0`'dan başlar: 3. satır `2`, 2. sütun `1` konumundadır.
+```
+
 ## 3. Kütüphaneyle yap
 
 Python listeleri öğrenmek için yeterlidir; büyük sayısal dizilerle çalışırken **NumPy** kullanılır. NumPy, dizilerin boyutunu (`shape`) gösterir ve çok sayıda sayısal işlemi verimli biçimde yapar. Kurulum komutu terminal içindir; tarayıcıdaki çalışma alanında NumPy kurulu değildir.
