@@ -8,7 +8,7 @@ Yapay zekâ mühendisliğini **Türkçe**, **sıfırdan** ve **kendi ellerinle y
 
 ## Hızlı başlangıç
 
-- Dersleri okumak için siteyi ya da [`docs/`](docs/) klasörünü kullan.
+- Dersleri okumak için siteyi ya da [`docs/`](docs/) klasörünü kullan. 
 - `{.python-playground}` ile işaretlenmiş ders kodlarını sayfada düzenleyip çalıştır; ilk çalıştırmada Python çalışma zamanı tarayıcıya CDN üzerinden indirilir.
 - Müfredat: [docs/MUFREDAT.md](docs/MUFREDAT.md)
 - Katkı: [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)
