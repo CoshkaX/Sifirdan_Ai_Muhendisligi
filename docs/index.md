@@ -5,7 +5,7 @@
 Bu seri açık kaynaktır, ücretsizdir ve her dersin çalışan, test edilmiş kodu vardır. Amaç, bir kütüphanenin fonksiyonunu çağırmayı değil, o fonksiyonun **içinde ne olduğunu** anlamaktır.
 
 !!! warning "Proje erken aşamada"
-    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an **Faz 0** (hazırlık), **Faz 1** (matematik), **Faz 2** (klasik makine öğrenmesi), **Faz 3** (sinir ağları) ve **Faz 4** (metin ve Türkçe NLP) tamamlandı. İlk kez geliyorsan [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md) dersinden başla.
+    Dersler yazıldıkça [müfredat](MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an **Faz 0** (hazırlık), **Faz 1** (matematik), **Faz 2** (klasik makine öğrenmesi), **Faz 3** (sinir ağları), **Faz 4** (metin ve Türkçe NLP) ve **Faz 5** (Transformer) tamamlandı. İlk kez geliyorsan [0.1 Geliştirme ortamı](faz-00-hazirlik/01-gelistirme-ortami/README.md) dersinden başla.
 
 ## Neden böyle bir seri?
 

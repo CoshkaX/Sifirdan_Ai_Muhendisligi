@@ -4,7 +4,7 @@ Yapay zekâ mühendisliğini **Türkçe**, **sıfırdan** ve **kendi ellerinle y
 
 🌐 **Siteyi aç:** https://coshkax.github.io/Sifirdan_Ai_Muhendisligi/
 
-> Dersler yazıldıkça [müfredat](docs/MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an **Faz 0–4 (31 ders)** hazır.
+> Dersler yazıldıkça [müfredat](docs/MUFREDAT.md) sayfasında ✅ ile işaretleniyor. Şu an **Faz 0–5 (37 ders)** hazır.
 
 ## Kimler için?
 
@@ -23,7 +23,8 @@ Başlamak için bir bilgisayar ve merak yeter. Matematik formülle değil kodla 
 | 2 | Klasik makine öğrenmesi: regresyon, sınıflandırma, ölçme | ✅ 6 ders |
 | 3 | Sinir ağları: nöron, otomatik türev, geri yayılım, PyTorch'a geçiş | ✅ 6 ders |
 | 4 | Metin ve Türkçe NLP: tokenizer, biçimbilim, gömme, arama, duygu analizi | ✅ 7 ders |
-| 5–13 | Transformer, küçük dil modeli, LLM API'leri, RAG, agent'lar, fine-tuning, değerlendirme, üretim, bitirme projeleri | ⬜ planlandı |
+| 5 | Transformer: dizi modelleme, attention, çok başlı attention, konum bilgisi, transformer bloğu, mini transformer | ✅ 6 ders |
+| 6–13 | Küçük dil modeli, LLM API'leri, RAG, agent'lar, fine-tuning, değerlendirme, üretim, bitirme projeleri | ⬜ planlandı |
 
 Ayrıntılı liste için [müfredata](docs/MUFREDAT.md), hedefine göre ders sırası için [öğrenme yollarına](docs/OGRENME-YOLLARI.md) bak.
 

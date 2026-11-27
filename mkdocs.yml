@@ -103,6 +103,8 @@ nav:
   - "5.2 Attention": faz-05-transformer/02-attention/README.md
   - "5.3 Çok başlı attention": faz-05-transformer/03-cok-basli-attention/README.md
   - "5.4 Konum bilgisi": faz-05-transformer/04-konum-bilgisi/README.md
+  - "5.5 Transformer bloğu": faz-05-transformer/05-transformer-blogu/README.md
+  - "5.6 Mini transformer": faz-05-transformer/06-mini-transformer/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md

@@ -115,6 +115,24 @@
 | dataset card | veri kartı (dataset card) | Bir veri setinin amacını, kaynağını, lisansını ve sınırlarını anlatan belge |
 | personal data | kişisel veri | Bir kişiyi tanımlayan veya tanımlanabilir kılan bilgi; Türkiye'de KVKK kapsamındadır |
 | regular expression | düzenli ifade (regular expression) | Metinde aranacak bir kalıbı tarif eden küçük dil; Python'da `re` modülü |
+| sequence | dizi (sequence) | Elemanlarının sırası anlam taşıyan veri; metin, ses, zaman serileri |
+| context window | bağlam penceresi (context window) | Modelin sıradaki token'ı tahmin ederken baktığı son token'ların sayısı |
+| bigram | bigram | Yalnızca bir önceki token'a bakarak sonraki token'ı tahmin eden, sayarak çalışan model |
+| padding | padding | Kısa dizileri aynı uzunluğa getirmek için sona eklenen anlamsız özel token |
+| batch | batch | Modelin aynı anda işlediği örnek grubu |
+| softmax | softmax | Bir puan listesini toplamı `1` olan pozitif ağırlıklara çeviren işlev |
+| query / key / value | sorgu / anahtar / değer (query, key, value) | Attention'ın üç parçası: bakan token'ın aradığı, her token'ın kendini tanıttığı ve çıktıya karışan bilgi |
+| self-attention | self-attention (öz dikkat) | Bir dizideki her token'ın aynı dizideki bütün token'lara bakması |
+| attention mask | maske (mask) | Bir token'ın bakmaması gereken konumların (gelecek, padding) puanını çok küçük yaparak ağırlığını sıfırlayan yöntem |
+| multi-head attention | çok başlı attention (multi-head attention) | Vektörü kafalara bölüp her kafada ayrı bir attention çalıştırma ve çıktıları birleştirme |
+| projection | projeksiyon (projection) | Bir vektörü ağırlık matrisiyle çarparak yeni bir uzaya taşıma |
+| positional encoding | konum kodlaması (positional encoding) | Her konum için üretilip token vektörüne eklenen sıra bilgisi |
+| layer normalization | katman normalizasyonu (layer normalization) | Bir token'ın sayılarını ortalaması `0`, varyansı `1` olacak biçimde dengeleme |
+| residual connection | artık bağlantı (residual connection) | Bir parçanın çıktısını girdisine toplayan kestirme yol; bilgi ve gradyan kestirmeden akar |
+| feed-forward network | ileri besleme ağı (feed-forward network) | Her token'ı tek başına işleyen, iki doğrusal katman ve aralarında ReLU'dan oluşan ağ |
+| transformer block | transformer bloğu | Attention, ileri besleme ağı, normalizasyon ve artık bağlantılardan oluşan, üst üste yığılabilen birim |
+| generation | üretim (generation) | Modelin her adımda sıradaki token'ı tahmin edip diziye ekleyerek metin üretmesi |
+| irreducible loss | kaçınılmaz kayıp | Verideki rastgelelik yüzünden hiçbir modelin altına inemeyeceği kayıp değeri |
 | NameError | NameError | Python, kullanılmış bir değişken adını bulamaz; ad tanımlanmamış, yanlış yazılmış veya hücresi çalıştırılmamış olabilir |
 | IndexError | IndexError | Listede olmayan bir sıradaki öğe istenir |
 | KeyError | KeyError | Sözlükte bulunmayan bir anahtarın değeri istenir |

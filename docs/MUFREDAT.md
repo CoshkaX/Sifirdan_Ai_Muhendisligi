@@ -80,8 +80,8 @@ Modern dil modellerinin temelindeki mimariyi parça parça kurarsın. **Ön koş
 - ✅ [5.2 Attention](faz-05-transformer/02-attention/README.md): "hangi kelimeye bakmalı?" sorusunun matematiği
 - ✅ [5.3 Çok başlı attention](faz-05-transformer/03-cok-basli-attention/README.md): aynı anda birden fazla ilişkiyi yakalamak
 - ✅ [5.4 Konum bilgisi](faz-05-transformer/04-konum-bilgisi/README.md): sıra bilgisini modele vermek
-- ⬜ 5.5 Transformer bloğu: attention, ileri besleme, normalizasyon
-- ⬜ 5.6 Mini transformer: PyTorch ile küçük bir model
+- ✅ [5.5 Transformer bloğu](faz-05-transformer/05-transformer-blogu/README.md): attention, ileri besleme, normalizasyon
+- ✅ [5.6 Mini transformer](faz-05-transformer/06-mini-transformer/README.md): PyTorch ile küçük bir model
 
 ## Faz 6 – Küçük Bir Dil Modeli (LLM) Sıfırdan
 
