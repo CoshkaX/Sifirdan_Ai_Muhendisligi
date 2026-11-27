@@ -76,10 +76,10 @@ Metni sayılara çevirmenin yollarını ve Türkçe'ye özgü zorlukları öğre
 
 Modern dil modellerinin temelindeki mimariyi parça parça kurarsın. **Ön koşul:** Faz 3-4. **Çıktı:** PyTorch ile yazılmış çalışan küçük bir transformer.
 
-- ⬜ 5.1 Dizi modelleme: sırada anlam taşıyan veri
-- ⬜ 5.2 Attention: "hangi kelimeye bakmalı?" sorusunun matematiği
-- ⬜ 5.3 Çok başlı attention: aynı anda birden fazla ilişkiyi yakalamak
-- ⬜ 5.4 Konum bilgisi: sıra bilgisini modele vermek
+- ✅ [5.1 Dizi modelleme](faz-05-transformer/01-dizi-modelleme/README.md): sırada anlam taşıyan veri
+- ✅ [5.2 Attention](faz-05-transformer/02-attention/README.md): "hangi kelimeye bakmalı?" sorusunun matematiği
+- ✅ [5.3 Çok başlı attention](faz-05-transformer/03-cok-basli-attention/README.md): aynı anda birden fazla ilişkiyi yakalamak
+- ✅ [5.4 Konum bilgisi](faz-05-transformer/04-konum-bilgisi/README.md): sıra bilgisini modele vermek
 - ⬜ 5.5 Transformer bloğu: attention, ileri besleme, normalizasyon
 - ⬜ 5.6 Mini transformer: PyTorch ile küçük bir model
 

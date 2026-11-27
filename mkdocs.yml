@@ -99,6 +99,10 @@ nav:
   - "4.5 Benzerlik ve arama": faz-04-metin-ve-turkce-nlp/05-benzerlik-ve-arama/README.md
   - "4.6 Duygu analizi": faz-04-metin-ve-turkce-nlp/06-duygu-analizi/README.md
   - "4.7 Veri setleri": faz-04-metin-ve-turkce-nlp/07-veri-setleri/README.md
+  - "5.1 Dizi modelleme": faz-05-transformer/01-dizi-modelleme/README.md
+  - "5.2 Attention": faz-05-transformer/02-attention/README.md
+  - "5.3 Çok başlı attention": faz-05-transformer/03-cok-basli-attention/README.md
+  - "5.4 Konum bilgisi": faz-05-transformer/04-konum-bilgisi/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
