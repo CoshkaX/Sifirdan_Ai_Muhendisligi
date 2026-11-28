@@ -133,6 +133,20 @@
 | transformer block | transformer bloğu | Attention, ileri besleme ağı, normalizasyon ve artık bağlantılardan oluşan, üst üste yığılabilen birim |
 | generation | üretim (generation) | Modelin her adımda sıradaki token'ı tahmin edip diziye ekleyerek metin üretmesi |
 | irreducible loss | kaçınılmaz kayıp | Verideki rastgelelik yüzünden hiçbir modelin altına inemeyeceği kayıp değeri |
+| next-token prediction | sonraki token tahmini | Dil modelinin temel görevi: önceki token'lara bakarak sıradakinin olasılığını tahmin etmek |
+| perplexity | perplexity | Kaybın `e` üstü; modelin her adımda ortalama kaç seçenek arasında kararsız kaldığını anlatır |
+| BPE (byte pair encoding) | BPE | En sık yan yana gelen parça çiftini tekrar tekrar birleştirerek alt sözcük sözlüğü öğrenen tokenizer yöntemi |
+| subword | alt sözcük (subword) | Sözcükten küçük, karakterden büyük token; kök ve ekler gibi |
+| fertility | token/sözcük oranı (fertility) | Bir sözcüğün ortalama kaç token'a bölündüğü; tokenizer verimliliğinin ölçüsü |
+| context window | bağlam penceresi (context window) | Modelin bir seferde görebildiği en fazla token sayısı |
+| dropout | dropout | Eğitimde değerlerin bir kısmını rastgele sıfırlayarak ezberlemeyi zorlaştıran yöntem |
+| greedy decoding | açgözlü seçim (greedy decoding) | Üretimde her adımda en olası token'ı seçmek |
+| sampling | örnekleme (sampling) | Üretimde token'ı olasılıklara göre rastgele seçmek |
+| temperature | sıcaklık (temperature) | Softmax'tan önce puanların bölündüğü sayı; küçükse olasılıkları keskinleştirir, büyükse yumuşatır |
+| top-k sampling | top-k örnekleme | Yalnızca en olası `k` token arasından seçim yapmak |
+| top-p (nucleus) sampling | top-p örnekleme | Olasılıkları toplamı `p`'ye ulaşan en olası token'lar arasından seçim yapmak |
+| early stopping | erken durdurma (early stopping) | Doğrulama kaybı iyileşmeyi bırakınca eğitimi durdurup en iyi modeli saklamak |
+| patience | sabır (patience) | Erken durdurmada iyileşme olmadan beklenen ölçüm sayısı |
 | NameError | NameError | Python, kullanılmış bir değişken adını bulamaz; ad tanımlanmamış, yanlış yazılmış veya hücresi çalıştırılmamış olabilir |
 | IndexError | IndexError | Listede olmayan bir sıradaki öğe istenir |
 | KeyError | KeyError | Sözlükte bulunmayan bir anahtarın değeri istenir |

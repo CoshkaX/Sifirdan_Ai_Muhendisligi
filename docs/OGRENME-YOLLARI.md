@@ -69,7 +69,7 @@ Bu yol Türkçe'nin ekli yapısını, Unicode ayrıntılarını, alt kelime ayr�
 | 1 | [Faz 0 — Hazırlık](faz-00-hazirlik/01-gelistirme-ortami/README.md) | Çalışan Python ortamı |
 | 2 | [Faz 4 — Türkçe NLP](faz-04-metin-ve-turkce-nlp/01-metni-sayilara-cevirmek/README.md) | UTF-8, küçük harf, ekler, temizleme, embedding ve benzerlik |
 | 3 | [Faz 5 — Transformer](faz-05-transformer/01-dizi-modelleme/README.md) | Attention, konum bilgisi ve transformer bloğunu parça parça kurar; mini bir transformer eğitir |
-| 4 | **Faz 6 — Küçük dil modeli** | BPE ve mini bir GPT eğitimi yapar |
+| 4 | [Faz 6 — Küçük dil modeli](faz-06-kucuk-dil-modeli/01-sonraki-token-tahmini/README.md) | Türkçe için BPE tokenizer kurar, verimliliğini ölçer ve mini bir GPT eğitir |
 | 5 | **Faz 8 — Türkçe RAG** | Ek yapısı ve normalleştirmeyi arama hattına dahil eder |
 
 Bu yolun çıkış projesi, Türkçe belgeleri etkili biçimde dizinleyen ve sorgulayan bir arama sistemi olabilir.

@@ -110,6 +110,7 @@ nav:
   - "6.3 Türkçe tokenizer verimliliği": faz-06-kucuk-dil-modeli/03-turkce-tokenizer-verimliligi/README.md
   - "6.4 Mini GPT eğitimi": faz-06-kucuk-dil-modeli/04-mini-gpt-egitimi/README.md
   - "6.5 Metin üretimi": faz-06-kucuk-dil-modeli/05-metin-uretimi/README.md
+  - "6.6 Küçük Türkçe veri deneyi": faz-06-kucuk-dil-modeli/06-kucuk-turkce-veri-deneyi/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
