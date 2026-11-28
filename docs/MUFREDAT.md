@@ -87,8 +87,8 @@ Modern dil modellerinin temelindeki mimariyi parça parça kurarsın. **Ön koş
 
 Küçük ölçekte de olsa, bir dil modelini baştan sona kendin eğitirsin. **Ön koşul:** Faz 5. **Çıktı:** kendi eğittiğin mini bir GPT ve Türkçe'de tokenizer verimliliği ölçümü.
 
-- ⬜ 6.1 Sonraki token tahmini: dil modelinin tek işi
-- ⬜ 6.2 BPE tokenizer: alt-kelime sözlüğünü veriden öğrenmek
+- ✅ [6.1 Sonraki token tahmini](faz-06-kucuk-dil-modeli/01-sonraki-token-tahmini/README.md): dil modelinin tek işi
+- ✅ [6.2 BPE tokenizer](faz-06-kucuk-dil-modeli/02-bpe-tokenizer/README.md): alt-kelime sözlüğünü veriden öğrenmek
 - ⬜ 6.3 Türkçe'de tokenizer verimliliği: aynı anlam kaç token tutuyor?
 - ⬜ 6.4 Mini GPT eğitimi: eğitim döngüsü ve kayıp eğrisi
 - ⬜ 6.5 Metin üretimi: sıcaklık, top-k, top-p

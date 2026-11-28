@@ -105,6 +105,8 @@ nav:
   - "5.4 Konum bilgisi": faz-05-transformer/04-konum-bilgisi/README.md
   - "5.5 Transformer bloğu": faz-05-transformer/05-transformer-blogu/README.md
   - "5.6 Mini transformer": faz-05-transformer/06-mini-transformer/README.md
+  - "6.1 Sonraki token tahmini": faz-06-kucuk-dil-modeli/01-sonraki-token-tahmini/README.md
+  - "6.2 BPE tokenizer": faz-06-kucuk-dil-modeli/02-bpe-tokenizer/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
