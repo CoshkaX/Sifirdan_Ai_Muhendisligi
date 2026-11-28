@@ -89,7 +89,7 @@ Küçük ölçekte de olsa, bir dil modelini baştan sona kendin eğitirsin. **�
 
 - ✅ [6.1 Sonraki token tahmini](faz-06-kucuk-dil-modeli/01-sonraki-token-tahmini/README.md): dil modelinin tek işi
 - ✅ [6.2 BPE tokenizer](faz-06-kucuk-dil-modeli/02-bpe-tokenizer/README.md): alt-kelime sözlüğünü veriden öğrenmek
-- ⬜ 6.3 Türkçe'de tokenizer verimliliği: aynı anlam kaç token tutuyor?
+- ✅ [6.3 Türkçe tokenizer verimliliği](faz-06-kucuk-dil-modeli/03-turkce-tokenizer-verimliligi/README.md): aynı anlam kaç token tutuyor?
 - ⬜ 6.4 Mini GPT eğitimi: eğitim döngüsü ve kayıp eğrisi
 - ⬜ 6.5 Metin üretimi: sıcaklık, top-k, top-p
 - ⬜ 6.6 Küçük Türkçe veriyle deney: sonuçları yorumlamak

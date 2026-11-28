@@ -107,6 +107,7 @@ nav:
   - "5.6 Mini transformer": faz-05-transformer/06-mini-transformer/README.md
   - "6.1 Sonraki token tahmini": faz-06-kucuk-dil-modeli/01-sonraki-token-tahmini/README.md
   - "6.2 BPE tokenizer": faz-06-kucuk-dil-modeli/02-bpe-tokenizer/README.md
+  - "6.3 Türkçe tokenizer verimliliği": faz-06-kucuk-dil-modeli/03-turkce-tokenizer-verimliligi/README.md
   - Sözlük: SOZLUK.md
   - Katkı:
       - Katkı rehberi: CONTRIBUTING.md
